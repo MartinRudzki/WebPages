@@ -1,0 +1,30 @@
+/*
+File: ~css/table.css
+Edit by: Martin Rudzk, UMass Lowell, 91.461 GUI Programming 1
+Email: Martin_Rudzki@student.uml.edu
+CopyRight (c) 2015 by Martin Rudzki. You are free to use any of my code here.
+Description: CSS for my multiplication table.
+Created: MR 10/20/2015
+*/
+
+table {
+  background-color: silver;
+  border: 1px solid black;
+}
+
+table, tr, td, input {
+  background-color: white;
+}
+table,tr {
+  background-color: black;
+}
+
+#tabRow, tr, td {
+  font-family: 'Montserrat', sans-serif;
+  background-color: red;
+  color: white;
+}
+
+p, h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+}
