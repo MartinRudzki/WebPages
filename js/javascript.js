@@ -88,10 +88,6 @@ jQuery(function($) {
      errorElement: 'div',
      errorLabelContainer: ".errorTxt"
   });
-  var bools = true;
-  if (bools == true) {
-      DisplayTable();
-  }
 });
 
 /*
@@ -99,7 +95,7 @@ jQuery(function($) {
   Contatct Email: Martin_Rudzki@student.uml.edu
   Created: MR 10/20/2015
 */
-/*
+
 $(document).ready(function () {
   $('#submmit').click(function () {
     var bool = true;
@@ -118,4 +114,4 @@ $(document).ready(function () {
     }
   });
 });
-*/
+
