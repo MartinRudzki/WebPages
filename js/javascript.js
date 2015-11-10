@@ -68,27 +68,6 @@ Created: MR 10/20/2015
 $('#submmit').click(function () {
 */
 
-jQuery(function($) {
-  
-  var bools = $('#form').validate({
-    rules: {
-        row: {
-        required: true,
-        number:   true
-      },
-      colum: {
-        required: true,
-        number:   true
-      }
-    },
-    messages: {
-      row:   "Please enter a number",
-      colum: "Please enter a number"
-    },
-     errorElement: 'div',
-     errorLabelContainer: ".errorTxt"
-  });
-});
 
 /*
   Checks to see if there is an empty space, if so sets bool to false and will not generate the table.
@@ -109,6 +88,25 @@ $(document).ready(function () {
         bool = false;
       }
     });
+    
+      $('#form').validate({
+    rules: {
+        row: {
+        required: true,
+        number:   true
+      },
+      colum: {
+        required: true,
+        number:   true
+      }
+    },
+    messages: {
+      row:   "Please enter a number",
+      colum: "Please enter a number"
+    },
+     errorElement: 'div',
+     errorLabelContainer: ".errorTxt"
+  });
     if (bool == true) {
       DisplayTable();
     }
