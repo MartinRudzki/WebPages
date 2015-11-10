@@ -88,6 +88,7 @@ jQuery(function($) {
      errorElement: 'div',
      errorLabelContainer: ".errorTxt"
   });
+  var bools = true;
   if (bools == true) {
       DisplayTable();
   }
