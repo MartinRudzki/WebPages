@@ -105,7 +105,7 @@ Contatct Email: Martin_Rudzki@student.uml.edu
 Created: MR 10/20/2015
 */
 
-$('#submmit').click(function () {
+$(function ($) {
    $('#form').validate({
     rules: {
         row: {
