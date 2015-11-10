@@ -106,7 +106,7 @@ Created: MR 10/20/2015
 $('#submmit').click(function () {
 */
 
-$(document).ready(function () {
+$('#submmit').click(function () {
    $('#form').validate({
     rules: {
         row: {
