@@ -69,7 +69,8 @@ $('#submmit').click(function () {
 */
 
 jQuery(function($) {
-   $('#form').validate({
+  
+  var bools = $('#form').validate({
     rules: {
         row: {
         required: true,
@@ -87,6 +88,9 @@ jQuery(function($) {
      errorElement: 'div',
      errorLabelContainer: ".errorTxt"
   });
+  if (bools == true) {
+      DisplayTable();
+  }
 });
 
 /*
@@ -94,6 +98,7 @@ jQuery(function($) {
   Contatct Email: Martin_Rudzki@student.uml.edu
   Created: MR 10/20/2015
 */
+/*
 $(document).ready(function () {
   $('#submmit').click(function () {
     var bool = true;
@@ -112,4 +117,4 @@ $(document).ready(function () {
     }
   });
 });
-
+*/
