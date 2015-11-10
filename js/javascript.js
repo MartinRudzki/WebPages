@@ -79,24 +79,23 @@ $(document).ready(function () {
   $('#submmit').click(function () {
     var bool = true;
     $('#form').validate({
-    rules: {
-        row: {
-        required: true,
-        number:   true
+      rules: {
+          row: {
+          required: true,
+          number:   true
+        },
+        colum: {
+          required: true,
+          number:   true
+        }
       },
-      colum: {
-        required: true,
-        number:   true
-      }
-    },
-    messages: {
-      row:   "Please enter a number",
-      colum: "Please enter a number"
-    },
-     errorElement: 'div',
-     errorLabelContainer: ".errorTxt"
-  });
-    $("[name = 'row']").each(function (index) {
+      messages: {
+        row:   "Please enter a number",
+        colum: "Please enter a number"
+      },
+       errorElement: 'div',
+       errorLabelContainer: ".errorTxt"
+           $("[name = 'row']").each(function (index) {
       if ($(this).val() == '') {
         bool = false;
       }
@@ -109,6 +108,7 @@ $(document).ready(function () {
     if (bool == true) {
       DisplayTable();
     }
+    });
   });
 });
 
