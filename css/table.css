@@ -30,19 +30,19 @@ table {
   border: 1px solid black;
 }
 
-table, tr, td, input {
+table tr td input {
   background-color: white;
 }
-table,tr {
+table tr {
   background-color: blue;
 }
 
-#tabRow, tr, td {
+#tabRow tr td {
   font-family: 'Montserrat', sans-serif;
   background-color: green;
   color: white;
 }
 
-p, h1, h2 {
+p h1 h2 {
   font-family: 'Montserrat', sans-serif;
 }
