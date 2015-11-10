@@ -81,7 +81,7 @@ jQuery(function($) {
       }
     },
     messages: {
-      
+      row: "Please Ennnter nummber"
     },
      errorElement: 'div',
      errorLabelContainer: ".errorTxt"
