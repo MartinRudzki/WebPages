@@ -13,18 +13,6 @@ Source: http://stackoverflow.com/questions/28777440/how-to-make-a-simple-5-line-
 Created: Martin_Rudzki@student.uml.edu 10/20/2015
 */
 
-/*
-function myFunction() {
-  var form = $("#myTable").closest('form')
-  $(form.prop('elements')).each(function () {
-    var missing = $(this).val() === ""
-    $(this).parent().toggleClass('error', missing)
-  })
-  return form.find(".error").length == 0
-}
-*/
-
-
 function DisplayTable() {
   var rowEnd = 4;
   var colEnd = 5;
@@ -71,32 +59,6 @@ function DisplayTable() {
   /* print/put generated html code inside the DIV element */
   document.getElementById("myTable").innerHTML = htmlBuffer;
 }
-
-/*
-$(document).on('keyup', '.numeric-only', function (event) {
-  var v = this.value;
-  if ($.isNumeric(v) === false) {
-    //chop off the last char entered
-    this.value = this.value.slice(0, -1);
-  }
-});
-*/
-/*
-$("#form").validate({
-    rules: {
-      r1: {
-        required: true,
-        number: true
-      }
-    },
-    messages: {
-      r1: {
-        required: "more stuffs",
-        number: "must enter a number."
-        }
-      }
-  });
-*/
 
 /*
 The following code was taken from the following website.
