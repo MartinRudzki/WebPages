@@ -5,7 +5,25 @@ Email: Martin_Rudzki@student.uml.edu
 CopyRight (c) 2015 by Martin Rudzki. You are free to use any of my code here.
 Description: CSS for my multiplication table.
 Created: MR 10/20/2015
+Edited: MR 11/05/2015
 */
+.error {
+    color: Red;
+    border-width: 3px;
+    border-color: red;
+    
+}
+
+ fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove (internal value);
+} 9
 
 table {
   background-color: silver;
@@ -16,12 +34,12 @@ table, tr, td, input {
   background-color: white;
 }
 table,tr {
-  background-color: black;
+  background-color: blue;
 }
 
 #tabRow, tr, td {
   font-family: 'Montserrat', sans-serif;
-  background-color: red;
+  background-color: green;
   color: white;
 }
 
