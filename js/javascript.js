@@ -112,5 +112,3 @@ $(document).ready(function () {
        errorLabelContainer: ".errorTxt"
     });
   });
-});
-});
