@@ -119,7 +119,7 @@ $('#submmit').click(function () {
       
     },
      errorElement: 'div',
-     errorLabelContainer: '.errorTxt'
+     errorLabelContainer: ".errorTxt"
   });
 });
 
