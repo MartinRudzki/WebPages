@@ -78,18 +78,7 @@ $('#submmit').click(function () {
 $(document).ready(function () {
   $('#submmit').click(function () {
     var bool = true;
-    $("[name = 'row']").each(function (index) {
-      if ($(this).val() == '') {
-        bool = false;
-      }
-    });
-    $("[name = 'colum']").each(function (index) {
-      if ($(this).val() == '') {
-        bool = false;
-      }
-    });
-    
-      $('#form').validate({
+    $('#form').validate({
     rules: {
         row: {
         required: true,
@@ -107,6 +96,16 @@ $(document).ready(function () {
      errorElement: 'div',
      errorLabelContainer: ".errorTxt"
   });
+    $("[name = 'row']").each(function (index) {
+      if ($(this).val() == '') {
+        bool = false;
+      }
+    });
+    $("[name = 'colum']").each(function (index) {
+      if ($(this).val() == '') {
+        bool = false;
+      }
+    });
     if (bool == true) {
       DisplayTable();
     }
