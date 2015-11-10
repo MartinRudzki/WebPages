@@ -110,10 +110,12 @@ $('#submmit').click(function () {
    $('#form').validate({
     rules: {
         row: {
-        required: true
+        required: true,
+        number:   true
       },
       colum: {
-        required: true
+        required: true,
+        number:   true
       }
     },
     messages: {
