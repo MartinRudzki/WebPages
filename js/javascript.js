@@ -103,9 +103,10 @@ The following code was taken from the following website.
 Source: http://stackoverflow.com/questions/26498899/jquery-validate-custom-error-message-location
 Contatct Email: Martin_Rudzki@student.uml.edu
 Created: MR 10/20/2015
+$('#submmit').click(function () {
 */
 
-$(function ($) {
+$(function () {
    $('#form').validate({
     rules: {
         row: {
