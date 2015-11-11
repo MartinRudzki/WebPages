@@ -63,19 +63,12 @@ function DisplayTable() {
 /*
 The following code was taken from the following website.
 Source: http://stackoverflow.com/questions/26498899/jquery-validate-custom-error-message-location
+Function: Checks to see if there is an empty space, if so sets bool to false and will not generate the table.
 Contatct Email: Martin_Rudzki@student.uml.edu
-Created: MR 10/20/2015
-$('#submmit').click(function () {
-*/
-
-
-/*
-  Checks to see if there is an empty space, if so sets bool to false and will not generate the table.
-  Contatct Email: Martin_Rudzki@student.uml.edu
-  Created: MR 10/20/2015
+Created: MR 11/05/2015
 */
 $(document).ready(function () {  
-  $('#form').validate({
+  $('#myTable').validate({
 
     rules: {
       row: {
@@ -88,25 +81,28 @@ $(document).ready(function () {
       }
     },
     messages: {
-      row:   "Please enter a number",
-      colum: "Please enter a number"
+      row: "Please enter a number in the left column.",
+      colum: "Please enter a number in the top row."
     },
     errorElement: 'div',
-    errorLabelContainer: ".errorTxt"
+    errorLabelContainer: ".errorTxt",
   });
 
-  //*********************************************
-
+  /*
+  Found evt.preventDefault(); on the followinf webpage
+  Source:http://jqueryvalidation.org/validate/
+  Creted: MR 11/5/2015
+  */
   $('#submmit').click(function (evt) {
     
     var bool = true;
-    $("[name = 'row']").each(function (index) {
+    $("[name = 'colum']").each(function (index) {
       if ($(this).val() == '') {
         bool = false;
       }
     });
 
-    $("[name = 'colum']").each(function (index) {
+    $("[name = 'row']").each(function (index) {
       if ($(this).val() == '') {
         bool = false;
       }
