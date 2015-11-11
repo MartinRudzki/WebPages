@@ -74,41 +74,52 @@ $('#submmit').click(function () {
   Contatct Email: Martin_Rudzki@student.uml.edu
   Created: MR 10/20/2015
 */
+$(document).ready(function () {  
+  $('#form').validate({
 
-$(document).ready(function () {
-  $('#submmit').click(function () {
+    rules: {
+      row: {
+        required: true,
+        number:   true
+      },
+      colum: {
+        required: true,
+        number:   true
+      }
+    },
+    messages: {
+      row:   "Please enter a number",
+      colum: "Please enter a number"
+    },
+    errorElement: 'div',
+    errorLabelContainer: ".errorTxt"
+  });
+
+  //*********************************************
+
+  $('#submmit').click(function (evt) {
+    
     var bool = true;
     $("[name = 'row']").each(function (index) {
-        if ($(this).val() == '') {
-          bool = false;
-        }
-      });
-      $("[name = 'colum']").each(function (index) {
-        if ($(this).val() == '') {
-          bool = false;
-        }
-      });
-      if (bool == true) {
-        DisplayTable();
+      if ($(this).val() == '') {
+        bool = false;
       }
     });
-    
-    $('#form').validate({
-      rules: {
-          row: {
-          required: true,
-          number:   true
-        },
-        colum: {
-          required: true,
-          number:   true
-        }
-      },
-      messages: {
-        row:   "Please enter a number",
-        colum: "Please enter a number"
-      },
-       errorElement: 'div',
-       errorLabelContainer: ".errorTxt"
+
+    $("[name = 'colum']").each(function (index) {
+      if ($(this).val() == '') {
+        bool = false;
+      }
     });
+
+    if (bool == true) {
+      evt.preventDefault();
+      DisplayTable();
+    }
+    
   });
+
+});
+
+
+
