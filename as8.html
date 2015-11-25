@@ -24,7 +24,28 @@ Created: MR 10/20/2015
   $(function() {
     $( "#slider" ).slider();
   });
-  </script>
+  </script
+  <style>
+  . background-div {  
+  height:50px; 
+  width:217px; 
+  padding:36px 0 0 24px;  
+  } 
+  
+  #slider {  
+  width:184px; 
+  height:23px; 
+  border:none; 
+  position:relative;  
+  left:4px; top:4px;  
+  }
+  
+  #slider .ui-slider-handle 
+  {  width:14px; 
+  height:30px; 
+  top:-4px;  
+  }
+  </style>
   
 </head>
 
@@ -60,7 +81,7 @@ Created: MR 10/20/2015
       
       <input type="submit" value="Submit" class="submit" id="submmit">
       <div class="errorTxt"></div>
-      <div id="slider">yes</div>
+      <div id="slider"></div>
     </fieldset>
   </form>
   <!--
