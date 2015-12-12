@@ -118,6 +118,20 @@ $("#form").validate({
       }
       $(element).removeClass(errorClass);
     },
+    submitHandler: function (form) {
+      theUrl = '/processData';
+      var params = $(form).serialize();
+      $.ajax({
+        type: "POST",
+        url: theUrl,
+        data: params,
+        processData: false,
+        async: false,
+        success: function (returnData) {
+          $('#errorTxt').html(returnData);
+        }
+      })
+    }
   });
   /*
   The following website helped .
