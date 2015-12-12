@@ -25,16 +25,4 @@ $("#form").validate({
       }
       $(element).removeClass(errorClass);
     },
-    submitHandler: function (form) {
-      theUrl = '/processData';
-      var params = $(form).serialize();
-      $.ajax({
-        data: params,
-        processData: false,
-        async: false,
-        success: function (returnData) {
-          $('#errorTxt').html(returnData);
-        }
-      })
-    }
   });
