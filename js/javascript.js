@@ -38,7 +38,7 @@ $(document).ready(function () {
   Contatct Email: Martin_Rudzki@student.uml.edu
   Created: MR 12/03/2015
   */
-  $(function () {
+$(function () {
   $(".slider_row").slider({
     range: "min",
     value: 1,
@@ -109,6 +109,15 @@ $("#form").validate({
       row: "Please enter a number in the left column.",
       colum: "Please enter a number in the top row.",
     },
+      submitHandler: function (form) {
+      var params = $(form).serialize();
+      $.ajax({
+        data: params,
+        success: function (returnData) {
+          $('#errorTxt').html(returnData);
+        }
+      })
+    }
   });
   /*
   The following website helped .
