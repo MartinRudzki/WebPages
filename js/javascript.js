@@ -142,7 +142,7 @@ $("#form").validate({
     });
 
     if (bool == true || (this.numberOfInvalids() != 0)) {
-      evt.preventDefault();
+      //evt.preventDefault();
       DisplayTable();
     }
   });
