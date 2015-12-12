@@ -5,12 +5,16 @@ Email: Martin_Rudzki@student.uml.edu
 CopyRight (c) 2015 by Martin Rudzki. You are free to use any of my code here.
 Description: CSS for my multiplication table.
 Created: MR 10/20/2015
+Updated MR: 12/09/2015
 */
 .error {
     color: Red;
     border-width: 3px;
     border-color: red;
-    
+}
+#errorTxt {
+  color: Red;
+  margin-left: 125px;
 }
 
  fieldset {
@@ -27,10 +31,13 @@ Created: MR 10/20/2015
 table {
   background-color: black;
   border: 1px solid black;
+  margin-left: 125px;
+  margin-top: -134px;
 }
 
 table tr td input {
-  background-color: #C8C8C8;
+  background-color: #6E7B8B;
+  padding-right: 40px;
 }
 table tr {
   background-color: #888888;
@@ -38,10 +45,92 @@ table tr {
 
 #tabRow tr td {
   font-family: 'Montserrat', sans-serif;
-  background-color: green;
+
   color: white;
+  margin-right: 20px;
 }
 
 p h1 h2 {
   font-family: 'Montserrat', sans-serif;
 }
+
+#c1 {
+  -webkit-appearance: none;
+  background-color: silver;
+  margin-left: 250px;
+  margin-top: 20px;
+  width: 10px;
+  height:80px;
+}
+#c2 {
+  -webkit-appearance: none;
+  background-color: silver;
+  margin-left: 85px;
+  margin-top: -2px;
+  width: 10px;
+  height: 80px;
+}
+#c3 {
+  -webkit-appearance: none;
+  background-color: silver;
+  margin-left: 85px;
+  margin-top: -2px;
+  width: 10px;
+  height: 80px;
+}
+#c4 {
+  -webkit-appearance: none;
+  background-color: silver;
+  margin-left: 85px;
+  margin-top: -2px;
+  width: 10px;
+  height: 80px;
+}
+
+#c5 {
+  -webkit-appearance: none;
+  background-color: silver;
+  margin-left: 85px;
+  margin-top: -2px;
+  width: 10px;
+  height: 80px;
+}
+
+#r1 {
+  -webkit-appearance: none;
+  background-color: silver;
+  margin-left: 30px;
+  margin-top: 50px;
+  width: 80px;
+  height: 10px;
+}
+#r2 {
+  -webkit-appearance: none;
+  background-color: silver;
+  margin-left: 30px;
+  margin-top: 16px;
+  width: 80px;
+  height: 10px;
+}
+#r3{
+  -webkit-appearance: none;
+  background-color: silver;
+  margin-left: 30px;
+  margin-top: 16px;
+  width: 80px;
+  height: 10px;
+}
+#r4{
+  -webkit-appearance: none;
+  background-color: silver;
+  margin-left: 30px;
+  margin-top: 16px;
+  width: 80px;
+  height: 10px;
+}
+
+.submit {
+   margin-left: 125px;
+}
+
+
