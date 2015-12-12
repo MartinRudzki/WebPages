@@ -93,7 +93,7 @@ $(function () {
   */
 $("#form").validate({
   errorLabelContainer: "#errorTxt",
-  wrapper: "p",
+  wrapper: "div",
   errorClass: "error",
     rules: {
        row: {
@@ -109,24 +109,11 @@ $("#form").validate({
       row: "Please enter a number in the left column.",
       colum: "Please enter a number in the top row.",
     },
-    invalidHandler: function (form, validator) {
-      $("#errorTxt").show();
-    },
-    unhighlight: function (element, errorClass) {
-      if (this.numberOfInvalids() == 0) {
-        $("#errorTxt").hide();
-      }
-      $(element).removeClass(errorClass);
-    },
     submitHandler: function (form) {
       theUrl = '/processData';
       var params = $(form).serialize();
       $.ajax({
-        type: "POST",
-        url: theUrl,
         data: params,
-        processData: false,
-        async: false,
         success: function (returnData) {
           $('#errorTxt').html(returnData);
         }
@@ -157,7 +144,6 @@ $("#form").validate({
     });
 
     if (bool == true) {
-      evt.preventDefault();
       DisplayTable();
     }
   });
