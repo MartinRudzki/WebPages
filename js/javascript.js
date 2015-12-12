@@ -142,6 +142,7 @@ $("#form").validate({
     });
 
     if (bool == true) {
+      evt.preventDefault();
       DisplayTable();
     }
   });
