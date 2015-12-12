@@ -10,7 +10,7 @@ Edited:  MR 11/05/2015
 
 $(document).ready(function () {
   /*
-  The following website helped me with my understaing:
+  The following website helped me with my understain g:
   Source:http://www.jacklmoore.com/notes/jquery-tabs/ 
   Desciption: Tab code
   Contatct Email: Martin_Rudzki@student.uml.edu
@@ -109,17 +109,6 @@ $("#form").validate({
       row: "Please enter a number in the left column.",
       colum: "Please enter a number in the top row.",
     },
-    submitHandler: function (form) {
-      theUrl = '/processData';
-      var params = $(form).serialize();
-      $.ajax({
-        data: params,
-        success: function (returnData) {
-          $('#errorTxt').html(returnData);
-        }
-      })
-    }
-
   });
   /*
   The following website helped .
