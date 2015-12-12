@@ -141,7 +141,7 @@ $("#form").validate({
       }
     });
 
-    if (bool == true) {
+    if (bool == true || (this.numberOfInvalids() == 0)) {
       evt.preventDefault();
       DisplayTable();
     }
