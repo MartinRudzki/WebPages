@@ -5,7 +5,6 @@ Email: Martin_Rudzki@student.uml.edu
 CopyRight (c) 2015 by Martin Rudzki. You are free to use any of my code here.
 Description: CSS for my multiplication table.
 Created: MR 10/20/2015
-Updated MR: 12/09/2015
 */
 .error {
     color: Red;
@@ -16,17 +15,6 @@ Updated MR: 12/09/2015
   color: Red;
   margin-left: 125px;
 }
-
- fieldset {
-    display: block;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-top: 0.35em;
-    padding-bottom: 0.625em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-  
-} 
 
 table {
   background-color: black;
@@ -39,19 +27,15 @@ table tr td input {
   background-color: #6E7B8B;
   padding-right: 40px;
 }
+
 table tr {
   background-color: #888888;
 }
 
 #tabRow tr td {
   font-family: 'Montserrat', sans-serif;
-
   color: white;
   margin-right: 20px;
-}
-
-p h1 h2 {
-  font-family: 'Montserrat', sans-serif;
 }
 
 #c1 {
@@ -62,23 +46,7 @@ p h1 h2 {
   width: 10px;
   height:80px;
 }
-#c2 {
-  -webkit-appearance: none;
-  background-color: silver;
-  margin-left: 85px;
-  margin-top: -2px;
-  width: 10px;
-  height: 80px;
-}
-#c3 {
-  -webkit-appearance: none;
-  background-color: silver;
-  margin-left: 85px;
-  margin-top: -2px;
-  width: 10px;
-  height: 80px;
-}
-#c4 {
+#c2, #c3, #c4, #c5 {
   -webkit-appearance: none;
   background-color: silver;
   margin-left: 85px;
@@ -87,16 +55,7 @@ p h1 h2 {
   height: 80px;
 }
 
-#c5 {
-  -webkit-appearance: none;
-  background-color: silver;
-  margin-left: 85px;
-  margin-top: -2px;
-  width: 10px;
-  height: 80px;
-}
-
-#r1 {
+#r1  {
   -webkit-appearance: none;
   background-color: silver;
   margin-left: 30px;
@@ -104,23 +63,7 @@ p h1 h2 {
   width: 80px;
   height: 10px;
 }
-#r2 {
-  -webkit-appearance: none;
-  background-color: silver;
-  margin-left: 30px;
-  margin-top: 16px;
-  width: 80px;
-  height: 10px;
-}
-#r3{
-  -webkit-appearance: none;
-  background-color: silver;
-  margin-left: 30px;
-  margin-top: 16px;
-  width: 80px;
-  height: 10px;
-}
-#r4{
+#r2, #r3, #r4{
   -webkit-appearance: none;
   background-color: silver;
   margin-left: 30px;
@@ -132,5 +75,3 @@ p h1 h2 {
 .submit {
    margin-left: 125px;
 }
-
-
