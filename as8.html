@@ -5,88 +5,113 @@ Email: Martin_Rudzki@student.uml.edu
 CopyRight (c) 2015 by Martin Rudzki. You are free to use any of my code here.
 Description: HTML holding page.
 Created: MR 10/20/2015
+Updated: MR 12/10/2015
 -->
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
-  <!--Page tab title-->
   <title>Practice</title>
-  <link rel="stylesheet" href="css/table.css">
+
+  <link rel="stylesheet" href="css/smoothness/jquery-ui-1.8.9.custom.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="js/jquery.validate1.14.0.js"></script>
   <script src="js/jquery.validate1.14.0.additional.js"></script>
+
+  <!--My files-->
+  <link rel="stylesheet" href="css/table.css">
   <script src="js/javascript.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <script>
-  $(function() {
-    $( "#slider" ).slider();
-  });
-  </script
-  <style>
-  . background-div {  
-  height:50px; 
-  width:217px; 
-  padding:36px 0 0 24px;  
-  } 
-  
-  #slider {  
-  width:184px; 
-  height:23px; 
-  border:none; 
-  position:relative;  
-  left:4px; top:4px;  
-  }
-  
-  #slider .ui-slider-handle 
-  {  width:14px; 
-  height:30px; 
-  top:-4px;  
-  }
-  </style>
-  
+
+  <!-- Two links below are for slider-->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 </head>
 
 <body>
-    <h1>Welcome to my first web app!</h1>
-    <h2>Multiplication Table.</h2>
-    <p>Please input only numbers:</p>
 
-  <form id="form" method="get" action="">
-    <fieldset>
-      <table id="myTable" border="0">
-        <tr>
-          <td></td>
-          <td><input type="text" name="colum" value="1" maxlength="4" size="1" required></td>
-          <td><input type="text" name="colum" value="2" maxlength="4" size="1" required></td>
-          <td><input type="text" name="colum" value="3" maxlength="4" size="1" required></td>
-          <td><input type="text" name="colum" value="4" maxlength="4" size="1" required></td>
-          <td><input type="text" name="colum" value="5" maxlength="4" size="1" required></td>
-        </tr>
-        <tr>
-          <td><input type="text" name="row" value="" maxlength="4" size="1" required></td>
-        </tr>
-        <tr>
-          <td><input type="text" name="row" value="2" maxlength="4" size="1" required></td>
-        </tr>
-        <tr>
-          <td><input type="text" name="row" value="3" maxlength="4" size="1" required></td>
-        </tr>
-        <tr>
-          <td><input type="text" name="row" value="4" maxlength="4" size="1" required></td>
-        </tr>
-      </table>
-      
-      <input type="submit" value="Submit" class="submit" id="submmit">
-      <div class="errorTxt"></div>
-      <div id="slider"></div>
-    </fieldset>
-  </form>
-  <!--
-    $("#myTable").validate();  
-  -->
-  
+  <div id="myTabs">
+    <ul>
+      <li><a href="#a">Multiplication table</a></li>
+      <li><a href="#b">Click me!</a></li>
+    </ul>
 
+    <!--Div a and b are tabs-->
+    <div id="a">
+    <!--Sliders-->
+      <div id="c1" class="slider_colum">
+        <div id="c2" class="slider_colum">
+          <div id="c3" class="slider_colum">
+            <div id="c4" class="slider_colum">
+              <div id="c5" class="slider_colum">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="r1" class="slider_row"></div>
+      <div id="r2" class="slider_row"></div>
+      <div id="r3" class="slider_row"></div>
+      <div id="r4" class="slider_row"></div>
+      <form id="form" method="get" action="">
+
+        <table id="myTable" method="get" action="myTable()">
+          <tr>
+            <td></td>
+            <td>
+              <input type="text" class="c1_col_value" name="colum" value="1" maxlength="4" size="1" required>
+            </td>
+            <td>
+              <input type="text" class="c2_col_value" name="colum" value="2" maxlength="4" size="1" required>
+            </td>
+            <td>
+              <input type="text" class="c3_col_value" name="colum" value="3" maxlength="4" size="1" required>
+            </td>
+            <td>
+              <input type="text" class="c4_col_value" name="colum" value="4" maxlength="4" size="1" required>
+            </td>
+            <td>
+              <input type="text" class="c5_col_value" name="colum" value="5" maxlength="4" size="1" required>
+            </td>
+          </tr>
+          <!--Rows -->
+          
+          <tr>
+            <td>
+                <input type="text" class="r1_row_value" name="row" value="1" maxlength="4" size="1" required>
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" class="r2_row_value" name="row" value="2" maxlength="4" size="1" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" class="r3_row_value" name="row" value="3" maxlength="4" size="1" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" class="r4_row_value" name="row" value="4" maxlength="4" size="1" required>
+            </td>
+          </tr>
+        </table>
+       <input type="submit" value="Submit" class="submit" id="submmit">
+       <div id="errorTxt"></div>
+    </form>
+    </div>
+    <!--Click me tab-->
+    <div id="b">
+     Now you will never get back to the muliplication table again! Muahahahaha!!!
+      <div>
+        <img src="th.jpg" alt="Count" style="width:304px;height:228px;">
+        <div>
+          <button type="button" id="enable">Enable</button>
+          <button type="button" id="disable">Disable</button>
+        </div>
+      </div>
+    </div>
+  </div
 </body>
+</html>
