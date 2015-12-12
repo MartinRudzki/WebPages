@@ -11,6 +11,7 @@ Created: MR 10/20/2015
     border-width: 3px;
     border-color: red;
 }
+
 #errorTxt {
   color: Red;
   margin-left: 125px;
@@ -46,6 +47,7 @@ table tr {
   width: 10px;
   height:80px;
 }
+
 #c2, #c3, #c4, #c5 {
   -webkit-appearance: none;
   background-color: silver;
@@ -63,6 +65,7 @@ table tr {
   width: 80px;
   height: 10px;
 }
+
 #r2, #r3, #r4{
   -webkit-appearance: none;
   background-color: silver;
