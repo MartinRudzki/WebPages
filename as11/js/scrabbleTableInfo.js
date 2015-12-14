@@ -1,6 +1,6 @@
 
 /* 
-    File:  js/tilesRemain.js
+    File:  js/scrabbleTableInfo.js
     Assignment 9:  Scrabble
     Created by: Martin_Rudzki@student.uml.edu
     Orginal Author: Jesse Heines 
