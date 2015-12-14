@@ -28,6 +28,20 @@ $(document).ready(function () {
 
   (function ($) {
     tilesRemaining = function tilesRemainingg(){
+      /***Learned .remove() ***
+      * Source:http://stackoverflow.com/questions/2620181/clear-table-jquery
+      * remove tags from the table. 
+      */
+      // Remove current table
+      $("#tbl tr").remove();
+      // Building new table
+      var htmlBuffer = "<tr> <th>Title</th>";
+      htmlBuffer += "<th>Value</th>";
+      htmlBuffer += "<th>Orig.<br>Dist.</th>";
+      htmlBuffer += "<th>No.<br>Left</th> </tr>";
+      document.getElementById("tbl").innerHTML = htmlBuffer;
+        
+        
     // define variables here to thwart hoisting
     var char;          // uppercase character indicated by the loop index
       var newTableRow;   // one row of the table
