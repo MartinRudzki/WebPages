@@ -1,13 +1,97 @@
 <!DOCTYPE html>
+<!--
+    File:  scrabble.html
+    Assignment 9:  Scrabble
+    Author: Martin Rudzki
+    Email: Martin_Rudzki@student.uml.edu
+    HTML Code
+    Edited:12/13/2015
+-->
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
+      <script src="as11/js/jQuery/jquery-2.1.4.min.js"></script>  
+      <script src="as11/js/jQuery/jquery-ui.js"></script> 
+      <!--My Files-->
+      <link rel="stylesheet" type="text/css" href="css/scrabbleCSS.css">
+      <script src="as11/js/scrabbleTileData.js"></script>
+      <script src="as11/js/scrabbleTilesInfo.js"></script>
+      <script src="as11/js/scrabbleEverythingElse.js"></script>
+      <script src="as11/js/scrabbleDragNDrop.js"></script>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
+      <title>Scrabble</title>
+    </head>
 <body>
-  <div> I am getting it on git hub Now 11:59pm</div>
-  <div> Git hub failed to push some refs 12.10am</div>
-<img src="http://media-cache-ak0.pinimg.com/736x/bb/cd/d2/bbcdd2a7c7417e39a049720ed522cf0e.jpg">
+  <div id="myTabs">
+        <ul>
+          <li><a href="#Tab_Scrabble_Game">Scrabble Game</a></li>
+          <li><a href="#Tab_Tiles_Remaining">Tiles Remaining</a></li>
+        </ul>
+        <!--Div a and b are tabs-->
+        <div id="Tab_Scrabble_Game">
+          <div class="errorBox"></div>
+          <br />
+          <div> Total Score </div>
+          <div class="scrabbleScore"></div>
+          <div> &nbsp; </div>
+          <div> Your word: </div>
+          <div class="currentWord"></div>
+          <div> &nbsp; </div>
+          <div> Current word points: </div>
+          <div class="wordScore"></div>
+          <div> &nbsp; </div>
+          <button type="button" onclick= "getLetters()">Get letters!</button>
+          <button type="submit" onclick= "submitWord()">Check Word</button>
+          <br><br/>
+          <table class="scrabble_board">
+            <tbody>
+              <tr>
+                <td class="boardSpace"></td>
+                <td class="boardSpace"></td>
+                <td class="boardSpaceDW"></td>
+                <td class="boardSpace"></td>
+                <td class="boardSpace"></td>
+                <td class="boardSpace"></td>
+                <td class="boardSpaceDL"></td>
+                <td class="boardSpace"></td>
+                <td class="boardSpaceDL"></td>
+                <td class="boardSpace"></td>
+                <td class="boardSpace"></td>
+                <td class="boardSpace"></td>
+                <td class="boardSpaceDW"></td>
+                <td class="boardSpace"></td>
+                <td class="boardSpace"></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="letterTray">
+            <h3>Letter Tray</h3>
+            <tbody>
+              <tr>
+                <td class="holderSpace-1"></td>
+                <td class="holderSpace-2"></td>
+                <td class="holderSpace-3"></td>
+                <td class="holderSpace-4"></td>
+                <td class="holderSpace-5"></td>
+                <td class="holderSpace-6"></td>
+                <td class="holderSpace-7"></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+        <div id="Tab_Tiles_Remaining">
+          <table id="tbl">
+            <tr>
+              <th>Title</th>
+              <th>Value</th>
+              <th>Orig.<br>Dist.</th>
+              <th>No.<br>Left</th>
+            </tr>
+          </table>
+      </div>
+    </div>
 </body>
 </html>
