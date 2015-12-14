@@ -66,7 +66,7 @@ function getRandomLetter() {
   scrabbleTiles[letterChar].numberRemaining = (scrabbleTiles[letterChar].numberRemaining - 1);
   console.log("New Remain:" + scrabbleTiles[letterChar].numberRemaining);
 
-  if (scrabbleTiles[letterChar].numberRemaining === -10) {
+  if (scrabbleTiles[letterChar].numberRemaining === -10) { //temp value
     
     while (scrabbleTiles[letterAsciiNum].numberRemaining === 0) {
       letterAsciiNum = getRandomInt();
