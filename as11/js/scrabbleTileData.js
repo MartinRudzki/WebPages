@@ -1,5 +1,5 @@
 /* 
-    File:  ~/public_html/js/scrabbleTilesInfo.html
+    File:  ~js/scrabbleTileData.js
     Assignment 9:  Scrabble
     Created by: Martin_Rudzki@student.uml.edu
     Orginal Author: Jesse Heines 
