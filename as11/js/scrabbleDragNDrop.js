@@ -3,7 +3,7 @@
     Assignment 9:  Scrabble
     Author: Martin Rudzki
     Email: Martin_Rudzki@student.uml.edu  
-    Credit for code: Patrick Quaratiello
+    Orginal code: Patrick Quaratiello
     Edited:12/13/2015 
  */
 
