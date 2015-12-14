@@ -99,7 +99,7 @@ function submitWord() {
     */
     arrayLetters = strWord.split("");
 
-    /********* Resetting variables back to default ***********/ 
+    /********* Resetting some variables to default and yr;;ing up scores ***********/ 
     strWord = "---"; //set word to blank
     $('.scrabbleScore').html(scrabbleSum); //update UI
     $('.wordScore').html(currentWordSum);
