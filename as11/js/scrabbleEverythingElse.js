@@ -117,7 +117,8 @@ function submitWord() {
       lettersAvailable = scrabbleTiles[(arrayLetters[i])].numberRemaining;
       console.log(" new Remainder :" + lettersAvailable);
     }
-   
+    
+    tilesRemaining();
     $(".inPlay").addClass("submitted"); // if the word is now "submitted"
     $(".submitted").removeClass("inPlay");
     $(".submitted").each(function () { arrayLetterId.push(this.id); });
