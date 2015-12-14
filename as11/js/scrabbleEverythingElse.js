@@ -191,5 +191,4 @@ function getLetters() {
       stop: function (event, ui) { }
     });
   }
-  tilesRemaining();
 }
