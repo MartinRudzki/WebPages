@@ -60,7 +60,7 @@ function getRandomLetter() {
   else
     letterChar = String.fromCharCode(letterAsciiNum);
 
-  if (scrabbleTiles[letterChar].numberRemaining === -10) { //temp value
+  if (scrabbleTiles[letterChar].numberRemaining === 0) { //temp value
     
     while (scrabbleTiles[letterAsciiNum].numberRemaining === 0) {
       letterAsciiNum = getRandomInt();
