@@ -109,7 +109,7 @@ function submitWord() {
     // set new letter remaining amounts
     for (var i = 0; i < arrayLetters.length; i++) {
       // This is subtracting the remainder correctly
-            /**********TEST LOG****************
+            /**********TEST LOG****************/
       console.log("Letter    :" + arrayLetters[i]);
       lettersAvailable = scrabbleTiles[arrayLetters[i]].numberRemaining;
       console.log("Remainder :" + lettersAvailable);
