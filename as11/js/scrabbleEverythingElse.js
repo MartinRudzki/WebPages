@@ -59,11 +59,11 @@ function getRandomLetter() {
     var letterChar = "_";
   else
     letterChar = String.fromCharCode(letterAsciiNum);
-  var lettersAvailable = scrabbleTiles[letterChar].numberRemaining;
-  // This is subtracting correctly the remainder correctly!
-  scrabbleTiles[letterChar].numberRemaining = (scrabbleTiles[letterChar].numberRemaining - 1);
+  /****************test log***********/  
+  lettersAvailable = scrabbleTiles[letterChar].numberRemaining;
   console.log("Letter    :" + letterChar);
   console.log("Remainder :" + lettersAvailable);
+  scrabbleTiles[letterChar].numberRemaining = (scrabbleTiles[letterChar].numberRemaining - 1);
   console.log("New Remain:" + scrabbleTiles[letterChar].numberRemaining);
 
   if (scrabbleTiles[letterChar].numberRemaining === -10) {
