@@ -4,6 +4,12 @@
     Author: Martin Rudzki
     Email: Martin_Rudzki@student.uml.edu  
     Orginal Author: Patrick Quaratiello
+    Description: Code contains some of the following:
+    -Global Variables
+    -Building tiles with images
+    -Getting random tile character
+    -Error handling
+    -Submmiting a word.
     Edited:12/13/2015 
  */
 
