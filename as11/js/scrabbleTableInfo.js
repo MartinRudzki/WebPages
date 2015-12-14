@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 
   (function ($) {
-    function tilesRemainingg() {
+    tilesRemaining = function tilesRemainingg(){
     // define variables here to thwart hoisting
     var char;          // uppercase character indicated by the loop index
       var newTableRow;   // one row of the table
