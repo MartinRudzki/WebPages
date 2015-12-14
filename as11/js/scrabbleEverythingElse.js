@@ -59,12 +59,6 @@ function getRandomLetter() {
     var letterChar = "_";
   else
     letterChar = String.fromCharCode(letterAsciiNum);
-  /****************test log***********/  
-  lettersAvailable = scrabbleTiles[letterChar].numberRemaining;
-  console.log("Letter    :" + letterChar);
-  console.log("Remainder :" + lettersAvailable);
-  scrabbleTiles[letterChar].numberRemaining = (scrabbleTiles[letterChar].numberRemaining - 1);
-  console.log("New Remain:" + scrabbleTiles[letterChar].numberRemaining);
 
   if (scrabbleTiles[letterChar].numberRemaining === -10) { //temp value
     
@@ -115,7 +109,13 @@ function submitWord() {
     // set new letter remaining amounts
     for (var i = 0; i < arrayLetters.length; i++) {
       // This is subtracting the remainder correctly
-      scrabbleTiles[arrayLetters[i]].numberRemaining -= 1
+            /**********TEST LOG****************
+      console.log("Letter    :" + arrayLetters[i]);
+      lettersAvailable = scrabbleTiles[arrayLetters[i]].numberRemaining;
+      console.log("Remainder :" + lettersAvailable);
+      scrabbleTiles[arrayLetters[i]].numberRemaining -= 1; // real function
+      lettersAvailable = scrabbleTiles[(arrayLetters[i])].numberRemaining;
+      console.log(" new Remainder :" + lettersAvailable);
     }
    
     $(".inPlay").addClass("submitted"); // if the word is now "submitted"
