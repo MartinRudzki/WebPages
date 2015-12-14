@@ -128,6 +128,5 @@ $(document).ready(function () {
         $("#tbl").append(newTableRow);
       }
     }
-    tilesRemaining = tilesRemainingg();
   })(jQuery);
 });
