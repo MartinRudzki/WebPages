@@ -119,10 +119,15 @@ function submitWord() {
     }
     
     tilesRemaining();
-    
+    var remove_Tile = document.getElementById('letter-' + 1);
+    $(remove_Tile).hasClass("inPlay");
+    console.log($(remove_Tile).hasClass("inPlay"));
+    var remove_Tile = 0;
     for (var i = 1; i < 8 ;i++ ){
-      var remove_Tile= document.getElementById('letter-' + i);
-      remove_Tile.parentNode.removeChild(remove_Tile);
+      remove_Tile = document.getElementById('letter-' + i);
+      if ($(remove_Tile).hasClass("inPlay") == true) {
+        remove_Tile.parentNode.removeChild(remove_Tile);
+      }
     }
     $(".inPlay").addClass("submitted"); // if the word is now "submitted"
     $(".submitted").removeClass("inPlay");
