@@ -15,6 +15,16 @@ $(document).ready(function () {
     $("#myTabs").tabs();
   })(jQuery);
 
+  (function ($) {
+    $("#myTabs").tabs({
+      disabled: [1]
+    });
+    $("#enable_tab").click(function () {
+      $("#myTabs").tabs("enable", 1);
+      tilesRemaining();
+    });
+  })(jQuery);
+
 
   (function ($) {
     tilesRemaining = function tilesRemainingg(){
