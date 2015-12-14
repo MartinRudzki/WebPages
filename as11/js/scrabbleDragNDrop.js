@@ -1,5 +1,5 @@
 /* 
-    File:  js/scrabbleTilesInfo.js
+    File:  js/scrabbleDragNDrop.js
     Assignment 9:  Scrabble
     Author: Martin Rudzki
     Email: Martin_Rudzki@student.uml.edu  
