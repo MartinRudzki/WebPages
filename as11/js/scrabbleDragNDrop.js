@@ -4,6 +4,8 @@
     Author: Martin Rudzki
     Email: Martin_Rudzki@student.uml.edu  
     Orginal code: Patrick Quaratiello
+    Description: Code does everything involved in a drag and drop
+    in cluding back to the tray holder.
     Edited:12/13/2015 
  */
 
