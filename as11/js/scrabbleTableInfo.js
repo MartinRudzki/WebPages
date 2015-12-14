@@ -5,7 +5,9 @@
     Created by: Martin_Rudzki@student.uml.edu
     Orginal Author: Jesse Heines 
     Date: 12/03/2015
-    JS for list
+    Description: 
+    -Tab Functions.
+    -On Ttab two, to build the table of remaning words.
  */
 
 $(document).ready(function () {
