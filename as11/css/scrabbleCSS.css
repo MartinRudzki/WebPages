@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 1, 2015, 8:16:01 PM
+    Author     : Patrick
+*/
+
+body {
+    background-image: url("http://livinggreeninsulation.com/wp-content/uploads/2014/01/Plain-Blue-Background.jpg")
+}
+
+
+table {
+  border-spacing : 0 ;
+  border-collapse : collapse ;
+}
+
+tr, th {
+  text-align : center ;
+  font-size: 94%;
+  border : 1px solid black ;
+  padding : 0px 5px ;
+}
+
+th {
+  background-color : black ;
+  color : white ;
+}
+
+a:hover:not(.nothing), a:active:not(.nothing) {
+    color: white;
+    background-color: #1a1aff;
+}
+
+.errorBox
+{
+    color: red;
+}
+
+.scrabble_board
+{
+    width:1130px;
+    height:81px;
+    background-image: url("../scrabble_graphics/Scrabble_line.png");
+}
+
+[class^='boardSpace']
+{
+        /*background-color: #F5F5F5; /* Light Grey */
+        table-layout: fixed;
+        padding: 0px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+}
+
+
+[class^='holderSpace-']
+{
+        /*background-color: #F5F5F5; /* Light Grey */
+        text-align: center;
+        table-layout: fixed;
+}
+
+#version
+{
+    color: #C0C0C0; /* Light Grey */
+    text-align: center;
+}
+
+.letterTray
+{
+    table-layout: fixed;
+    width: 640px;
+    height: 100px;
+    background-color: #D2691E;
+}
+
