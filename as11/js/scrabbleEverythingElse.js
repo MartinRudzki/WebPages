@@ -1,9 +1,9 @@
 /* 
-    File:  js/scrabbleTilesInfo.js
+    File:  js/scrabbleEverythingElse.js
     Assignment 9:  Scrabble
     Author: Martin Rudzki
     Email: Martin_Rudzki@student.uml.edu  
-    Credit for code: Patrick Quaratiello
+    Orginal Author: Patrick Quaratiello
     Edited:12/13/2015 
  */
 
