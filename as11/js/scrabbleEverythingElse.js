@@ -114,12 +114,8 @@ function submitWord() {
 
     // set new letter remaining amounts
     for (var i = 0; i < arrayLetters.length; i++) {
-      // This is subtracting the remainder correctly!
-      var lettersAvailable = scrabbleTiles[letterChar].numberRemaining;
-      console.log("Letter    :" + arrayLetters[i]);
-      console.log("Remainder :" + lettersAvailable);
-      scrabbleTiles[arrayLetters[i]].numberRemaining -= 1;
-      console.log("New Remain:" + scrabbleTiles[arrayLetters[i]].numberRemaining);
+      // This is subtracting the remainder correctly
+      scrabbleTiles[arrayLetters[i]].numberRemaining -= 1
     }
    
     $(".inPlay").addClass("submitted"); // if the word is now "submitted"
