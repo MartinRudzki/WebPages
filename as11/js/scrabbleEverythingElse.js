@@ -79,34 +79,47 @@ function getRandomLetter() {
   return letterChar;
 }
 
-//Submit word 
+/*
+* Function: submitWord 
+* Add word score to totals sum score.
+* Check double word flag to see if you need to add the dobule word score.
+* Capture string that was submitted; create an array of lettrs form that string
+* Reset variables.
+*/
 function submitWord() {
   if (validWord == true && strWord != "---" && strWord.length > 1)// we need to check words at some point
   {
-    
-    var arrayLetters = 0;
+    var arrayLetters = 0; // will hold string of characters that were submitted
     var letterId;
     var letter;
     var arrayLetterId = [];
-    //console.log("Word Submitted!");
     /******** totaling word value**************/
     if (doubleWordFlag)
       scrabbleSum += doubleCurrentWordSum;
     else
       scrabbleSum += currentWordSum;
-    arrayLetters = strWord.split(""); // store what letters are in play
 
-    /********* Restting variables back to default ***********/ 
+    /*** Learned split() ***
+    * Source:http://www.w3schools.com/jsref/jsref_split.asp
+    * Split a string into an array of substrings, and returns the new array
+    */
+    arrayLetters = strWord.split("");
+
+    /********* Resetting variables back to default ***********/ 
     strWord = "---"; //set word to blank
     $('.scrabbleScore').html(scrabbleSum); //update UI
     $('.wordScore').html(currentWordSum);
     $('.currentWord').html(strWord);
-
     validWord = false; // word is now not valid
 
-    //set new letter amounts
+    // set new letter remaining amounts
     for (var i = 0; i < arrayLetters.length; i++) {
+      // This is subtracting the remainder correctly!
+      var lettersAvailable = scrabbleTiles[letterChar].numberRemaining;
+      console.log("Letter    :" + arrayLetters[i]);
+      console.log("Remainder :" + lettersAvailable);
       scrabbleTiles[arrayLetters[i]].numberRemaining -= 1;
+      console.log("New Remain:" + scrabbleTiles[arrayLetters[i]].numberRemaining);
     }
    
     $(".inPlay").addClass("submitted"); // if the word is now "submitted"
