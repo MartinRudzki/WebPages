@@ -65,12 +65,6 @@ a:hover:not(.nothing), a:active:not(.nothing) {
         table-layout: fixed;
 }
 
-#version
-{
-    color: #C0C0C0; /* Light Grey */
-    text-align: center;
-}
-
 .letterTray
 {
     table-layout: fixed;
