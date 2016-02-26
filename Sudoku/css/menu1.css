@@ -1,0 +1,335 @@
+.navbar-inner {
+	background-color: #e1e1df;
+	border: none;
+}
+.navbar .nav {
+	margin-top: 0;
+}
+.menu-wrapper {
+	display: table;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.navbar .nav > li > a {
+	padding: 60px 13px 59px 14px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: 18px;
+	color: #696969;
+	font-weight: 700;
+}
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+	background-color: #888888;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+.navbar .divider-vertical {
+	border-color: rgba(0, 0, 0, 0.2);
+}
+.navbar .divider-vertical {
+	height: 55px;
+	margin: 0;
+	border-right: 1px solid #cecbc3;
+	border-left: 1px solid #f2f2f1;
+}
+
+/* Brand
+------------------------- */
+.navbar .brand {
+	padding: 0;
+	margin: 20px 0px 20px 20px;
+}
+.navbar .brand img {
+	width: 100px;
+}
+
+/* Dropdown menu
+------------------------- */
+.navbar .dropdown-menu {
+	min-width: 250px;
+	padding: 0;
+	margin: 0;
+	background-color: #888888;
+	border: none;
+	border: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.navbar .dropdown-menu li > a {
+	padding: 15px;
+	clear: both;
+}
+
+
+
+/* Collapse button
+------------------------- */
+.navbar .btn-navbar {
+	margin: 6px 10px 6px 5px;
+	background-color: #e5e3dc;
+	background-image: -moz-linear-gradient(top, #e1e1df, #e1e1df);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e1e1df), to(#e1e1df));
+	background-image: -webkit-linear-gradient(top, #e1e1df, #e1e1df);
+	background-image: -o-linear-gradient(top, #e1e1df, #e1e1df);
+	background-image: linear-gradient(to bottom, #e1e1df, #e1e1df);
+	border: none;
+}
+.navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
+	color: white;
+	background-color: #e1e1df;
+}
+.navbar .btn-navbar .icon-bar {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background-color: #696969;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	margin-top: 4px;
+}
+
+/* Collapse main menu hover
+------------------------- */
+.navbar .nav-collapse .nav li > a {
+	color: #696969;
+}
+.navbar .nav-collapse .dropdown-menu li > a {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 15px;
+	color: #e5e3dc;
+}
+.navbar .nav-collapse .nav li > a:hover {
+	background-color: #888888;
+	color: #FFF;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+.navbar .nav-collapse .dropdown-menu li > a:hover {
+	color: #FFF;
+}
+
+/* Social media button
+------------------------- */
+.navbar .nav-collapse .pull-right > li > a {
+	float: left;
+	font-size: 30px;
+	padding: 12px 0 0 15px;
+	margin: 0 0 20px 0;
+	color: #c0bfbf;
+	text-decoration: none;
+}
+.navbar .nav-collapse .pull-right li > a:hover {
+	background: none;
+	color: #888888;
+}
+
+/* Icons
+------------------------- */
+.rfc-icons {
+	font-size: 40px;
+	margin: 50px 20px 0 0;
+}
+.rfc-icons a {
+  	color: #c0bfbf;
+  	text-decoration: none;
+}
+
+.rfc-icons a:hover, .rfc-icons a:focus {
+  	color: #888888;
+  	text-decoration: none;
+}
+
+/* Mega 
+------------------------- */
+.rfc-mega-menu {
+	padding: 30px 0 30px 0;
+}
+.rfc-mega-menu li {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 0 0 5px 0;
+}
+.rfc-mega-menu h4 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #555555;
+}
+.rfc-mega-menu a {
+  	color: #FFF;
+  	text-decoration: none;
+}
+
+.rfc-mega-menu a:hover, .rfc-mega-menu a:focus {
+  	color: #c7c838;
+  	text-decoration: none;
+}
+.rfc-mega-intro {
+	background: #FFF;
+	padding: 20px;
+	margin-left: 30px;
+}
+.rfc-mega-intro p {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	color: #444444;
+	margin: 0;
+}
+
+
+
+
+/* Responsive
+-------------------------------------------------- */
+
+/* Desktop large
+------------------------- */
+@media (min-width: 1200px) {
+
+.navbar .nav-collapse .pull-right > li > a {
+	display: none;
+}
+
+}
+
+/* Desktop
+------------------------- */
+@media (max-width: 1199px) {
+
+.navbar .nav-collapse .pull-right > li > a {
+	display: none;
+}
+.rfc-icons {
+	font-size: 30px;
+	margin: 55px 25px 0 0;
+}
+.navbar .nav > li > a {
+	padding: 60px 13px 59px 14px;
+	letter-spacing: 3px;
+	font-size: 16px;
+}
+
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+
+.rfc-icons {
+	display: none;
+}
+.navbar .nav-collapse .pull-right > li > a {
+	display: inherit;
+}
+.menu-wrapper {
+	display: inline;
+}
+.navbar .nav > li > a {
+	padding: 20px 13px 20px 14px;
+	letter-spacing: 3px;
+	font-size: 16px;
+}
+.rfc-mega-menu {
+	padding: 15px 0 15px 0;
+	margin-bottom: 2px;
+}
+.rfc-mega-menu li {
+	letter-spacing: 0px;
+	font-size: 13px;
+	line-height: 18px;
+	margin: 0 0 6px 0;
+}
+.rfc-mega-menu h4 {
+	font-size: 16px;
+	letter-spacing: 0px;
+	line-height: 18px;
+}
+.rfc-mega-intro {
+	padding: 15px;
+	margin-left: 15px;
+}
+.rfc-mega-intro p {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+}
+
+/* Tablet
+------------------------- */
+@media (max-width: 767px) {
+
+.rfc-icons {
+	display: none;
+}
+.navbar .nav-collapse .pull-right > li > a {
+	display: inherit;
+}
+.menu-wrapper {
+	display: inline;
+}
+.navbar .nav > li > a {
+	padding: 20px 13px 20px 14px;
+	letter-spacing: 3px;
+	font-size: 16px;
+}
+.rfc-mega-menu {
+	padding: 15px 15px 15px 15px;
+	margin-bottom: 2px;
+}
+.rfc-mega-menu li {
+	letter-spacing: 0px;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 0 0 10px 0;
+}
+.rfc-mega-menu h4 {
+	font-size: 18px;
+	letter-spacing: 0px;
+	line-height: 20px;
+}
+.rfc-mega-intro {
+	padding: 20px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+.rfc-mega-intro p {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+}
+
+/* Landscape phones
+------------------------- */
+@media (max-width: 480px) {
+
+
+
+}
+
+
+
+
+
