@@ -11,7 +11,7 @@ $(document).ready(function () {
         return value.match(new RegExp("." + param + "$"));
     });
 
-    $("#theForm1").validate({
+    $("#theForm1").validate({//Function with rules for validating forms
         rules: {
             Username1: {
                 required: true,
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 
 
-    $("#theForm2").validate({
+    $("#theForm2").validate({//Function with rules for validating forms
         rules: {
             Username2: {
                 required: true,
