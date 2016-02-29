@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+        <link rel="stylesheet" href="css/menu.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
         <script src="app.js"></script>
@@ -18,13 +18,13 @@ and open the template in the editor.
     <body>
 
 
-        <div style="width: 100%;overflow:auto;">        
-            <h3>Sign-Up</h3>
-            <div id="SignUp" style="float:left; width: 80%">
+        <div style="width: 100%;overflow:auto;">                 
+            <div id="SignUp">
+                <h3>Sign-Up</h3>
                 <form id="theForm1" name="theForm1">
                     <label for="Username1"> Choose your username:  </label>
                     <input type="text" name="Username1" id="Username1">
-                    <div>&nbsp</div>
+                    <div id="errUsername1">&nbsp</div>
                     <label for="Password1"> Choose your password:  </label>
                     <input type="password" name="Password1" id="Password1">
                     <div>&nbsp</div>
@@ -34,7 +34,7 @@ and open the template in the editor.
                     <input type="button" value="Submit" onclick="NewAccount();">
                 </form>
             </div>
-            <div id="Login" style="float:right;">
+            <div id="Login">
                 <form id="theForm2" name="theForm2">
                     <h3>Login</h3>
                     <label for="Username2"> Username:  </label>
@@ -49,6 +49,6 @@ and open the template in the editor.
 
         </div>
 
-        
+
     </body>
 </html>

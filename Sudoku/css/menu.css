@@ -178,6 +178,16 @@ body {
     float: none;
 }
 
+#SignUp{
+    float:left; 
+    width: 50%;
+}
+
+#Login{
+    float:right; 
+    width:50%;
+}
+
 .loginSignup{
     background: #6070A3;
     border-radius: 3px;

@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 
 
-    jQuery.validator.addMethod("acceptOnly", function (value, element, param) {
+    jQuery.validator.addMethod("acceptOnly", function (value, element, param) {//Adds a new validation rule called acceptOnly which allows you to choose which characters are valid.
         return value.match(new RegExp("." + param + "$"));
     });
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
                 required: true,
                 minlength: 8,
                 maxlength: 15,
-                acceptOnly: "[0-9a-zA-Z]+"
+                acceptOnly: "[0-9a-zA-Z]+"//only allow number and letters
             },
             Password1: {
                 required: true,
@@ -31,10 +31,12 @@ $(document).ready(function () {
             }
         },
         messages: {//Error messages to display when the form is invalid.
-            Username1: {acceptOnly: "Invalid Characters: Letters and Numbers only."},
-            Password1: {acceptOnly: "Invalid Characters: Letters and Numbers only."},
+            Username1: {acceptOnly: "Invalid: Letters and Numbers only."},
+            Password1: {acceptOnly: "Invalid: Letters and Numbers only."},
             rePassword1: {equalTo: "Your passwords do not match."}
-        }});
+        }     
+      
+    });
 
 
 
@@ -55,14 +57,15 @@ $(document).ready(function () {
             }
         },
         messages: {//Error messages to display when the form is invalid.
-            Username2: "The Username or Password you entered is invalid.",
-            Password2: "The Username or Password you entered is invalid."
-        }});
+            Username2: "Username or Password invalid.",
+            Password2: "Username or Password invalid."
+        }
+    });
     
     //Need a function that when submit is pressed and all entries are valid will: store the new account info into the DB.
     
     
 });
 
-require("db");
+//require("db");
 
