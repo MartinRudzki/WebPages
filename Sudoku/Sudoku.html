@@ -21,6 +21,10 @@ Created: MR 02/20/2015
   <link rel="stylesheet" href="css/menu.css">
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <title>Sodoku Zen Garden</title>
+  <meta name="description" content="A Javascript implementation of a Sudoku puzzle with a backtracking algorithm.">
+  <script src="jquery-2.0.3.min.js"></script>
+  <script src="SudokuGame.js"></script>
+  <link rel="stylesheet" href="game.css">
 </head>
 
 <body>
@@ -97,12 +101,38 @@ Created: MR 02/20/2015
   </div>
   <!--End of cssmenu-->
   <!--Sudoku Game-->
-  <div class="game_board">
-    <img src="img/sudokuTemp.jpg" alt="Sudoku" style="width: 40%; height:40%; ">
-    <button type="button">New Game</button>
-    <button type="button">Check</button>
-    <button type="button">Clear</button>
-    <button type="button">Print</button>
+  <div >
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var game = Sudoku.getInstance();
+      $('#container').append(game.getGameBoard());
+
+      $('#solve').click(function () {
+        game.solve();
+      });
+      $('#validate').click(function () {
+        game.validate();
+      });
+      $('#reset').click(function () {
+        game.reset();
+      });
+    });
+
+   
+  </script>
+
+  <h1>Sudoku</h1>
+  <div id="container"></div>
+  <div id="menu" class="sudoku-menu">
+    <button id="solve">Solve</button>
+    <button id="validate">Validate Board</button>
+    <button id="reset">Reset</button>
   </div>
+  </div>
+  
+  <audio controls>
+  <source src="sounds/BeachSounds.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+	</audio>
 </body>
 </html>
