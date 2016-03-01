@@ -13,37 +13,39 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/menu.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
-        <script src="app.js"></script>
+        <script src="LoginOrSignup.js"></script>
+        <script src="db.js"></script>
     </head>
     <body>
 
-
+        <div style='float:right;'><a class='loginSignup' href='Sudoku.html'>Home</a></div>
         <div style="width: 100%;overflow:auto;">                 
             <div id="SignUp">
-                <h3>Sign-Up</h3>
+                <h3 class="loginH3">Sign-Up</h3>
                 <form id="theForm1" name="theForm1">
-                    <label for="Username1"> Choose your username:  </label>
-                    <input type="text" name="Username1" id="Username1">
-                    <div id="errUsername1">&nbsp</div>
-                    <label for="Password1"> Choose your password:  </label>
-                    <input type="password" name="Password1" id="Password1">
+                    <label class="loginLabel" for="Username1"> Choose your username:  </label>
+                    <input class="loginField" type="text" name="Username1" id="Username1">
                     <div>&nbsp</div>
-                    <label for="rePassword1"> Re-type password:  </label>
-                    <input type="password" name="rePassword1" id="rePassword1">
+                    <label class="loginLabel" for="Password1"> Choose your password:  </label>
+                    <input class="loginField" type="password" name="Password1" id="Password1">
                     <div>&nbsp</div>
-                    <input type="button" value="Submit" onclick="NewAccount();">
+                    <label class="loginLabel" for="rePassword1"> Re-type password:  </label>
+                    <input class="loginField" type="password" name="rePassword1" id="rePassword1">
+                    <div>&nbsp</div>                             <!--inside db.js addUser(username,password) returns the address of the new user in the database-->                 
+                    <input id= "SignupButton" class="loginButton" type="button" onclick="window.location = 'Sudoku.html'" value="Submit">
                 </form>
+
             </div>
             <div id="Login">
                 <form id="theForm2" name="theForm2">
-                    <h3>Login</h3>
-                    <label for="Username2"> Username:  </label>
-                    <input type="text" name="Username2" id="Username2">
+                    <h3 class='loginH3'>Login</h3>
+                    <label class="loginLabel" for="Username2"> Username:  </label>
+                    <input class="loginField" type="text" name="Username2" id="Username2">
                     <div>&nbsp</div>
-                    <label for="Password2"> Password:  </label>
-                    <input type="password" name="Password2" id="Password2">
+                    <label class="loginLabel" for="Password2"> Password:  </label>
+                    <input class="loginField" type="password" name="Password2" id="Password2">
                     <div>&nbsp</div>
-                    <input type="button" value="Login" onclick="login();">
+                    <input class="loginButton" type="button" value="Login" onclick="window.location = 'Sudoku.html'">
                 </form>
             </div>
 
