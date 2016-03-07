@@ -1,5 +1,4 @@
-﻿<!doctype html>
-<!--
+﻿<!--
 File: ~Sudoku/Sudoku.html
 Edit by: Martin Rudzk, UMass Lowell, 91.461 GUI Programming 1
 Email: Martin_Rudzki@student.uml.edu
@@ -12,44 +11,37 @@ Created: MR 02/20/2015
   <meta charset='utf-8'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--Fixes spacing between "church_rainbow.jpg" and menu-->
-  <style>
-    img {
-      display: block;
-    }
-  </style>
   <link rel="stylesheet" href="css/menu.css">
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <title>Sodoku Zen Garden</title>
   <meta name="description" content="A Javascript implementation of a Sudoku puzzle with a backtracking algorithm.">
-  <script src="jquery-2.0.3.min.js"></script>
-  <script src="SudokuGame.js"></script>
+  <script src="java/jquery-2.0.3.min.js"></script>
+  <script src="java/SudokuGame.js"></script>
+  <script src="java/db.js"></script>
   <link rel="stylesheet" href="game.css">
 </head>
 
 <body>
   <!--Top of page, Sudoku image and menu-->
-  <!--Login/Signup-->
-      <div style='float:right;'><a class='loginSignup' href='LoginOrSignup.html'>Login/Signup</a></div>
   <div class="top_page">
-    <img src="img/SudokuLogo.jpg" alt="Sudoku" style="border-radius: 20px; width: 30%; height:20%; ">
+    <img src="img/SudokuLogo.jpg" alt="Sudoku" style="border-radius: 25px; width: 400px; height:125px; ">
   </div>
   <div id='cssmenu'>
     <ul>
       <!--Tutorial-->
-      <li class='drop_down'>
+      <li>
         <a href='#'><span>Tutorial</span></a>
         <ul class="menu_scroll">
-          <li >
+          <li>
             <blockquote class="text_in_menu">
               <h1>Getting Started</h1>
               The goal of sudoku is to fill in a 9x9 grid and rows with digits that are between the numbers of 1 to 9.
-              <p><img src="img/Sudoku_Learning1.jpg" alt="Sudoku1" style="width: 90%; height:90%;"></p>
+              <p><img src="img/Sudoku_Learning1.jpg" alt="Sudoku1" style="width: 95%; height:25%;"></p>
               At the beginning of the game, the board will have squares that are partially filled in with digits.
               Your job is to fill in the missing digits without having duplicate numbers in the same 9x9 grid section or row.
               In the image below, the number 8 is having a conflict within a row. To fix this we need to delete the top 8 and turn it into a 9.
               The number 5 is having a 9x9 grid problem to fix this we need to change to the numbers that are colored in green.
-              <p><img src="img/Sudoku_Learning2.jpg" alt="Sudoku2" style="width: 90%; height:90%;"></p>
+              <p><img src="img/Sudoku_Learning2.jpg" alt="Sudoku2" style="width: 95%; height:70%;"></p>
             </blockquote>
           </li>
         </ul>
@@ -73,66 +65,95 @@ Created: MR 02/20/2015
         </ul>
       </li>
       <!--Options-->
-      <li class='drop_down'>
-        <a href='#'><span>Options</span></a>
+      <li>
+        <a href='#'><span>Options</span>
+          <img src="img/icon_sound2.png" alt="icon_sound" style="width: 20px; height: 14px;">
+        </a>
         <ul>
-          <li class='has-sub'>
-            <a href='#'><span>temp</span></a>
-            <ul>
-              <li><a href='#'><span>Sub temp</span></a></li>
-              <li class='last'><a href='#'><span>Sub temp</span></a></li>
-            </ul>
-          </li>
-          <li class='has-sub'>
-            <a href='#'><span>temp</span></a>
-            <ul>
-              <li><a href='#'><span>Sub temp</span></a></li>
-              <li class='last'><a href='#'><span>Sub temp</span></a></li>
-            </ul>
+          <li>
+            <blockquote class="text_in_menu">
+              <h1 style="text-align:left">Sound</h1>
+              <p>Beach:</p>
+              <audio controls>
+                <source src="sounds/BeachSounds.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </blockquote>
           </li>
         </ul>
       </li>
       <!--About-->
       <li><a href='#'><span>Achievements</span></a></li>
-      <!--Contact-->
-      <li class='last'><a href='#'><span>Contact</span></a></li>
-      
+
+      <!--Login/Signup-->
+      <li>
+        <a href='#'><span>Login/Signup</span></a>
+        <ul>
+          <li>
+            <div class="text_in_menu" style="margin-left: 10%; width:80%">
+              <div class="text_in_menu">
+                <form id="theForm2" name="theForm2" style="width:50%">
+                  <h3>Login</h3>
+                  <label for="Username2"> Username:  </label>
+                  <input type="text" name="Username2" id="Username2">
+                  <div>&nbsp</div>
+                  <label for="Password2"> Password:  </label>
+                  <input type="password" name="Password2" id="Password2">
+                  <div>&nbsp</div>
+                  <input type="button" value="Login" onclick="login();">
+                  <br />
+                </form>
+              </div>
+              <div>
+                <br />
+                <h3>Sign-Up</h3>
+                <form id="theForm1" name="theForm1">
+                  <label for="Username1"> Choose your username:</label>
+                  <input type="text" name="Username1" id="Username1">
+                  <div id="errUsername1">&nbsp</div>
+                  <label for="Password1"> Choose your password:</label>
+                  <input type="password" name="Password1" id="Password1">
+                  <div>&nbsp</div>
+                  <label for="rePassword1"> Re-type password:  </label>
+                  <input type="password" name="rePassword1" id="rePassword1">
+                  <div>&nbsp</div>
+                  <input type="button" value="Submit" onclick="NewAccount();">
+                </form>
+              </div>
+            </div>
+
+          </li>
+        </ul>
+      </li>
+
     </ul>
   </div>
   <!--End of cssmenu-->
   <!--Sudoku Game-->
-  <div >
+  <div>
     <script type="text/javascript">
-    $(document).ready(function () {
-      var game = Sudoku.getInstance();
-      $('#container').append(game.getGameBoard());
-
-      $('#solve').click(function () {
-        game.solve();
+      $(document).ready(function () {
+        var game = Sudoku.getInstance();
+        $('#container').append(game.getGameBoard());
+        $('#solve').click(function () {
+          game.solve();
+        });
+        $('#validate').click(function () {
+          game.validate();
+        });
+        $('#reset').click(function () {
+          game.reset();
+        });
       });
-      $('#validate').click(function () {
-        game.validate();
-      });
-      $('#reset').click(function () {
-        game.reset();
-      });
-    });
 
-   
-  </script>
+    </script>
 
-  <h1>Sudoku</h1>
-  <div id="container"></div>
-  <div id="menu" class="sudoku-menu">
-    <button id="solve">Solve</button>
-    <button id="validate">Validate Board</button>
-    <button id="reset">Reset</button>
+    <div id="container"></div>
+    <div id="menu" class="sudoku-menu">
+      <button id="solve">Solve</button>
+      <button id="validate">Validate Board</button>
+      <button id="reset">Reset</button>
+    </div>
   </div>
-  </div>
-  
-  <audio controls>
-  <source src="sounds/BeachSounds.mp3" type="audio/mpeg">
-	Your browser does not support the audio element.
-	</audio>
 </body>
 </html>
