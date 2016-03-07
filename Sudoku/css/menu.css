@@ -203,9 +203,12 @@ body {
 
 /**********Special Menu Items***********/
 .text_in_menu{
-    text-transform: none;
-    color: white;
-    font-family: sans-serif;
+  text-transform: none;
+  color: white;
+  font-family: sans-serif;
+  text-transform: none;
+  color: white;
+  font-family: sans-serif;
 }
 .menu_scroll {
     height:75%; 
