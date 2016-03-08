@@ -23,7 +23,7 @@ Created: MR 02/20/2015
 
 <body>
   <!--Top of page, Sudoku image and menu-->
-  <div class="top_page">
+  <div class="top_page" style="padding-bottom: 2px;padding-top:2px;">
     <img src="img/SudokuLogo.jpg" alt="Sudoku" style="border-radius: 25px; width: 400px; height:125px; ">
   </div>
   <div id='cssmenu'>
@@ -39,8 +39,9 @@ Created: MR 02/20/2015
               <p><img src="img/Sudoku_Learning1.jpg" alt="Sudoku1" style="width: 95%; height:25%;"></p>
               At the beginning of the game, the board will have squares that are partially filled in with digits.
               Your job is to fill in the missing digits without having duplicate numbers in the same 9x9 grid section or row.
-              In the image below, the number 8 is having a conflict within a row. To fix this we need to delete the top 8 and turn it into a 9.
-              The number 5 is having a 9x9 grid problem to fix this we need to change to the numbers that are colored in green.
+              In the image below, the number 8 is having a conflict within a vertical row. As you can see there are two 8's, which goes 
+              against the rule that you can only one of each number within a row. To fix this we need to delete the top 8 and turn it into a 9.
+              The number 5 is having a 9x9 grid problem to fix this, we need to change the numbers that are colored in green.
               <p><img src="img/Sudoku_Learning2.jpg" alt="Sudoku2" style="width: 95%; height:70%;"></p>
             </blockquote>
           </li>
@@ -49,18 +50,18 @@ Created: MR 02/20/2015
       <!--Diffculty-->
       <li class='drop_down'>
         <a href='#'><span>Diffculty</span></a>
-        <ul>
-          <li class='sub-difficulty'>
-              <button id="EasyButton" type="button" onclick="EasyClicked()">Easy</button>
+        <ul class="text_in_menu" style="width: 177px; padding-left: 25px">
+          <li class='button'>
+            <button id="EasyButton" class="button button1" type="button" onclick="EasyClicked()">Easy</button>
           </li>
           <li class='sub-difficulty'>
-            <button id="MediumButton" type="button" onclick="MediumClicked()">Medium</button>
+            <button id="MediumButton" class="button button2" type="button" onclick="MediumClicked()">Medium</button>
           </li>
           <li class='sub-difficulty'>
-            <button id="HardButton" type="button" onclick="HardClicked()">Hard</button>
+            <button id="HardButton" class="button button3" type="button" onclick="HardClicked()">Hard</button>
           </li>
           <li class='sub-difficulty'>
-            <button id="ExpertButton" type="button" onclick="ExpertClicked()">Expert</button>
+            <button id="ExpertButton" class="button button5" type="button" onclick="ExpertClicked()">Expert</button>
           </li>
         </ul>
       </li>
@@ -91,15 +92,23 @@ Created: MR 02/20/2015
           </li>
         </ul>
       </li>
-      <!--About-->
-      <li><a href='#'><span>Achievements</span></a></li>
+      <!--Achievements-->
+      <li><a href='#'><span>Achievements</span></a>
+        <ul>
+          <li style ="width:340px">
+            <blockquote class="text_in_menu">
+              <p><img src="img/achivements.jpg" alt="achivements" ></p>
+            </blockquote>
+        </ul>
+      </li>
+
 
       <!--Login/Signup-->
       <li>
         <a href='#'><span>Login/Signup</span></a>
         <ul>
           <li>
-            <div class="text_in_menu" style="margin-left: 10%; width:80%">
+            <div class="text_in_menu" style="margin-left: 10%; width:300px">
               <div class="text_in_menu">
                 <form id="theForm2" name="theForm2" style="width:50%">
                   <h3>Login</h3>
@@ -130,11 +139,9 @@ Created: MR 02/20/2015
                 </form>
               </div>
             </div>
-
           </li>
         </ul>
       </li>
-
     </ul>
   </div>
   <!--End of cssmenu-->

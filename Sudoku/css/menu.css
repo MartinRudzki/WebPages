@@ -80,7 +80,6 @@ body {
 }
 /*Menu bar color*/
 #cssmenu ul {
- 
   background: #6070A3;
   border-radius: 3px;
   border: 1px solid #2b4479;
@@ -221,7 +220,7 @@ body {
 /***********Game Board CSS**************/
 .game_board {
     padding-left: 20%;
-    padding-top: 4px;
+    
 }
 /**************TEMP********************/
 nav {
@@ -234,3 +233,126 @@ nav {
 }
 
 /*Color navigation bar normal mode*/
+button, h1 {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.sudoku-menu {
+	width: 50%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sudoku-menu button {
+	font-size: 24px;
+	margin: 10px;
+	padding: 5px;
+}
+
+.sudoku-container {
+	border: 5px solid #666;
+	margin-left: auto;
+	margin-right: auto;
+  margin-top: 20px;
+}
+
+.sudoku-container td {
+	margin: 0;
+}
+.sudoku-container input {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 20px;
+	padding: 0;
+	border: 1px #ccc solid;
+	background: transparent;
+}
+
+.sudoku-container .sudoku-input-error {
+	background: #ffc9d7;
+}
+.sudoku-container.valid-matrix {
+	border: 5px solid #7edb37;
+}
+
+/*Color for 9x9 Top left, Top Right, Center Center,
+  Bottom Left, Bottom Right
+*/
+.sudoku-section-one {
+	background: #ccc;
+}
+
+.sudoku-section-two {
+	background: #E8E8E8;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+}
+
+.button3:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.button4 {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button5:hover {
+    background-color: #555555;
+    color: white;
+}
