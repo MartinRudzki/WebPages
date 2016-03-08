@@ -66,6 +66,7 @@ var Sudoku = (function ($) {
 			 */
       validate: function () {
         var isValid;
+        
 
         isValid = _game.validateMatrix();
         $('.sudoku-container').toggleClass('valid-matrix', isValid);
@@ -172,6 +173,7 @@ var Sudoku = (function ($) {
         // Append to table
         $table.append($tr);
       }
+      
       // Return the GUI table
       return $table;
     },
@@ -224,6 +226,43 @@ var Sudoku = (function ($) {
 
       $('.sudoku-container input').removeAttr('disabled');
       $('.sudoku-container').removeClass('valid-matrix');
+      //First Row
+$("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").val(6);
+$("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").val(1);
+$("#container>table>tbody>tr:nth-child(1)>td:nth-child(9)>input").val(2);
+//Second Row
+$("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").val(4);
+$("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").val(6);
+$("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").val(2);
+$("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").val(7);
+//Third Row
+$("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").val(3);
+$("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").val(7);
+$("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").val(8);
+//Fourth Row
+$("#container>table>tbody>tr:nth-child(4)>td:nth-child(2)>input").val(2);
+$("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").val(4);
+$("#container>table>tbody>tr:nth-child(4)>td:nth-child(7)>input").val(9);
+//Fifth Row
+$("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").val(1);
+$("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").val(2);
+//Sixth Row
+$("#container>table>tbody>tr:nth-child(6)>td:nth-child(3)>input").val(3);
+$("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").val(8);
+$("#container>table>tbody>tr:nth-child(6)>td:nth-child(8)>input").val(5);
+//Seventh Row
+$("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").val(9);
+$("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").val(8);
+$("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").val(4);
+//Eigth Row
+$("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").val(4);
+$("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").val(3);
+$("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").val(2);
+$("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").val(9);
+//Ninth Row
+$("#container>table>tbody>tr:nth-child(9)>td:nth-child(1)>input").val(2);
+$("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").val(7);
+$("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").val(4);
     },
 
     /**
@@ -523,3 +562,47 @@ var Sudoku = (function ($) {
     }
   };
 })(jQuery);
+
+
+
+$(window).load(function() {
+    //Manually setting up the "easy" puzzle
+//First Row
+$("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").val(6);
+$("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").val(1);
+$("#container>table>tbody>tr:nth-child(1)>td:nth-child(9)>input").val(2);
+//Second Row
+$("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").val(4);
+$("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").val(6);
+$("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").val(2);
+$("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").val(7);
+//Third Row
+$("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").val(3);
+$("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").val(7);
+$("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").val(8);
+//Fourth Row
+$("#container>table>tbody>tr:nth-child(4)>td:nth-child(2)>input").val(2);
+$("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").val(4);
+$("#container>table>tbody>tr:nth-child(4)>td:nth-child(7)>input").val(9);
+//Fifth Row
+$("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").val(1);
+$("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").val(2);
+//Sixth Row
+$("#container>table>tbody>tr:nth-child(6)>td:nth-child(3)>input").val(3);
+$("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").val(8);
+$("#container>table>tbody>tr:nth-child(6)>td:nth-child(8)>input").val(5);
+//Seventh Row
+$("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").val(9);
+$("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").val(8);
+$("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").val(4);
+//Eigth Row
+$("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").val(4);
+$("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").val(3);
+$("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").val(2);
+$("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").val(9);
+//Ninth Row
+$("#container>table>tbody>tr:nth-child(9)>td:nth-child(1)>input").val(2);
+$("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").val(7);
+$("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").val(4);
+
+});

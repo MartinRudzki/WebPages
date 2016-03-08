@@ -27,6 +27,7 @@ button, h1 {
 	border: 5px solid #666;
 	margin-left: auto;
 	margin-right: auto;
+        margin-top: 250px;
 }
 
 .sudoku-container td {
@@ -53,6 +54,7 @@ button, h1 {
 .sudoku-section-one {
 	background: #ccc;
 }
+
 
 
 
