@@ -78,6 +78,15 @@ Created: MR 02/20/2015
                 <source src="sounds/BeachSounds.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
+              <p>Rainforest:</p>
+              <audio controls>
+                <source src="sounds/RainforestSounds.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+			  
+			  <h1 style="text-align:left">Background</h1>
+			  <button class="BeachButton">Beach</button>
+			  <button class="RainforestButton">Rainforest</button>
             </blockquote>
           </li>
         </ul>
@@ -146,6 +155,8 @@ Created: MR 02/20/2015
         });
       });
 
+	  $('.RainforestButton').on('click', function() { document.body.style.backgroundImage = "url('img/rainforest.jpg')"; });
+	  $('.BeachButton').on('click', function() { document.body.style.backgroundImage = "url('img/beach.jpg')"; });
     </script>
 
     <div id="container"></div>
