@@ -51,16 +51,16 @@ Created: MR 02/20/2015
         <a href='#'><span>Diffculty</span></a>
         <ul>
           <li class='sub-difficulty'>
-            <a href='#'><span>Easy</span></a>
+              <button id="EasyButton" type="button" onclick="EasyClicked()">Easy</button>
           </li>
           <li class='sub-difficulty'>
-            <a href='#'><span>Medium</span></a>
+            <button id="MediumButton" type="button" onclick="MediumClicked()">Medium</button>
           </li>
           <li class='sub-difficulty'>
-            <a href='#'><span>Hard</span></a>
+            <button id="HardButton" type="button" onclick="HardClicked()">Hard</button>
           </li>
           <li class='sub-difficulty'>
-            <a href='#'><span>Expert</span></a>
+            <button id="ExpertButton" type="button" onclick="ExpertClicked()">Expert</button>
           </li>
         </ul>
       </li>
@@ -152,6 +152,22 @@ Created: MR 02/20/2015
         });
         $('#reset').click(function () {
           game.reset();
+        });
+        $('#EasyButton').click(function(){
+            game.reset();
+            EasyClicked();
+        });
+        $('#MediumButton').click(function(){
+            game.reset();
+            MediumClicked();
+        });
+        $('#HardButton').click(function(){
+            game.reset();
+            HardClicked();
+        });
+        $('#ExpertButton').click(function(){
+            game.reset();
+            ExpertClicked();
         });
       });
 
