@@ -12,26 +12,33 @@ Created: MR 02/20/2015
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/menu.css">
-  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <title>Sodoku Zen Garden</title>
-  <meta name="description" content="A Javascript implementation of a Sudoku puzzle with a backtracking algorithm.">
   <script src="java/jquery-2.0.3.min.js"></script>
   <script src="java/SudokuGame.js"></script>
-  <script src="java/db.js"></script>
-  <link rel="stylesheet" href="game.css">
+  <script src="java/Other.js"></script>
+
 </head>
 
 <body>
+  <!--All background images are loaded in the beginning-->
+  <div id="cf7" class="shadow">
+    <img class='opaque' src="img/beach.jpg" />
+    <img src="img/rainforest.jpg" />
+    <img src="img/metal.jpg" />
+
+  </div>
   <!--Top of page, Sudoku image and menu-->
   <div class="top_page" style="padding-bottom: 2px;padding-top:2px;">
     <img src="img/SudokuLogo.jpg" alt="Sudoku" style="border-radius: 25px; width: 400px; height:125px; ">
   </div>
+
   <div id='cssmenu'>
     <ul>
       <!--Tutorial-->
       <li>
-        <a href='#'><span>Tutorial</span></a>
-        <ul class="menu_scroll">
+        <a href='#' class="drop_down"><span>Tutorial</span></a>
+        <!--class="open" gets created in Other.js for the <ul> <ul class="menu_scroll">-->
+        <ul id="menu_scroll">
           <li>
             <blockquote class="text_in_menu">
               <h1>Getting Started</h1>
@@ -39,7 +46,7 @@ Created: MR 02/20/2015
               <p><img src="img/Sudoku_Learning1.jpg" alt="Sudoku1" style="width: 95%; height:25%;"></p>
               At the beginning of the game, the board will have squares that are partially filled in with digits.
               Your job is to fill in the missing digits without having duplicate numbers in the same 9x9 grid section or row.
-              In the image below, the number 8 is having a conflict within a vertical row. As you can see there are two 8's, which goes 
+              In the image below, the number 8 is having a conflict within a vertical row. As you can see there are two 8's, which goes
               against the rule that you can only one of each number within a row. To fix this we need to delete the top 8 and turn it into a 9.
               The number 5 is having a 9x9 grid problem to fix this, we need to change the numbers that are colored in green.
               <p><img src="img/Sudoku_Learning2.jpg" alt="Sudoku2" style="width: 95%; height:70%;"></p>
@@ -48,8 +55,8 @@ Created: MR 02/20/2015
         </ul>
       </li>
       <!--Diffculty-->
-      <li class='drop_down'>
-        <a href='#'><span>Diffculty</span></a>
+      <li>
+        <a href='#' class="drop_down"><span>Diffculty</span></a>
         <ul class="text_in_menu" style="width: 177px; padding-left: 25px">
           <li class='button'>
             <button id="EasyButton" class="button button1" type="button" onclick="EasyClicked()">Easy</button>
@@ -67,7 +74,7 @@ Created: MR 02/20/2015
       </li>
       <!--Options-->
       <li>
-        <a href='#'><span>Options</span>
+        <a href='#' class="drop_down"><span>Options</span>
           <img src="img/icon_sound2.png" alt="icon_sound" style="width: 20px; height: 14px;">
         </a>
         <ul>
@@ -84,28 +91,30 @@ Created: MR 02/20/2015
                 <source src="sounds/RainforestSounds.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
-			  
-			  <h1 style="text-align:left">Background</h1>
-			  <button class="BeachButton">Beach</button>
-			  <button class="RainforestButton">Rainforest</button>
+              <h1 style="text-align:left">Background</h1>
+              <p id="cf7_controls">
+                <span class="selected"><img src="img/beach.jpg" style="width:75px; height:75px;" /></span>
+                <span><img src="img/rainforest.jpg" style="width:75px; height:75px;" /></span>
+                <span><img src="img/metal.jpg" style="width:75px; height:75px;" /></span>
+              </p>
             </blockquote>
           </li>
         </ul>
       </li>
       <!--Achievements-->
-      <li><a href='#'><span>Achievements</span></a>
+      <li>
+        <a href='#' class="drop_down"><span>Achievements</span></a>
         <ul>
-          <li style ="width:340px">
+          <li style="width:340px">
             <blockquote class="text_in_menu">
-              <p><img src="img/achivements.jpg" alt="achivements" ></p>
+              <p><img src="img/achivements.jpg" alt="achivements"></p>
             </blockquote>
         </ul>
       </li>
 
-
       <!--Login/Signup-->
       <li>
-        <a href='#'><span>Login/Signup</span></a>
+        <a href='#' class="drop_down"><span>Login/Signup</span></a>
         <ul>
           <li>
             <div class="text_in_menu" style="margin-left: 10%; width:300px">
@@ -146,48 +155,12 @@ Created: MR 02/20/2015
   </div>
   <!--End of cssmenu-->
   <!--Sudoku Game-->
-  <div>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        var game = Sudoku.getInstance();
-        $('#container').append(game.getGameBoard());
-        $('#solve').click(function () {
-          game.solve();
-        });
-        $('#validate').click(function () {
-          game.validate();
-        });
-        $('#reset').click(function () {
-          game.reset();
-        });
-        $('#EasyButton').click(function(){
-            game.reset();
-            EasyClicked();
-        });
-        $('#MediumButton').click(function(){
-            game.reset();
-            MediumClicked();
-        });
-        $('#HardButton').click(function(){
-            game.reset();
-            HardClicked();
-        });
-        $('#ExpertButton').click(function(){
-            game.reset();
-            ExpertClicked();
-        });
-      });
-
-	  $('.RainforestButton').on('click', function() { document.body.style.backgroundImage = "url('img/rainforest.jpg')"; });
-	  $('.BeachButton').on('click', function() { document.body.style.backgroundImage = "url('img/beach.jpg')"; });
-    </script>
-
-    <div id="container"></div>
-    <div id="menu" class="sudoku-menu">
-      <button id="solve">Solve</button>
-      <button id="validate">Validate Board</button>
-      <button id="reset">Reset</button>
-    </div>
+  <div id="container"></div>
+  <div id="menu" class="sudoku-menu">
+    <button id="solve">Solve</button>
+    <button id="validate">Validate Board</button>
+    <button id="reset">Reset</button>
   </div>
 </body>
+
 </html>

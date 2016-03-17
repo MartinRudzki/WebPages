@@ -9,13 +9,18 @@ Created: MR 02/20/2016
 Menu code was taken from.
 Source: http://cssmenumaker.com/menu/blue-drop-down-menu
 Created: Martin_Rudzki@student.uml.edu 02/20/2016
-----------------------------------------------------------
-****Below Layout****
--Top Page
--Menu
--Below Menu
-********************
-----------------------------------------------------------
+
+*******************Webpage CSS Layout********************
+*-Top Page                                              *
+*-Menu                                                  *
+*-Special Menu Items                                    *
+*  -Class: text_in_menu                                 *
+*  -ID:    menu_scroll                                  *
+*-Game Board                                            *
+*-Temp                                                  *
+*   -Diffculty buttons                                  *
+*********************************************************
+
 */
 body {
 	background-image: url("");
@@ -24,14 +29,13 @@ body {
   margin:  0px;
   padding: 0px;
   width: 100%;
-
 }
-/**********Top Page CSS***********/
+/********************Top Page CSS**********************/
 .top_page {
   vertical-align: middle;
   text-align: center;
 }
-/************Menu CSS************/
+/**********************Menu CSS************************/
 #cssmenu {
   margin-left:auto;
   margin-right: auto;
@@ -48,21 +52,21 @@ body {
 #cssmenu ul li,
 /*Font below*/
 #cssmenu ul li a {
-    padding: 0;
-    margin: 0;
-    line-height: 1;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 16px;
-    color: black;
-    font-weight: 700;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 16px;
+  color: black;
+  font-weight: 700;
 
-    -webkit-transition: all ease .3s;
-    -o-transition: all ease .3s;
-    -moz-transition: all ease .3s;
-    -ms-transition: all ease .3s;
-    transition: all ease .3s;
+  -webkit-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  -moz-transition: all ease .3s;
+  -ms-transition: all ease .3s;
+  transition: all ease .3s;
 }
 #cssmenu:before,
 #cssmenu:after,
@@ -94,113 +98,106 @@ body {
 }
 /*Menu list horizontal*/
 #cssmenu ul > li {
-    float: left;
-    margin: 0 auto;
-    list-style: none;
-    text-align: left;
+  float: left;
+  margin: 0 auto;
+  list-style: none;
+  text-align: left;
 }
 /*Menu thickness*/
 #cssmenu ul > li > a {
-    display: block;
-    text-decoration: none;
-    padding: 15px 44px;
-    position: relative;
+  display: block;
+  text-decoration: none;
+  padding: 15px 44px;
+  position: relative;
 }
 /*Hover Color*/
 #cssmenu ul > li > a:hover {
-    background: #343F63;
-    color: white; /*Text will turn white*/
-    -webkit-box-shadow: inset 0 0 1px #1e2e4f;
-    -o-box-shadow: inset 0 0 1px #1e2e4f;
-    -moz-box-shadow: inset 0 0 1px #1e2e4f;
-    -ms-box-shadow: inset 0 0 1px #1e2e4f;
-    box-shadow: inset 0 0 1px #1e2e4f;
-    -webkit-transition: all ease .3s;
-    -o-transition: all ease .3s;
-    -moz-transition: all ease .3s;
-    -ms-transition: all ease .3s;
-    transition: all ease .3s;
+  background: #343F63;
+  color: white; /*Text will turn white*/
+  -webkit-box-shadow: inset 0 0 1px #1e2e4f;
+  -o-box-shadow: inset 0 0 1px #1e2e4f;
+  -moz-box-shadow: inset 0 0 1px #1e2e4f;
+  -ms-box-shadow: inset 0 0 1px #1e2e4f;
+  box-shadow: inset 0 0 1px #1e2e4f;
+  -webkit-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  -moz-transition: all ease .3s;
+  -ms-transition: all ease .3s;
+  transition: all ease .3s;
 }
 #cssmenu ul > li > a:hover:before {
-    content: "";
-    z-index: 2;
-    position: absolute;
-    border: 1px solid white;
-    border-top: 0;
-    border-bottom: 0;
-    border-right: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -1px;
-    opacity: .2;
+  content: "";
+  z-index: 2;
+  position: absolute;
+  border: 1px solid white;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -1px;
+  opacity: .2;
 }
 #cssmenu ul > li > a:hover:after {
-    content: "";
-    z-index: 2;
-    position: absolute;
-    border: 1px solid white;
-    border-top: 0;
-    border-bottom: 0;
-    border-left: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: -1px;
-    opacity: .2;
+  content: "";
+  z-index: 2;
+  position: absolute;
+  border: 1px solid white;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -1px;
+  opacity: .2;
 }
 /*Hide menu bar*/
-#cssmenu > ul > li > ul {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
+#cssmenu ul li ul {
+  opacity: 1;
+  display: none;
+  position: absolute;
+  border-radius: 0 0 3px 3px;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
 }
-/*menu hover drop down*/
-#cssmenu > ul > li:hover > ul {
-    opacity: 1;
-    visibility: visible;
-    position: absolute;
-    border-radius: 0 0 3px 3px;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -moz-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none;
-    display: block; 
-}
-#cssmenu > ul > li > ul {
-    /*width: 200px;*/
-    position: absolute;
+#cssmenu ul li ul {
+  /*width: 200px;*/
+  display: none;
 }
 /*Drop down menu vertical */
 #cssmenu > ul > li > ul > li {
-    float: none;
-    position: relative;
-
+  float: none;
+  position: relative;
 }
-/*hide menu for sub list*/
+/* Currently not using; if there are sub-menus with in the menu, then uncomment
+/*hide menu for sub list
 #cssmenu > ul > li > ul > li > ul {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
 }
-/*Show menu for sub list*/
+/*Show menu for sub list
 #cssmenu > ul > li > ul > li:hover > ul {
-    opacity: 1;
-    visibility: visible;
-    position: absolute;
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
 }
-/*menu drop down sub menu*/
+/*menu drop down sub menu
 #cssmenu > ul > li > ul > li > ul {
-    left: 200px;
-    top: 1px;
-    width: 200px;
+  left: 200px;
+  top: 1px;
+  width: 200px;
 }
 #cssmenu > ul > li > ul > li > ul > li {
-    float: none;
+  float: none;
 }
-
-/**********Special Menu Items***********/
+*/
+/************************Special Menu Items************************/
 .text_in_menu{
   text-transform: none;
   color: white;
@@ -209,29 +206,51 @@ body {
   color: white;
   font-family: sans-serif;
 }
-.menu_scroll {
-    height:75%; 
-    width:40%;
-    overflow:hidden; 
-    overflow-y:scroll;
+#menu_scroll {
+  height:75%; 
+  width:40%;
+  overflow:hidden; 
+  overflow-y:scroll;
 }
-/***Login***/
+/*CSS for picture transition*/
+/*Code found at:
+  http://css3.bradshawenterprises.com/cfimg/
+  Martin_Rudzki@student.uml.edu
+  Created: 3/13/2016*/
 
-/***********Game Board CSS**************/
-.game_board {
-    padding-left: 20%;
-    
+/*Spans are cliackable*/
+#cf7_controls span {
+  padding-right:2em;
+  cursor:pointer;
 }
-/**************TEMP********************/
-nav {
-    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
-    line-height: 1.5;
-    width: 200px;
-    -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+/* To make image flush with the top of the page*/
+#cf7 {
+  z-index:-1; /*Sets picture to be in the very back.*/
+  width: 100%;
+  top:0px;
+  position: fixed;
+  background-size: cover;
+}
+/*Make image transparent*/
+#cf7 img {
+  width: 100%;
+  position:absolute;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity:0;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+/*img.opaque = only apply to img with a class opaque*/
+#cf7 img.opaque {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=1);
 }
 
+/************************Game Board CSS*************************/
 /*Color navigation bar normal mode*/
 button, h1 {
 	margin-left: auto;
@@ -279,81 +298,88 @@ button, h1 {
 	border: 5px solid #7edb37;
 }
 
-/*Color for 9x9 Top left, Top Right, Center Center,
-  Bottom Left, Bottom Right
-*/
+/*Color for 9x9 square on game board:
+  Top left,----------,Top Right, 
+  --- --,Center Center,--------
+  Bottom Left,----,Bottom Right*/
 .sudoku-section-one {
 	background: #ccc;
 }
-
+/*Color for 9x9 square on game board:
+  --------,Top middle,-----------
+  Left Middle,------,Right Middle
+  --------,Bottom Middle,--------
+  */
 .sudoku-section-two {
 	background: #E8E8E8;
 }
-
+/*************************TEMP*******************************/
+/*Difficulty buttons*/
 .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 3px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 .button1 {
-    background-color: white; 
-    color: black; 
-    border: -3px solid #4CAF50;
+  background-color: white; 
+  color: black; 
+  border: -3px solid #4CAF50;
 }
 
 .button1:hover {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4CAF50;
+  color: white;
 }
 
 .button2 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #008CBA;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
 }
 
 .button2:hover {
-    background-color: #008CBA;
-    color: white;
+  background-color: #008CBA;
+  color: white;
 }
 
 .button3 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #f44336;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
 }
 
 .button3:hover {
-    background-color: #f44336;
-    color: white;
+  background-color: #f44336;
+  color: white;
 }
 
 .button4 {
-    background-color: white;
-    color: black;
-    border: 2px solid #e7e7e7;
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
 }
 
 .button4:hover {background-color: #e7e7e7;}
 
 .button5 {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
 }
 
 .button5:hover {
-    background-color: #555555;
-    color: white;
+  background-color: #555555;
+  color: white;
 }
+
