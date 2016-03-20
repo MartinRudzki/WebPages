@@ -75,11 +75,13 @@ Created: MR 02/20/2015
       <!--Options-->
       <li>
         <a href='#' class="drop_down"><span>Options</span>
-          <img src="img/icon_sound2.png" alt="icon_sound" style="width: 20px; height: 14px;">
+          <img src="img/icon_sound2.png" alt="icon_sound" style="width: 20px; height: 12px;">
         </a>
         <ul>
           <li>
             <blockquote class="text_in_menu">
+
+              <!--Sound Menu-->
               <h1 style="text-align:left">Sound</h1>
               <p>Beach:</p>
               <audio controls>
@@ -91,11 +93,12 @@ Created: MR 02/20/2015
                 <source src="sounds/RainforestSounds.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
+              <!--Backgroud Menu-->
               <h1 style="text-align:left">Background</h1>
-              <p id="cf7_controls">
-                <span class="selected"><img src="img/beach.jpg" style="width:75px; height:75px;" /></span>
-                <span><img src="img/rainforest.jpg" style="width:75px; height:75px;" /></span>
-                <span><img src="img/metal.jpg" style="width:75px; height:75px;" /></span>
+              <p id="cf7_controls" class="fade">
+                <span class="selected"><img src="img/beach_mini.jpg" style="width:75px; height:75px;" /></span>
+                <span><img src="img/rainforest_mini.jpg" style="width:75px; height:75px;" /></span>
+                <span><img src="img/metal_mini.jpg" style="width:75px; height:75px;" /></span>
               </p>
             </blockquote>
           </li>
@@ -155,12 +158,16 @@ Created: MR 02/20/2015
   </div>
   <!--End of cssmenu-->
   <!--Sudoku Game-->
-  <div id="container"></div>
+  <div id="color"></div>
+
+  <div id="container" style=""></div>
   <div id="menu" class="sudoku-menu">
     <button id="solve">Solve</button>
     <button id="validate">Validate Board</button>
     <button id="reset">Reset</button>
   </div>
 </body>
+
+
 
 </html>

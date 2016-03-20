@@ -56,6 +56,16 @@ $(document).ready(function () {
       $ul.hide();
     }
   });
+
+
+  $(".fade").animate({
+    transform: 'scale(1.1)',
+  });
+
+
+
+
+  $("#solve").trigger('mouseenter');
   /* Michael please comment code*/ 
   var game = Sudoku.getInstance();
   $('#container').append(game.getGameBoard());
@@ -85,4 +95,5 @@ $(document).ready(function () {
     ExpertClicked();
   });
 
-});
+});//(document).ready
+
