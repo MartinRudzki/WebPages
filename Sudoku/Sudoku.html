@@ -7,166 +7,171 @@ Description: Sudoku website.
 Created: MR 02/20/2015
 -->
 <html>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/menu.css">
-  <title>Sodoku Zen Garden</title>
-  <script src="java/jquery-2.0.3.min.js"></script>
-  <script src="java/SudokuGame.js"></script>
-  <script src="java/Other.js"></script>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/menu.css">
+        <title>Sodoku Zen Garden</title>
+        <script src="java/jquery-2.0.3.min.js"></script>
+        <script src="java/SudokuGame.js"></script>
+        <script src="java/Other.js"></script>
 
-</head>
 
-<body>
-  <!--All background images are loaded in the beginning-->
-  <div id="cf7" class="shadow">
-    <img class='opaque' src="img/beach.jpg" />
-    <img src="img/rainforest.jpg" />
-    <img src="img/metal.jpg" />
 
-  </div>
-  <!--Top of page, Sudoku image and menu-->
-  <div class="top_page" style="padding-bottom: 2px;padding-top:2px;">
-    <img src="img/SudokuLogo.jpg" alt="Sudoku" style="border-radius: 25px; width: 400px; height:125px; ">
-  </div>
+    </head>
 
-  <div id='cssmenu'>
-    <ul>
-      <!--Tutorial-->
-      <li>
-        <a href='#' class="drop_down"><span>Tutorial</span></a>
-        <!--class="open" gets created in Other.js for the <ul> <ul class="menu_scroll">-->
-        <ul id="menu_scroll">
-          <li>
-            <blockquote class="text_in_menu">
-              <h1>Getting Started</h1>
-              The goal of sudoku is to fill in a 9x9 grid and rows with digits that are between the numbers of 1 to 9.
-              <p><img src="img/Sudoku_Learning1.jpg" alt="Sudoku1" style="width: 95%; height:25%;"></p>
-              At the beginning of the game, the board will have squares that are partially filled in with digits.
-              Your job is to fill in the missing digits without having duplicate numbers in the same 9x9 grid section or row.
-              In the image below, the number 8 is having a conflict within a vertical row. As you can see there are two 8's, which goes
-              against the rule that you can only one of each number within a row. To fix this we need to delete the top 8 and turn it into a 9.
-              The number 5 is having a 9x9 grid problem to fix this, we need to change the numbers that are colored in green.
-              <p><img src="img/Sudoku_Learning2.jpg" alt="Sudoku2" style="width: 95%; height:70%;"></p>
-            </blockquote>
-          </li>
-        </ul>
-      </li>
-      <!--Diffculty-->
-      <li>
-        <a href='#' class="drop_down"><span>Diffculty</span></a>
-        <ul class="text_in_menu" style="width: 177px; padding-left: 25px">
-          <li class='button'>
-            <button id="EasyButton" class="button button1" type="button" onclick="EasyClicked()">Easy</button>
-          </li>
-          <li class='sub-difficulty'>
-            <button id="MediumButton" class="button button2" type="button" onclick="MediumClicked()">Medium</button>
-          </li>
-          <li class='sub-difficulty'>
-            <button id="HardButton" class="button button3" type="button" onclick="HardClicked()">Hard</button>
-          </li>
-          <li class='sub-difficulty'>
-            <button id="ExpertButton" class="button button5" type="button" onclick="ExpertClicked()">Expert</button>
-          </li>
-        </ul>
-      </li>
-      <!--Options-->
-      <li>
-        <a href='#' class="drop_down"><span>Options</span>
-          <img src="img/icon_sound2.png" alt="icon_sound" style="width: 20px; height: 12px;">
-        </a>
-        <ul>
-          <li>
-            <blockquote class="text_in_menu">
+    <body>
+        <!--All background images are loaded in the beginning-->
+        <div id="cf7" class="shadow">
+            <img class='opaque' src="img/beach.jpg" />
+            <img src="img/rainforest.jpg" />
+            <img src="img/metal.jpg" />
 
-              <!--Sound Menu-->
-              <h1 style="text-align:left">Sound</h1>
-              <p>Beach:</p>
-              <audio controls>
-                <source src="sounds/BeachSounds.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <p>Rainforest:</p>
-              <audio controls>
-                <source src="sounds/RainforestSounds.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <!--Backgroud Menu-->
-              <h1 style="text-align:left">Background</h1>
-              <p id="cf7_controls" class="fade">
-                <span class="selected"><img src="img/beach_mini.jpg" style="width:75px; height:75px;" /></span>
-                <span><img src="img/rainforest_mini.jpg" style="width:75px; height:75px;" /></span>
-                <span><img src="img/metal_mini.jpg" style="width:75px; height:75px;" /></span>
-              </p>
-            </blockquote>
-          </li>
-        </ul>
-      </li>
-      <!--Achievements-->
-      <li>
-        <a href='#' class="drop_down"><span>Achievements</span></a>
-        <ul>
-          <li style="width:340px">
-            <blockquote class="text_in_menu">
-              <p><img src="img/achivements.jpg" alt="achivements"></p>
-            </blockquote>
-        </ul>
-      </li>
+        </div>
+        <!--Top of page, Sudoku image and menu-->
+        <div class="top_page" style="padding-bottom: 2px;padding-top:2px;">
+            <img src="img/SudokuLogo.jpg" alt="Sudoku" style="border-radius: 25px; width: 400px; height:125px; ">
+        </div>
 
-      <!--Login/Signup-->
-      <li>
-        <a href='#' class="drop_down"><span>Login/Signup</span></a>
-        <ul>
-          <li>
-            <div class="text_in_menu" style="margin-left: 10%; width:300px">
-              <div class="text_in_menu">
-                <form id="theForm2" name="theForm2" style="width:50%">
-                  <h3>Login</h3>
-                  <label for="Username2"> Username:  </label>
-                  <input type="text" name="Username2" id="Username2">
-                  <div>&nbsp</div>
-                  <label for="Password2"> Password:  </label>
-                  <input type="password" name="Password2" id="Password2">
-                  <div>&nbsp</div>
-                  <input type="button" value="Login" onclick="login();">
-                  <br />
-                </form>
-              </div>
-              <div>
-                <br />
-                <h3>Sign-Up</h3>
-                <form id="theForm1" name="theForm1">
-                  <label for="Username1"> Choose your username:</label>
-                  <input type="text" name="Username1" id="Username1">
-                  <div id="errUsername1">&nbsp</div>
-                  <label for="Password1"> Choose your password:</label>
-                  <input type="password" name="Password1" id="Password1">
-                  <div>&nbsp</div>
-                  <label for="rePassword1"> Re-type password:  </label>
-                  <input type="password" name="rePassword1" id="rePassword1">
-                  <div>&nbsp</div>
-                  <input type="button" value="Submit" onclick="NewAccount();">
-                </form>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <!--End of cssmenu-->
-  <!--Sudoku Game-->
-  <div id="color"></div>
+        <div id='cssmenu'>
+            <ul>
+                <!--Tutorial-->
+                <li>
+                    <a href='#' class="drop_down"><span>Tutorial</span></a>
+                    <!--class="open" gets created in Other.js for the <ul> <ul class="menu_scroll">-->
+                    <ul id="menu_scroll">
+                        <li>
+                            <blockquote class="text_in_menu">
+                                <h1>Getting Started</h1>
+                                The goal of sudoku is to fill in a 9x9 grid and rows with digits that are between the numbers of 1 to 9.
+                                <p><img src="img/Sudoku_Learning1.jpg" alt="Sudoku1" style="width: 95%; height:25%;"></p>
+                                At the beginning of the game, the board will have squares that are partially filled in with digits.
+                                Your job is to fill in the missing digits without having duplicate numbers in the same 9x9 grid section or row.
+                                In the image below, the number 8 is having a conflict within a vertical row. As you can see there are two 8's, which goes
+                                against the rule that you can only one of each number within a row. To fix this we need to delete the top 8 and turn it into a 9.
+                                The number 5 is having a 9x9 grid problem to fix this, we need to change the numbers that are colored in green.
+                                <p><img src="img/Sudoku_Learning2.jpg" alt="Sudoku2" style="width: 95%; height:70%;"></p>
+                            </blockquote>
+                        </li>
+                    </ul>
+                </li>
+                <!--Diffculty-->
+                <li>
+                    <a href='#' class="drop_down"><span>Diffculty</span></a>
+                    <ul class="text_in_menu" style="width: 177px; padding-left: 25px">
+                        <li class='button'>
+                            <button id="EasyButton" class="button button1" type="button" onclick="EasyClicked()">Easy</button>
+                        </li>
+                        <li class='sub-difficulty'>
+                            <button id="MediumButton" class="button button2" type="button" onclick="MediumClicked()">Medium</button>
+                        </li>
+                        <li class='sub-difficulty'>
+                            <button id="HardButton" class="button button3" type="button" onclick="HardClicked()">Hard</button>
+                        </li>
+                        <li class='sub-difficulty'>
+                            <button id="ExpertButton" class="button button5" type="button" onclick="ExpertClicked()">Expert</button>
+                        </li>
+                    </ul>
+                </li>
+                <!--Options-->
+                <li>
+                    <a href='#' class="drop_down"><span>Options</span>
+                        <img src="img/icon_sound2.png" alt="icon_sound" style="width: 20px; height: 12px;">
+                    </a>
+                    <ul>
+                        <li>
+                            <blockquote class="text_in_menu">
 
-  <div id="container" style=""></div>
-  <div id="menu" class="sudoku-menu">
-    <button id="solve">Solve</button>
-    <button id="validate">Validate Board</button>
-    <button id="reset">Reset</button>
-  </div>
-</body>
+                                <!--Sound Menu-->
+                                <h1 style="text-align:left">Sound</h1>
+                                <p>Beach:</p>
+                                <audio controls>
+                                    <source src="sounds/BeachSounds.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <p>Rainforest:</p>
+                                <audio controls>
+                                    <source src="sounds/RainforestSounds.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <!--Backgroud Menu-->
+                                <h1 style="text-align:left">Background</h1>
+                                <p id="cf7_controls" class="fade">
+                                    <span class="selected"><img src="img/beach_mini.jpg" style="width:75px; height:75px;" /></span>
+                                    <span><img src="img/rainforest_mini.jpg" style="width:75px; height:75px;" /></span>
+                                    <span><img src="img/metal_mini.jpg" style="width:75px; height:75px;" /></span>
+                                </p>
+                            </blockquote>
+                            <blockquote id="optionsDropDown">
+                            </blockquote>
+
+                        </li>
+                    </ul>
+                </li>
+                <!--Achievements-->
+                <li>
+                    <a href='#' class="drop_down"><span>Achievements</span></a>
+                    <ul>
+                        <li style="width:340px">
+                            <blockquote class="text_in_menu">
+                                <p><img src="img/achivements.jpg" alt="achivements"></p>
+                            </blockquote>
+                    </ul>
+                </li>
+
+                <!--Login/Signup-->
+                <li>
+                    <a href='#' class="drop_down"><span>Login/Signup</span></a>
+                    <ul>
+                        <li>
+                            <div class="text_in_menu" style="margin-left: 10%; width:300px">
+                                <div class="text_in_menu">
+                                    <form id="theForm2" name="theForm2" style="width:50%">
+                                        <h3>Login</h3>
+                                        <label for="Username2"> Username:  </label>
+                                        <input type="text" name="Username2" id="Username2">
+                                        <div>&nbsp</div>
+                                        <label for="Password2"> Password:  </label>
+                                        <input type="password" name="Password2" id="Password2">
+                                        <div>&nbsp</div>
+                                        <input type="button" value="Login" onclick="login();">
+                                        <br />
+                                    </form>
+                                </div>
+                                <div>
+                                    <br />
+                                    <h3>Sign-Up</h3>
+                                    <form id="theForm1" name="theForm1">
+                                        <label for="Username1"> Choose your username:</label>
+                                        <input type="text" name="Username1" id="Username1">
+                                        <div id="errUsername1">&nbsp</div>
+                                        <label for="Password1"> Choose your password:</label>
+                                        <input type="password" name="Password1" id="Password1">
+                                        <div>&nbsp</div>
+                                        <label for="rePassword1"> Re-type password:  </label>
+                                        <input type="password" name="rePassword1" id="rePassword1">
+                                        <div>&nbsp</div>
+                                        <input type="button" value="Submit" onclick="NewAccount();">
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--End of cssmenu-->
+        <!--Sudoku Game-->
+        <div id="color"></div>
+
+        <div id="container" style=""></div>
+        <div id="menu" class="sudoku-menu">
+            <button id="solve">Solve</button>
+            <button id="validate">Validate Board</button>
+            <button id="reset">Reset</button>
+        </div>
+    </body>
 
 
 
