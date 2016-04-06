@@ -623,6 +623,9 @@ var HardClicked = function () {
     $("#ExpertButton").css("color", "black");
 
     clearInterval(timer);//Pause the timer
+    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    elapsed_seconds = 0;//Reset time to 0
+    timer = setInterval(function () {//Begin timer again
         elapsed_seconds = elapsed_seconds + 1;
         $('#optionsDropDown').text('Time On Hard: ' + get_elapsed_time_string(elapsed_seconds));
     }, 1000);
@@ -640,9 +643,13 @@ var ExpertClicked = function () {
 
 
     clearInterval(timer);//Pause the timer
+    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    elapsed_seconds = 0;//Reset time to 0
+    timer = setInterval(function () {//Begin timer again
         elapsed_seconds = elapsed_seconds + 1;
         $('#optionsDropDown').text('Time On Expert: ' + get_elapsed_time_string(elapsed_seconds));
     }, 1000);
+ 
     ExpertPuzzle1();
 };
 
