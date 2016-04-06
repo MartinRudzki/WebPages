@@ -58,6 +58,15 @@ $(document).ready(function () {
   });
 
 
+//Makes it so that: When you click outside of the dropdown it closes
+/*$(document).on('click', function(event) {
+  if (!$(event.target).closest('a.drop_down').length) {
+    var $ul = $('a.drop_down').siblings("ul");
+    $ul.hide();
+  }
+});*/
+
+
   $(".fade").animate({
     transform: 'scale(1.1)',
   });

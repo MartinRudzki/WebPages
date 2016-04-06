@@ -540,18 +540,20 @@ var difficulty = "easy";
 var EasyClicked = function () {
     difficulty = "easy";
     $("#EasyButton").css("background-color", "#4CAF50");
-    $("#MediumButton").css("background-color", "#white");
+    $("#MediumButton").css("background-color", "white");
     $("#HardButton").css("background-color", "white");
     $("#ExpertButton").css("background-color", "white");
+    $("#ExpertButton").css("color", "black");
     EasyPuzzle1();
 };
 
 var MediumClicked = function () {
     difficulty = "medium";
     $("#EasyButton").css("background-color", "white");
-    $("#MediumButton").css("background-color", "008CBA");
+    $("#MediumButton").css("background-color", "#008CBA");
     $("#HardButton").css("background-color", "white");
     $("#ExpertButton").css("background-color", "white");
+    $("#ExpertButton").css("color", "black");
     MediumPuzzle1();
 };
 
@@ -561,6 +563,7 @@ var HardClicked = function () {
     $("#MediumButton").css("background-color", "white");
     $("#HardButton").css("background-color", "#f44336");
     $("#ExpertButton").css("background-color", "white");
+    $("#ExpertButton").css("color", "black");
     HardPuzzle1();
 };
 
