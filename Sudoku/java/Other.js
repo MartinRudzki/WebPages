@@ -113,5 +113,6 @@ $(document).click(function(event) {
     ExpertClicked();
   });
 
+  var sound = $("#beach_audio")[0];
+  sound.play();
 });//(document).ready
-
