@@ -539,21 +539,38 @@ var difficulty = "easy";
 
 var EasyClicked = function () {
     difficulty = "easy";
+    $("#EasyButton").css("background-color", "#4CAF50");
+    $("#MediumButton").css("background-color", "#white");
+    $("#HardButton").css("background-color", "white");
+    $("#ExpertButton").css("background-color", "white");
     EasyPuzzle1();
 };
 
 var MediumClicked = function () {
     difficulty = "medium";
+    $("#EasyButton").css("background-color", "white");
+    $("#MediumButton").css("background-color", "008CBA");
+    $("#HardButton").css("background-color", "white");
+    $("#ExpertButton").css("background-color", "white");
     MediumPuzzle1();
 };
 
 var HardClicked = function () {
     difficulty = "hard";
+    $("#EasyButton").css("background-color", "white");
+    $("#MediumButton").css("background-color", "white");
+    $("#HardButton").css("background-color", "#f44336");
+    $("#ExpertButton").css("background-color", "white");
     HardPuzzle1();
 };
 
 var ExpertClicked = function () {
     difficulty = "expert";
+    $("#EasyButton").css("background-color", "white");
+    $("#MediumButton").css("background-color", "white");
+    $("#HardButton").css("background-color", "white");
+    $("#ExpertButton").css("background-color", "#555555");
+    $("#ExpertButton").css("color", "white");
     ExpertPuzzle1();
 };
 
