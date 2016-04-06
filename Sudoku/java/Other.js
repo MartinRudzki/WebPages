@@ -58,13 +58,22 @@ $(document).ready(function () {
   });
 
 
-//Makes it so that: When you click outside of the dropdown it closes
-/*$(document).on('click', function(event) {
-  if (!$(event.target).closest('a.drop_down').length) {
-    var $ul = $('a.drop_down').siblings("ul");
-    $ul.hide();
-  }
-});*/
+
+
+//Code found at: http://stackoverflow.com/questions/152975/how-to-detect-a-click-outside-an-element
+//Makes it so that: When you click outside of the dropdown it closes, but if you click inside the dropdown it stays open
+$(document).click(function(event) { 
+    var $ul = $('a.drop_down').siblings('ul');
+    
+    if(!$(event.target).closest($ul).length &&//If we clicked and the target was not inside the dropdown: hide the drop down
+       !$(event.target).is('a.drop_down')) {
+        if($ul.is(":visible")) {            
+            $ul.hide();            
+        }
+    }        
+});
+    
+
 
 
   $(".fade").animate({
