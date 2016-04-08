@@ -232,8 +232,8 @@ var Sudoku = (function ($) {
                     if (difficulty == "hard") {
                         HardPuzzle1();
                     }
-                    else{
-                        if(difficulty == "expert"){
+                    else {
+                        if (difficulty == "expert") {
                             ExpertPuzzle1();
                         }
                     }
@@ -535,296 +535,503 @@ var Sudoku = (function ($) {
     };
 })(jQuery);
 
-var difficulty = "easy";
 
+
+
+//Code found at: http://stackoverflow.com/questions/2604450/how-to-create-a-jquery-clock-timer
+//Figures out the elapsed time
+function get_elapsed_time_string(total_seconds) {
+    function pretty_time_string(num) {
+        return (num < 10 ? "0" : "") + num;
+    }
+
+    var hours = Math.floor(total_seconds / 3600);
+    total_seconds = total_seconds % 3600;
+
+    var minutes = Math.floor(total_seconds / 60);
+    total_seconds = total_seconds % 60;
+
+    var seconds = Math.floor(total_seconds);
+
+    // Pad the minutes and seconds with leading zeros, if required
+    hours = pretty_time_string(hours);
+    minutes = pretty_time_string(minutes);
+    seconds = pretty_time_string(seconds);
+
+    // Compose the string for display
+    var currentTimeString = hours + ":" + minutes + ":" + seconds;
+
+    return currentTimeString;
+}
+//Displays timer
+var elapsed_seconds = 0;
+var timer = setInterval(function () {
+    elapsed_seconds = elapsed_seconds + 1;
+    $('#optionsDropDown').text('Time On Easy: ' + get_elapsed_time_string(elapsed_seconds));
+}, 1000);
+
+
+
+
+var difficulty = "easy";
 var EasyClicked = function () {
-    difficulty = "easy";
-    EasyPuzzle1();
+    difficulty = "easy";//Set difficulty to easy
+    $("#EasyButton").css("background-color", "#4CAF50");//Set background colors for difficulty buttons
+    $("#MediumButton").css("background-color", "white");
+    $("#HardButton").css("background-color", "white");
+    $("#ExpertButton").css("background-color", "white");
+    $("#ExpertButton").css("color", "black");
+
+
+    clearInterval(timer);//Pause the timer
+    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    elapsed_seconds = 0;//Reset time to 0
+    timer = setInterval(function () {//Begin timer again
+        elapsed_seconds = elapsed_seconds + 1;
+        $('#optionsDropDown').text('Time On Easy: ' + get_elapsed_time_string(elapsed_seconds));
+    }, 1000);
+
+    EasyPuzzle1();//Set the puzzle to easy
 };
 
 var MediumClicked = function () {
     difficulty = "medium";
-    MediumPuzzle1();
+    $("#EasyButton").css("background-color", "white");//Set background colors for difficulty buttons
+    $("#MediumButton").css("background-color", "#008CBA");
+    $("#HardButton").css("background-color", "white");
+    $("#ExpertButton").css("background-color", "white");
+    $("#ExpertButton").css("color", "black");
+
+
+    clearInterval(timer);//Pause the timer
+    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    elapsed_seconds = 0;//Reset time to 0
+    timer = setInterval(function () {//Begin timer again
+        elapsed_seconds = elapsed_seconds + 1;
+        $('#optionsDropDown').text('Time On Medium: ' + get_elapsed_time_string(elapsed_seconds));
+    }, 1000);
+
+    MediumPuzzle1();//Set the puzzle to medium
 };
 
 var HardClicked = function () {
     difficulty = "hard";
-    HardPuzzle1();
+    $("#EasyButton").css("background-color", "white");//Set background colors for difficulty buttons
+    $("#MediumButton").css("background-color", "white");
+    $("#HardButton").css("background-color", "#f44336");
+    $("#ExpertButton").css("background-color", "white");
+    $("#ExpertButton").css("color", "black");
+
+    clearInterval(timer);//Pause the timer
+    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    elapsed_seconds = 0;//Reset time to 0
+    timer = setInterval(function () {//Begin timer again
+        elapsed_seconds = elapsed_seconds + 1;
+        $('#optionsDropDown').text('Time On Hard: ' + get_elapsed_time_string(elapsed_seconds));
+    }, 1000);
+
+    HardPuzzle1();//Set the puzzle to hard
 };
 
 var ExpertClicked = function () {
     difficulty = "expert";
+    $("#EasyButton").css("background-color", "white");//Set background colors for difficulty buttons
+    $("#MediumButton").css("background-color", "white");
+    $("#HardButton").css("background-color", "white");
+    $("#ExpertButton").css("background-color", "#555555");
+    $("#ExpertButton").css("color", "white");
+
+
+    clearInterval(timer);//Pause the timer
+    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    elapsed_seconds = 0;//Reset time to 0
+    timer = setInterval(function () {//Begin timer again
+        elapsed_seconds = elapsed_seconds + 1;
+        $('#optionsDropDown').text('Time On Expert: ' + get_elapsed_time_string(elapsed_seconds));
+    }, 1000);
+ 
     ExpertPuzzle1();
 };
 
 var EasyPuzzle1 = function () {//puzzle found here http://www.mathinenglish.com/images/sudoku.gif
-    //First Row
+//The code in EasyPuzzle1(), MediumPuzzle1(), HardPuzzle1(), and ExpertPuzzle1(), sets up the board with the starting numbers depending on difficulty
+//First Row
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").val(6);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").val(1);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(9)>input").val(2);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(9)>input").prop('disabled', true);
 //Second Row
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").val(4);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").val(6);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").val(2);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").val(7);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").prop('disabled', true);
 //Third Row
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").val(3);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").val(7);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").val(8);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").prop('disabled', true);
 //Fourth Row
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(2)>input").val(2);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").val(4);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(7)>input").val(9);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(7)>input").prop('disabled', true);
 //Fifth Row
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").val(1);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").val(2);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").prop('disabled', true);
 //Sixth Row
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(3)>input").val(3);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").val(8);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(8)>input").val(5);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(8)>input").prop('disabled', true);
 //Seventh Row
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").val(9);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").val(8);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").val(4);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").prop('disabled', true);
 //Eigth Row
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").val(4);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").val(3);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").val(2);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").val(9);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").prop('disabled', true);
 //Ninth Row
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(1)>input").val(2);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").val(7);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").val(4);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").prop('disabled', true);
 };
 
 var MediumPuzzle1 = function () {//puzzle found here http://www.sudoku.ws/standard-12.htm
     //First Row
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").val(1);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(4)>input").val(3);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").val(5);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(7)>input").val(9);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(7)>input").prop('disabled', true);
 //Second Row
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").val(2);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").val(7);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(8)>input").val(3);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(8)>input").prop('disabled', true);
 //Third Row
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(3)>input").val(2);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").val(5);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(9)>input").val(4);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(9)>input").prop('disabled', true);
 //Fourth Row
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").val(8);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").val(3);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").val(1);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").prop('disabled', true);
 //Fifth Row
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").val(4);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(4)>input").val(1);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(6)>input").val(7);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(6)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").val(2);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").prop('disabled', true);
 //Sixth Row
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").val(9);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").val(8);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").val(3);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").prop('disabled', true);
 //Seventh Row
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(1)>input").val(1);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").val(7);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(7)>input").val(8);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(7)>input").prop('disabled', true);
 //Eigth Row
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(2)>input").val(5);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").val(3);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").val(8);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").prop('disabled', true);
 //Ninth Row
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(3)>input").val(8);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").val(7);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(6)>input").val(1);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(6)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").val(6);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").prop('disabled', true);
 };
 
 var HardPuzzle1 = function () {//puzzle found here http://www.sudoku.ws/hard-7.htm
     //First Row
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").val(3);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(6)>input").val(8);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(6)>input").prop('disabled', true);
 //Second Row
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(1)>input").val(7);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(3)>input").val(8);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").val(3);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").val(2);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").val(5);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").prop('disabled', true);
 //Third Row
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").val(9);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").val(1);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").prop('disabled', true);
 //Fourth Row
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").val(9);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").val(4);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").val(2);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").prop('disabled', true);
 //Fifth Row
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").val(1);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").prop('disabled', true);
 //Sixth Row
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").val(7);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").val(8);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").val(9);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").prop('disabled', true);
 //Seventh Row
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").val(5);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").val(3);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").prop('disabled', true);
 //Eigth Row
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").val(8);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").val(4);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").val(7);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(7)>input").val(5);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(7)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(9)>input").val(3);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(9)>input").prop('disabled', true);
 //Ninth Row
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(4)>input").val(5);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(4)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").val(6);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").prop('disabled', true);
 };
 
 var ExpertPuzzle1 = function () {//puzzle found here http://www.sudoku.ws/expert-7.htm
     //First Row
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").val(8);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(3)>input").val(2);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").val(6);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(8)>input").val(4);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(8)>input").prop('disabled', true);
 //Second Row
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").val(5);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").val(8);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").val(3);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").prop('disabled', true);
 //Third Row
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").val(5);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(7)>input").val(7);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(7)>input").prop('disabled', true);
 //Fourth Row
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(3)>input").val(8);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").val(9);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").prop('disabled', true);
 //Fifth Row
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(1)>input").val(9);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").val(7);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").val(8);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").val(5);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(9)>input").val(4);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(9)>input").prop('disabled', true);
 
 //Sixth Row
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").val(1);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(7)>input").val(6);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(7)>input").prop('disabled', true);
 //Seventh Row
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(3)>input").val(1);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").val(9);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").prop('disabled', true);
 
 //Eigth Row
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").val(4);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").val(6);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").val(5);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").prop('disabled', true);
 //Ninth Row
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(2)>input").val(8);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(2)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(2)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").val(7);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(7)>input").val(4);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(7)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(7)>input").prop('disabled', true);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").val(2);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").keyup();
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").prop('disabled', true);
 };
 
 $(window).load(function () {
@@ -839,8 +1046,8 @@ $(window).load(function () {
             if (difficulty == "hard") {
                 HardPuzzle1();
             }
-            else{
-                if(difficulty == "expert"){
+            else {
+                if (difficulty == "expert") {
                     ExpertPuzzle1();
                 }
             }

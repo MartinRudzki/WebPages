@@ -17,6 +17,8 @@ Created: MR 02/20/2015
   <script src="java/SudokuGame.js"></script>
   <script src="java/Other.js"></script>
 
+
+
 </head>
 
 <body>
@@ -31,6 +33,7 @@ Created: MR 02/20/2015
   <div class="top_page" style="padding-bottom: 2px;padding-top:2px;">
     <img src="img/SudokuLogo.jpg" alt="Sudoku" style="border-radius: 25px; width: 400px; height:125px; ">
   </div>
+
 
   <div id='cssmenu'>
     <ul>
@@ -57,26 +60,25 @@ Created: MR 02/20/2015
       <!--Diffculty-->
       <li>
         <a href='#' class="drop_down"><span>Diffculty</span></a>
-        <ul class="text_in_menu" style="width: 182px;">
+        <ul class="text_in_menu" style="width: 177px; padding-left: 25px">
           <li class='button'>
-            <p></p>
             <button id="EasyButton" class="button button1" type="button" onclick="EasyClicked()">Easy</button>
           </li>
-          <li>
+          <li class='sub-difficulty'>
             <button id="MediumButton" class="button button2" type="button" onclick="MediumClicked()">Medium</button>
           </li>
-          <li>
+          <li class='sub-difficulty'>
             <button id="HardButton" class="button button3" type="button" onclick="HardClicked()">Hard</button>
           </li>
-          <li>
+          <li class='sub-difficulty'>
             <button id="ExpertButton" class="button button5" type="button" onclick="ExpertClicked()">Expert</button>
-            <br />
           </li>
         </ul>
       </li>
       <!--Options-->
       <li>
-        <a href='#' class="drop_down"><span>Options</span>
+        <a href='#' class="drop_down">
+          <span>Options</span>
           <img src="img/icon_sound2.png" alt="icon_sound" style="width: 20px; height: 12px;">
         </a>
         <ul>
@@ -86,12 +88,12 @@ Created: MR 02/20/2015
               <!--Sound Menu-->
               <h1 style="text-align:left">Sound</h1>
               <p>Beach:</p>
-              <audio controls>
+              <audio id="beach_audio" controls loop>
                 <source src="sounds/BeachSounds.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
               <p>Rainforest:</p>
-              <audio controls>
+              <audio controls loop>
                 <source src="sounds/RainforestSounds.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -103,6 +105,8 @@ Created: MR 02/20/2015
                 <span><img src="img/metal_mini.jpg" style="width:75px; height:75px;" /></span>
               </p>
             </blockquote>
+            <blockquote id="optionsDropDown"></blockquote>
+
           </li>
         </ul>
       </li>
@@ -165,7 +169,7 @@ Created: MR 02/20/2015
   <div id="container" style=""></div>
   <div id="menu" class="sudoku-menu">
     <button id="solve">Solve</button>
-    <button id="validate">Check</button>
+    <button id="validate">Validate Board</button>
     <button id="reset">Reset</button>
   </div>
 </body>
