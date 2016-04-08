@@ -270,7 +270,6 @@ body {
 }
 
 /************************Game Board CSS*************************/
-/*Color navigation bar normal mode*/
 button, h1 {
 	margin-left: auto;
 	margin-right: auto;
@@ -288,6 +287,14 @@ button, h1 {
 	font-size: 24px;
 	margin: 10px;
 	padding: 5px;
+    background: #9A73A9;
+  background: -moz-linear-gradient(top, #9A73A9 0%, #7A4A8D 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9A73A9), color-stop(100%,#7A4A8D));
+  background: -webkit-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+  background: -o-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+  background: -ms-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+  background: linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9A73A9', endColorstr='#7A4A8D',GradientType=0 );
 }
 
 .sudoku-container {
@@ -313,6 +320,7 @@ button, h1 {
 .sudoku-container .sudoku-input-error {
 	background: #ffc9d7;
 }
+
 .sudoku-container.valid-matrix {
 	border: 5px solid #7edb37;
 }
@@ -336,31 +344,33 @@ button, h1 {
 /*Difficulty buttons*/
 .button {
   background-color: #4CAF50; /* Green */
+  width: 9em;  height: 4em;
   border: none;
   color: white;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin-top: 5px;
+
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 3px;
 }
-
+/*Easy*/
 .button1 {
   background-color: white; 
   color: black; 
-  border: -3px solid #4CAF50;
+  border: 2px solid #4CAF50;
 }
 
 .button1:hover {
   background-color: #4CAF50;
   color: white;
 }
-
+/*Medium*/
 .button2 {
   background-color: white; 
   color: black; 
@@ -371,7 +381,7 @@ button, h1 {
   background-color: #008CBA;
   color: white;
 }
-
+/*Hard*/
 .button3 {
   background-color: white; 
   color: black; 
@@ -382,14 +392,7 @@ button, h1 {
   background-color: #f44336;
   color: white;
 }
-
-.button4 {
-  background-color: white;
-  color: black;
-  border: 2px solid #e7e7e7;
-}
-
-.button4:hover {background-color: #e7e7e7;}
+/*Expert*/
 
 .button5 {
   background-color: white;
