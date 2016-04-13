@@ -14,26 +14,24 @@ Created: MR 02/20/2015
   <link rel="stylesheet" href="css/menu.css">
   <title>Sodoku Zen Garden</title>
   <script src="java/jquery-2.0.3.min.js"></script>
+  <!--Assists with audio-->
+  <script src="java/jquery-ui.min-1.11.2.js"></script>
   <script src="java/SudokuGame.js"></script>
   <script src="java/Other.js"></script>
-
-
-
 </head>
 
 <body>
   <!--All background images are loaded in the beginning-->
   <div id="cf7" class="shadow">
-    <img class='opaque' src="img/beach.jpg" />
-    <img src="img/rainforest.jpg" />
-    <img src="img/metal.jpg" />
+    <img class='opaque' src="img/Backgrounds/beach.jpg" />
+    <img src="img/Backgrounds/rainforest.jpg" />
+    <img src="img/Backgrounds/metal.jpg" />
 
   </div>
   <!--Top of page, Sudoku image and menu-->
   <div class="top_page" style="padding-bottom: 2px;padding-top:2px;">
     <img src="img/SudokuLogo.jpg" alt="Sudoku" style="border-radius: 25px; width: 400px; height:125px; ">
   </div>
-
 
   <div id='cssmenu'>
     <ul>
@@ -46,13 +44,13 @@ Created: MR 02/20/2015
             <blockquote class="text_in_menu">
               <h1>Getting Started</h1>
               The goal of sudoku is to fill in a 9x9 grid and rows with digits that are between the numbers of 1 to 9.
-              <p><img src="img/Sudoku_Learning1.jpg" alt="Sudoku1" style="width: 95%; height:25%;"></p>
+              <p><img src="img/Tutorial/Sudoku_Learning1.jpg" alt="Sudoku1" style="width: 95%; height:25%;"></p>
               At the beginning of the game, the board will have squares that are partially filled in with digits.
               Your job is to fill in the missing digits without having duplicate numbers in the same 9x9 grid section or row.
               In the image below, the number 8 is having a conflict within a vertical row. As you can see there are two 8's, which goes
               against the rule that you can only one of each number within a row. To fix this we need to delete the top 8 and turn it into a 9.
               The number 5 is having a 9x9 grid problem to fix this, we need to change the numbers that are colored in green.
-              <p><img src="img/Sudoku_Learning2.jpg" alt="Sudoku2" style="width: 95%; height:70%;"></p>
+              <p><img src="img/Tutorial/Sudoku_Learning2.jpg" alt="Sudoku2" style="width: 95%; height:70%;"></p>
             </blockquote>
           </li>
         </ul>
@@ -60,7 +58,7 @@ Created: MR 02/20/2015
       <!--Diffculty-->
       <li>
         <a href='#' class="drop_down"><span>Diffculty</span></a>
-        <ul class="text_in_menu" style="width: 177px; padding-left: 25px">
+        <ul class="text_in_menu" style="width: 177px; padding-left: 2px; padding-top: 10px;padding-bottom:15px">
           <li class='button'>
             <button id="EasyButton" class="button button1" type="button" onclick="EasyClicked()">Easy</button>
           </li>
@@ -87,8 +85,22 @@ Created: MR 02/20/2015
 
               <!--Sound Menu-->
               <h1 style="text-align:left">Sound</h1>
+              <section>
+                <div class="slider"></div> <!-- the Slider -->
+                <span class="volume"></span> <!-- Volume -->
+                <div id="player"></div>
+              </section>
+              <section>
+                <div class="slider" style="margin-top:20px;"></div> <!-- the Slider -->
+                <span class="volume" style="margin-top:20px;"></span> <!-- Volume -->
+                <div id="player"></div>
+              </section>
+
+
               <p>Beach:</p>
+              <img src="img/beach_logo.png" alt="icon_sound" style="width: 50px; height: 50px;">
               <audio id="beach_audio" controls loop>
+               
                 <source src="sounds/BeachSounds.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -97,12 +109,22 @@ Created: MR 02/20/2015
                 <source src="sounds/RainforestSounds.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
+              <p>Rain:</p>
+              <audio controls loop>
+                <source src="sounds/RainSound.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>Thunder:</p>
+              <audio controls loop>
+                <source src="sounds/thunder1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
               <!--Backgroud Menu-->
               <h1 style="text-align:left">Background</h1>
               <p id="cf7_controls" class="fade">
-                <span class="selected"><img src="img/beach_mini.jpg" style="width:75px; height:75px;" /></span>
-                <span><img src="img/rainforest_mini.jpg" style="width:75px; height:75px;" /></span>
-                <span><img src="img/metal_mini.jpg" style="width:75px; height:75px;" /></span>
+                <span class="selected"><img src="img/Backgrounds/beach_mini.jpg" style="width:75px; height:75px;" /></span>
+                <span><img src="img/Backgrounds/rainforest_mini.jpg" style="width:75px; height:75px;" /></span>
+                <span><img src="img/Backgrounds/metal_mini.jpg" style="width:75px; height:75px;" /></span>
               </p>
             </blockquote>
             <blockquote id="optionsDropDown"></blockquote>
@@ -164,14 +186,15 @@ Created: MR 02/20/2015
   </div>
   <!--End of cssmenu-->
   <!--Sudoku Game-->
-  <div id="color"></div>
+  <div id="behind_gameboard"></div>
 
   <div id="container" style=""></div>
   <div id="menu" class="sudoku-menu">
-    <button id="solve">Solve</button>
-    <button id="validate">Validate Board</button>
+    <button id="solve" type="button">Solve</button>
+    <button id="validate">Check</button>
     <button id="reset">Reset</button>
   </div>
+
 </body>
 
 

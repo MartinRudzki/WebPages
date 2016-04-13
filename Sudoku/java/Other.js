@@ -8,6 +8,65 @@
  */
 
 $(document).ready(function () {
+
+
+  $(function () {
+    //Store frequently elements in variables
+    var slider = $('.slider');
+
+    //Call the Slider
+    slider.slider({
+      //Config
+      range: "min",
+      min: 0,
+      value: 0,
+
+
+      //Slider Event
+      slide: function (event, ui) { //When the slider is sliding
+      //Increase/decrease sound
+      setVolume((ui.value) / 100);
+
+        // Volume meter transition
+        var value = slider.slider('value'),
+          volume = $('.volume');
+        if (value <= 1) {
+          volume.css('background-position', '0 -5px');
+        }
+        else if (value <= 25) {
+          volume.css('background-position', '0 -44px');
+        }
+        else if (value <= 75) {
+          volume.css('background-position', '0 -83px');
+        }
+        else {
+          volume.css('background-position', '0 -122px');
+        };
+      },
+    });
+
+  });
+
+
+  var myMedia = document.createElement('audio');
+  document.getElementById('#player');
+  $('#player').append(myMedia);
+  myMedia.id = "myMedia";
+  playAudio('sounds/RainforestSounds.mp3', 0);
+
+  function playAudio(fileName, myVolume) {
+    myMedia.src = fileName;
+    myMedia.setAttribute('loop', 'loop');
+    setVolume(myVolume);
+    myMedia.play();
+  }
+
+  function setVolume(myVolume) {
+    var myMedia = document.getElementById('myMedia');
+    myMedia.volume = myVolume;
+  }
+
+
     /*
      Code found at:
      http://css3.bradshawenterprises.com/cfimg/
@@ -58,61 +117,56 @@ $(document).ready(function () {
     });
 
 
+  // Code found at: http://stackoverflow.com/questions/152975/how-to-detect-a-click-outside-an-element
+  // Makes it so that: When you click outside of the dropdown it closes, but if you click inside the dropdown it stays open
+  $(document).click(function (event) {
+      var $ul = $('a.drop_down').siblings('ul');
+
+      if (!$(event.target).closest($ul).length && //If we clicked and the target was not inside the dropdown: hide the drop down
+              !$(event.target).is('a.drop_down')) {
+          if ($ul.is(":visible")) {
+              $ul.hide();
+          }
+      }
+  });
 
 
-//Code found at: http://stackoverflow.com/questions/152975/how-to-detect-a-click-outside-an-element
-//Makes it so that: When you click outside of the dropdown it closes, but if you click inside the dropdown it stays open
-    $(document).click(function (event) {
-        var $ul = $('a.drop_down').siblings('ul');
-
-        if (!$(event.target).closest($ul).length && //If we clicked and the target was not inside the dropdown: hide the drop down
-                !$(event.target).is('a.drop_down')) {
-            if ($ul.is(":visible")) {
-                $ul.hide();
-            }
-        }
-    });
+  $(".fade").animate({
+      transform: 'scale(1.1)',
+  });
 
 
-
-
-    $(".fade").animate({
-        transform: 'scale(1.1)',
-    });
-
-
-
-
-    $("#solve").trigger('mouseenter');
-    /* Michael please comment code*/
-    var game = Sudoku.getInstance();
-    $('#container').append(game.getGameBoard());
-    $('#solve').click(function () {
-        game.solve();
-    });
-    $('#validate').click(function () {
-        game.validate();
-    });
-    $('#reset').click(function () {
-        game.reset();
-    });
-    $('#EasyButton').click(function () {
-        game.reset();
-        EasyClicked();
-    });
-    $('#MediumButton').click(function () {
-        game.reset();
-        MediumClicked();
-    });
-    $('#HardButton').click(function () {
-        game.reset();
-        HardClicked();
-    });
-    $('#ExpertButton').click(function () {
-        game.reset();
-        ExpertClicked();
-    });
-
+  $("#solve").trigger('mouseenter');
+  /* Michael please comment code*/
+  var game = Sudoku.getInstance();
+  $('#container').append(game.getGameBoard());
+  $('#solve').click(function () {
+      game.solve();
+  });
+  $('#validate').click(function () {
+      game.validate();
+  });
+  $('#reset').click(function () {
+      game.reset();
+  });
+  $('#EasyButton').click(function () {
+      game.reset();
+      EasyClicked();
+  });
+  $('#MediumButton').click(function () {
+      game.reset();
+      MediumClicked();
+  });
+  $('#HardButton').click(function () {
+      game.reset();
+      HardClicked();
+  });
+  $('#ExpertButton').click(function () {
+      game.reset();
+      ExpertClicked();
+  });
+  /*
   var sound = $("#beach_audio")[0];
   sound.play();
+  */
 });//(document).ready
