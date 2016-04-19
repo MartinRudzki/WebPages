@@ -31,7 +31,7 @@ $(document).ready(function () {
         var value = slider.slider('value'),
           volume = $('.volume');
         if (value <= 1) {
-          volume.css('background-position', '0 0');
+          volume.css('background-position', '0 0px');
         }
         else if (value <= 50) {
           volume.css('background-position', '0 -44px');
