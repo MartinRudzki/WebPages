@@ -12,9 +12,9 @@ $(document).ready(function () {
 
   $(function () {
     //Store frequently elements in variables
-    if ($(this).hasClass('clickedTag')){
+    if ($(this).hasClass('slider')){
     
-    var slider = $('.slider');
+    var slider = $(this).hasClass('slider');
 
     //Call the Slider
     slider.slider({
