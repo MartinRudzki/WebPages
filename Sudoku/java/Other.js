@@ -47,8 +47,8 @@ $(document).ready(function () {
       },
     });
 
-  });
-}
+  };
+});
 
   var myMedia = document.createElement('audio');
   document.getElementById('#player');
