@@ -14,7 +14,7 @@ $(document).ready(function () {
     //Store frequently elements in variables
     if ($(this).hasClass('slider')){
     
-    var slider = $(this).hasClass('slider');
+    var slider = $('.slider');
 
     //Call the Slider
     slider.slider({
