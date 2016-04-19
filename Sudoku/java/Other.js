@@ -35,6 +35,7 @@ $(document).ready(function () {
         }
         else if (value <= 50) {
           volume.css('background-position', '0 -44px');
+        }
         else if (value <= 75) {
           volume.css('background-position', '0 -83px');
         }
