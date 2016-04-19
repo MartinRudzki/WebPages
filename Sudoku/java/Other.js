@@ -12,6 +12,8 @@ $(document).ready(function () {
 
   $(function () {
     //Store frequently elements in variables
+    if ($(this).hasClass('clickedTag')){
+    
     var slider = $('.slider');
 
     //Call the Slider
@@ -46,7 +48,7 @@ $(document).ready(function () {
     });
 
   });
-
+}
 
   var myMedia = document.createElement('audio');
   document.getElementById('#player');
