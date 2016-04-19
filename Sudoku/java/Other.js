@@ -30,9 +30,11 @@ $(document).ready(function () {
         // Volume meter transition
         var value = slider.slider('value'),
           volume = $('.volume');
-        if (value <= 25) {
-          volume.css('background-position', '0 -44px');
+        if (value < 1) {
+          volume.css('background-position', '0 0px');
         }
+        else if (value <= 50) {
+          volume.css('background-position', '0 -44px');
         else if (value <= 75) {
           volume.css('background-position', '0 -83px');
         }
