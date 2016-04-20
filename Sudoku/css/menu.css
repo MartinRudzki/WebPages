@@ -181,7 +181,7 @@ body {
 #cssmenu ul li ul {
   display: none;
   /*here is where we change the tutorials width */
-  width: 80%;
+  //width: 55%;
 }
 /*Drop down menu vertical */
 #cssmenu > ul > li > ul > li {
