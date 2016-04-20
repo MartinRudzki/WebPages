@@ -63,7 +63,6 @@ body {
   font-size: 16px;
   color: black;
   font-weight: bolder;
-
   -webkit-transition: all ease .3s;
   -o-transition: all ease .3s;
   -moz-transition: all ease .3s;
@@ -108,7 +107,6 @@ body {
   background: -ms-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
   background: linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9A73A9', endColorstr='#7A4A8D',GradientType=0 );
-
 }
 /*Menu list horizontal*/
 #cssmenu ul > li {
@@ -123,7 +121,6 @@ body {
   text-decoration: none;
   padding: 15px 35px;
   position: relative;
-
 }
 /*Hover Color*/
 #cssmenu ul > li > a:hover{
@@ -182,8 +179,9 @@ body {
 
 }
 #cssmenu ul li ul {
-  /*width: 200px;*/
   display: none;
+  /*here is where we change the tutorials width */
+  width: 80%;
 }
 /*Drop down menu vertical */
 #cssmenu > ul > li > ul > li {
@@ -221,9 +219,8 @@ body {
   text-transform: none;
   color: white;
   font-family: sans-serif;
-   font-size: 17px;
+  font-size: 17px;
   text-shadow: 0px 0px 1px #000;
-
 }
 #menu_scroll {
   height:75%; 

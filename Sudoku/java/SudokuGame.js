@@ -74,6 +74,8 @@ var Sudoku = (function ($) {
              * board.
              */
             solve: function () {
+				//reset the game board then solve correctly
+				_game.resetGame();
                 var isValid, starttime, endtime, elapsed;
                 // Make sure the board is valid first
                 if (!_game.validateMatrix()) {
