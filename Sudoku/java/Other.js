@@ -11,24 +11,29 @@ $(document).ready(function () {
 
 
   $(function () {
+
+
     //Store frequently elements in variables
-    var slider = $('.slider');
+    //var slider = $(".slider");
 
     //Call the Slider
-    slider.slider({
+    $(".slider").slider({
       //Config
       range: "min",
       min: 0,
       value: 0,
-
+      create: function () {
+        $(this).slider("option", "value", $(this).next().val());
+      },
 
       //Slider Event
       slide: function (event, ui) { //When the slider is sliding
-      //Increase/decrease sound
-      setVolume((ui.value) / 100);
+        var id = $(this).attr("id");
+        //Increase/decrease sound
+        setVolume((ui.value) / 100);
 
         // Volume meter transition
-        var value = slider.slider('value'),
+        var value = $(this).slider('value'),
           volume = $('.volume');
         if (value <= 1) {
           volume.css('background-position', '0 -5px');
@@ -43,8 +48,8 @@ $(document).ready(function () {
           volume.css('background-position', '0 -122px');
         };
       },
-    });
-
+      });
+  
   });
 
 

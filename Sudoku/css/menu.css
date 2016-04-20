@@ -506,3 +506,9 @@ section {
 	height: 100%;
 	border-radius: 25px;
 }
+
+#eq > span {
+  height: 10px;
+  float: left;
+  margin: 15px;
+}
