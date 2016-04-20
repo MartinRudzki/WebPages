@@ -142,6 +142,21 @@ $(document).ready(function () {
   /* Michael please comment code*/
   var game = Sudoku.getInstance();
   $('#container').append(game.getGameBoard());
+  
+  // only numbers allowed in game board
+  // credit to https://snipt.net/GerryEng/jquery-making-textfield-only-accept-numeric-values/
+  $("#container").keydown(function(event) {
+		// Allow only backspace and delete
+		if ( event.keyCode == 46 || event.keyCode == 8 ) {
+			// let it happen, don't do anything
+		}
+		else {
+			// Ensure that it is a number and stop the keypress
+			if (event.keyCode < 48 || event.keyCode > 57 ) {
+				event.preventDefault();	
+			}	
+		}
+	});
   $('#solve').click(function () {
       game.solve();
   });
