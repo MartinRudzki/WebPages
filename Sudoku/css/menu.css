@@ -281,7 +281,6 @@ body {
 /************************Special Menu Items************************/
 .text_in_menu {
   text-transform: none;
-  color: white;
   font-family: sans-serif;
   text-transform: none;
   color: white;
@@ -289,12 +288,12 @@ body {
   font-size: 19px;
   text-shadow: 0px 0px 1px #000;
 }
-#menu_scroll {
+/*#menu_scroll {
     height:75%; 
-    width:40%;
-    /*overflow:hidden; */
-    /* overflow-y:scroll;*/
-}
+    width:90%;
+    overflow:hidden; */
+    /* overflow-y:scroll;
+}*/
 /*CSS for picture transition*/
 /*Code found at:
   http://css3.bradshawenterprises.com/cfimg/
@@ -579,5 +578,16 @@ section {
 
 .sound_text{
   font-size: 19px;
+}
 
+ .iconDetails {
+ margin-left: 10px;
+ padding-right: 10px;
+ float:left; 
+} 
+
+.container2 {
+	width:100%;
+	height:auto;
+	margin-left:5%
 }
