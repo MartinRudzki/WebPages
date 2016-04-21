@@ -74,8 +74,8 @@ var Sudoku = (function ($) {
              * board.
              */
             solve: function () {
-				//reset the game board then solve correctly
-				_game.resetGame();
+
+
                 var isValid, starttime, endtime, elapsed;
                 // Make sure the board is valid first
                 if (!_game.validateMatrix()) {
@@ -88,17 +88,23 @@ var Sudoku = (function ($) {
                 // Check start time
                 starttime = Date.now();
 
-                // Solve the game
-                isValid = _game.solveGame(0, 0);
+                // Solve the game when the dialog box "Confirm" button is pressed
+                $('.ui-button:contains("Confirm")').click(function () {
+                    //reset the game board then solve correctly
+                    _game.resetGame();
+                    isValid = _game.solveGame(0, 0);
+                    // Visual indication of whether the game was solved
+                    $('.sudoku-container').toggleClass('valid-matrix', isValid);
+                    /*if (isValid) {
+                        $('.valid-matrix input').attr('disabled', 'disabled');
+                    }*/
+
+                });
 
                 // Get solving end time
                 endtime = Date.now();
 
-                // Visual indication of whether the game was solved
-                $('.sudoku-container').toggleClass('valid-matrix', isValid);
-                if (isValid) {
-                    $('.valid-matrix input').attr('disabled', 'disabled');
-                }
+
 
                 // Display elapsed time
                 if (_game.config.show_solver_timer) {
@@ -536,6 +542,29 @@ var Sudoku = (function ($) {
         }
     };
 })(jQuery);
+//Function to create the dialog box when you click Confirm
+$(function () {
+    $("#dialog-confirm").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 140,
+        modal: true,
+        open: function (event, ui) {
+            $('.ui-dialog-buttonpane').find('button:contains("Confirm")').addClass('dialogbuttonconfirm');
+            $('.ui-dialog-buttonpane').find('button:contains("Cancel")').addClass('dialogbuttoncancel');
+            $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+        },
+        buttons: {
+            Confirm: function () {
+                $(this).dialog("close");
+            },
+            Cancel: function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+});
+
 
 
 
@@ -651,7 +680,7 @@ var ExpertClicked = function () {
         elapsed_seconds = elapsed_seconds + 1;
         $('#optionsDropDown').text('Time On Expert: ' + get_elapsed_time_string(elapsed_seconds));
     }, 1000);
- 
+
     ExpertPuzzle1();
 };
 

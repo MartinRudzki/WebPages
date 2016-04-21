@@ -47,10 +47,10 @@ Created: MR 02/20/2015
                                 <p><img src="img/Tutorial/Sudoku_Learning1.jpg" alt="Sudoku1" style="width: 25%; height:25%;"></p>-->
                                 <!--tutorial text found here: http://www.instructables.com/id/Sudoku%3Asolving-it-for-beginners-and-the-expirience/-->
                                 <blockquote class="text_in_menu">
-                                Your objective is to fill a 9x9 grid so that each column, each row, and each of the nine 3x3 boxes (also called blocks or regions) contains the digits from 1 to 9. 
+                                    Your objective is to fill a 9x9 grid so that each column, each row, and each of the nine 3x3 boxes (also called blocks or regions) contains the digits from 1 to 9. 
                                 </blockquote>
                                 <blockquote class="text_in_menu">
-                                A cell is the smallest block in the game. A row , column and region consists of 9 cells and the whole game consists of 81 cells. A region has checkerboard style background color. This simply makes it easier to see where regions are.
+                                    A cell is the smallest block in the game. A row , column and region consists of 9 cells and the whole game consists of 81 cells. A region has checkerboard style background color. This simply makes it easier to see where regions are.
                                 </blockquote>
                                 <p><img src="img/Tutorial/Sudoku_Learning2.jpg" alt="Sudoku2" style="width: 55%; height:55%; display: block; margin-left: auto; margin-right: auto;"></p>
                             </blockquote>
@@ -190,11 +190,14 @@ Created: MR 02/20/2015
 
         <div id="container" style=""></div>
         <div id="menu" class="sudoku-menu">
-            <button id="solve" type="button">Solve</button>
+            <button id="solve" type="button" onclick="$( '#dialog-confirm' ).dialog( 'open' )">Solve</button>
             <button id="validate">Check</button>
             <button id="reset">Reset</button>
         </div>
-
+        <div id="dialog-confirm">
+            <p class='dialogbox' style='font-weight: bold'>Are you sure?</p>
+            <p class='dialogbox'>If you confirm now your progress will be lost and replaced with the completed puzzle.</p>
+        </div>
     </body>
 
 
