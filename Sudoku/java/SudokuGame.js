@@ -655,7 +655,8 @@ var ExpertClicked = function () {
     ExpertPuzzle1();
 };
 
-var EasyPuzzle1 = function () {//puzzle found here http://www.mathinenglish.com/images/sudoku.gif
+var EasyPuzzle1 = function () {
+//puzzle found here http://www.mathinenglish.com/images/sudoku.gif
 //The code in EasyPuzzle1(), MediumPuzzle1(), HardPuzzle1(), and ExpertPuzzle1(), sets up the board with the starting numbers depending on difficulty
 //First Row
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").val(6);

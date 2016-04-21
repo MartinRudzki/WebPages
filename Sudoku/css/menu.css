@@ -219,7 +219,7 @@ body {
   text-transform: none;
   color: white;
   font-family: sans-serif;
-  font-size: 17px;
+  font-size: 19px;
   text-shadow: 0px 0px 1px #000;
 }
 #menu_scroll {
@@ -312,6 +312,8 @@ button, h1 {
 	padding: 0;
 	border: 1px #B19E98 solid;
 	background: transparent;
+  color: black;
+  font-weight: 600;
 }
 
 .sudoku-container .sudoku-input-error {
@@ -448,32 +450,35 @@ button, h1 {
 section {
 	width: 150px;
 	height: auto;
-	margin: 100px auto 0;
+	margin: 20px auto 0;
+  padding-top: 0px; /*Spacing between each volume button*/
 	position: relative;
 }
-.slider{
+.slider, .slider1, .slider2, .slider3{
 	border-width: 1px;
 	border-style: solid;
 	border-color: #333 #333 #777 #333;
 	border-radius: 25px;
 	width: 100px;
 	position: absolute;
-	height: 13px;
+	height: 12px;
 	background-color: #8e8d8d;
 	background: url('../img/Audio_Icons/bg-track.png') repeat top left;
   box-shadow: inset 0 1px 5px 0px rgba(0, 0, 0, .5), 
     				0 1px 0 0px rgba(250, 250, 250, .5);
   left: 20px;
 }
-.volume {
+.volume, .volume1, .volume2, .volume3 {
 	content: "";
 	display: inline-block;
 	width: 175px;
 	height: 25px;
-	right: -5px;
-	background: url('../img/Audio_Icons/volume.png') no-repeat 0 -5px;
+	right: -135px;
+	background: url('../img/Audio_Icons/volume3.png') no-repeat 0 -5px;
 	position: absolute;
 	margin-top: -7px;
+  
+  position: relative;
 }
 .ui-slider-handle {
 	position: absolute;
@@ -504,8 +509,7 @@ section {
 	border-radius: 25px;
 }
 
-#eq > span {
-  height: 10px;
-  float: left;
-  margin: 15px;
+.sound_text{
+  font-size: 19px;
+
 }

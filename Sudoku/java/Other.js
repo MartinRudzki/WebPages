@@ -10,19 +10,21 @@
 $(document).ready(function () {
 
 
-  $(function () {
+  $(".slider").each(function () {
     //Store frequently elements in variables
-    if ($(this).hasClass('slider')) {
 
-      var slider = $('.slider');
+    var slider = $('.slider');
+
+    //var value = slider.slider('value');
+  
 
       //Call the Slider
       slider.slider({
         //Config
         range: "min",
         min: 0,
+        max: 100,
         value: 0,
-
 
         //Slider Event
         slide: function (event, ui) { //When the slider is sliding
@@ -30,15 +32,17 @@ $(document).ready(function () {
           setVolume((ui.value) / 100);
 
           // Volume meter transition
-          var value = slider.slider('value'),
-            volume = $('.volume');
+          var value = slider.slider('value');
+     
+            volume = $('.volume');    
+           
           if (value <= 1) {
             volume.css('background-position', '0 -5px');
           }
-          else if (value <= 50) {
+          else if (value <= 25) {
             volume.css('background-position', '0 -44px');
           }
-          else if (value <= 75) {
+          else if (value <= 50) {
             volume.css('background-position', '0 -83px');
           }
           else {
@@ -46,15 +50,11 @@ $(document).ready(function () {
           };
         },
       });
-
-    };
+      var myMedia = document.createElement('audio');
+      $('#player').append(myMedia);
+      myMedia.id = "myMedia";
+      playAudio('sounds/BeachSounds.mp3', 0);
   });
-
-  var myMedia = document.createElement('audio');
-  document.getElementById('#player');
-  $('#player').append(myMedia);
-  myMedia.id = "myMedia";
-  playAudio('sounds/RainforestSounds.mp3', 0);
 
   function playAudio(fileName, myVolume) {
     myMedia.src = fileName;
@@ -67,6 +67,182 @@ $(document).ready(function () {
     var myMedia = document.getElementById('myMedia');
     myMedia.volume = myVolume;
   }
+
+ 
+  $(".slider1").each(function () {
+    //Store frequently elements in variables
+
+    var slider = $('.slider1');
+
+    //var value = slider.slider('value');
+
+
+    //Call the Slider
+    slider.slider({
+      //Config
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 0,
+
+      //Slider Event
+      slide: function (event, ui) { //When the slider is sliding
+        //Increase/decrease sound
+        setVolume1((ui.value) / 100);
+
+        // Volume meter transition
+        var value = slider.slider('value');
+
+        volume = $('.volume1');
+
+        if (value <= 1) {
+          volume.css('background-position', '0 -5px');
+        }
+        else if (value <= 25) {
+          volume.css('background-position', '0 -44px');
+        }
+        else if (value <= 50) {
+          volume.css('background-position', '0 -83px');
+        }
+        else {
+          volume.css('background-position', '0 -122px');
+        };
+      },
+    });
+    var myMedia1 = document.createElement('audio');
+    $('#player1').append(myMedia1);
+    myMedia1.id = "myMedia1";
+    playAudio1('sounds/RainforestSounds.mp3', 0);
+  });
+
+  function playAudio1(fileName, myVolume) {
+    myMedia1.src = fileName;
+    myMedia1.setAttribute('loop', 'loop');
+    setVolume1(myVolume);
+    myMedia1.play();
+  }
+
+  function setVolume1(myVolume) {
+    var myMedia = document.getElementById('myMedia1');
+    myMedia.volume = myVolume;
+  }
+
+  $(".slider2").each(function () {
+    //Store frequently elements in variables
+
+    var slider = $('.slider2');
+
+    //var value = slider.slider('value');
+
+
+    //Call the Slider
+    slider.slider({
+      //Config
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 0,
+
+      //Slider Event
+      slide: function (event, ui) { //When the slider is sliding
+        //Increase/decrease sound
+        setVolume2((ui.value) / 100);
+
+        // Volume meter transition
+        var value = slider.slider('value');
+
+        volume = $('.volume2');
+
+        if (value <= 1) {
+          volume.css('background-position', '0 -5px');
+        }
+        else if (value <= 25) {
+          volume.css('background-position', '0 -44px');
+        }
+        else if (value <= 50) {
+          volume.css('background-position', '0 -83px');
+        }
+        else {
+          volume.css('background-position', '0 -122px');
+        };
+      },
+    });
+    var myMedia2 = document.createElement('audio');
+    $('#player2').append(myMedia2);
+    myMedia2.id = "myMedia2";
+    playAudio2('sounds/RainSound.mp3', 0);
+  });
+
+  function playAudio2(fileName, myVolume) {
+    myMedia2.src = fileName;
+    myMedia2.setAttribute('loop', 'loop');
+    setVolume2(myVolume);
+    myMedia2.play();
+  }
+
+  function setVolume2(myVolume) {
+    var myMedia = document.getElementById('myMedia2');
+    myMedia.volume = myVolume;
+  }
+
+  $(".slider3").each(function () {
+    //Store frequently elements in variables
+
+    var slider = $('.slider3');
+
+    //var value = slider.slider('value');
+
+
+    //Call the Slider
+    slider.slider({
+      //Config
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 0,
+
+      //Slider Event
+      slide: function (event, ui) { //When the slider is sliding
+        //Increase/decrease sound
+        setVolume3((ui.value) / 100);
+
+        // Volume meter transition
+        var value = slider.slider('value');
+
+        volume = $('.volume3');
+
+        if (value <= 4) {
+          volume.css('background-position', '0 -5px');
+        }
+        else if (value <= 25) {
+          volume.css('background-position', '0 -44px');
+        }
+        else if (value <= 50) {
+          volume.css('background-position', '0 -83px');
+        }
+        else {
+          volume.css('background-position', '0 -122px');
+        };
+      },
+    });
+    var myMedia3 = document.createElement('audio');
+    $('#player3').append(myMedia3);
+    myMedia3.id = "myMedia3";
+    playAudio3('sounds/thunder1.mp3', 0);
+  });
+
+  function playAudio3(fileName, myVolume) {
+    myMedia3.src = fileName;
+    myMedia3.setAttribute('loop', 'loop');
+    setVolume3(myVolume);
+    myMedia3.play();
+  }
+
+  function setVolume3(myVolume) {
+    var myMedia = document.getElementById('myMedia3');
+    myMedia.volume = myVolume;
+  }
+
 
 
   /*
