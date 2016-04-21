@@ -156,6 +156,10 @@ $(document).ready(function () {
       }
     }
   });
+  $('#login').click(function () {
+	document.getElementById('currentuser').innerHTML = document.getElementById('Username2').value;
+	});
+	
   $('#solve').click(function () {
     game.solve();
   });
@@ -186,3 +190,4 @@ $(document).ready(function () {
   sound.play();
   */
 });//(document).ready
+
