@@ -18,42 +18,42 @@ $(document).ready(function () {
     //var value = slider.slider('value');
   
 
-      //Call the Slider
-      slider.slider({
-        //Config
-        range: "min",
-        min: 0,
-        max: 100,
-        value: 0,
+    //Call the Slider
+    slider.slider({
+      //Config
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 0,
 
-        //Slider Event
-        slide: function (event, ui) { //When the slider is sliding
-          //Increase/decrease sound
-          setVolume((ui.value) / 100);
+      //Slider Event
+      slide: function (event, ui) { //When the slider is sliding
+        //Increase/decrease sound
+        setVolume((ui.value) / 100);
 
-          // Volume meter transition
-          var value = slider.slider('value');
+        // Volume meter transition
+        var value = slider.slider('value');
      
-            volume = $('.volume');    
+        volume = $('.volume');    
            
-          if (value <= 1) {
-            volume.css('background-position', '0 -5px');
-          }
-          else if (value <= 25) {
-            volume.css('background-position', '0 -44px');
-          }
-          else if (value <= 50) {
-            volume.css('background-position', '0 -83px');
-          }
-          else {
-            volume.css('background-position', '0 -122px');
-          };
-        },
-      });
-      var myMedia = document.createElement('audio');
-      $('#player').append(myMedia);
-      myMedia.id = "myMedia";
-      playAudio('sounds/BeachSounds.mp3', 0);
+        if (value <= 1) {
+          volume.css('background-position', '0 -5px');
+        }
+        else if (value <= 25) {
+          volume.css('background-position', '0 -44px');
+        }
+        else if (value <= 50) {
+          volume.css('background-position', '0 -83px');
+        }
+        else {
+          volume.css('background-position', '0 -122px');
+        };
+      },
+    });
+    var myMedia = document.createElement('audio');
+    $('#player').append(myMedia);
+    myMedia.id = "myMedia";
+    playAudio('sounds/BeachSounds.mp3', 0);
   });
 
   function playAudio(fileName, myVolume) {
@@ -242,9 +242,6 @@ $(document).ready(function () {
     var myMedia = document.getElementById('myMedia3');
     myMedia.volume = myVolume;
   }
-
-
-
   /*
    Code found at:
    http://css3.bradshawenterprises.com/cfimg/
@@ -333,6 +330,11 @@ $(document).ready(function () {
       }
     }
   });
+
+  $('#login').click(function () {
+	document.getElementById('currentuser').innerHTML = document.getElementById('Username2').value;
+	});
+	
   $('#solve').click(function () {
     game.solve();
   });
@@ -363,3 +365,4 @@ $(document).ready(function () {
   sound.play();
   */
 });//(document).ready
+

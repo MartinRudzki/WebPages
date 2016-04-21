@@ -74,8 +74,8 @@ var Sudoku = (function ($) {
              * board.
              */
             solve: function () {
-				//reset the game board then solve correctly
-				_game.resetGame();
+
+
                 var isValid, starttime, endtime, elapsed;
                 // Make sure the board is valid first
                 if (!_game.validateMatrix()) {
@@ -88,17 +88,23 @@ var Sudoku = (function ($) {
                 // Check start time
                 starttime = Date.now();
 
-                // Solve the game
-                isValid = _game.solveGame(0, 0);
+                // Solve the game when the dialog box "Confirm" button is pressed
+                $('.ui-button:contains("Confirm")').click(function () {
+                    //reset the game board then solve correctly
+                    _game.resetGame();
+                    isValid = _game.solveGame(0, 0);
+                    // Visual indication of whether the game was solved
+                    $('.sudoku-container').toggleClass('valid-matrix', isValid);
+                    /*if (isValid) {
+                        $('.valid-matrix input').attr('disabled', 'disabled');
+                    }*/
+
+                });
 
                 // Get solving end time
                 endtime = Date.now();
 
-                // Visual indication of whether the game was solved
-                $('.sudoku-container').toggleClass('valid-matrix', isValid);
-                if (isValid) {
-                    $('.valid-matrix input').attr('disabled', 'disabled');
-                }
+
 
                 // Display elapsed time
                 if (_game.config.show_solver_timer) {
@@ -536,6 +542,29 @@ var Sudoku = (function ($) {
         }
     };
 })(jQuery);
+//Function to create the dialog box when you click Confirm
+$(function () {
+    $("#dialog-confirm").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 140,
+        modal: true,
+        open: function (event, ui) {
+            $('.ui-dialog-buttonpane').find('button:contains("Confirm")').addClass('dialogbuttonconfirm');
+            $('.ui-dialog-buttonpane').find('button:contains("Cancel")').addClass('dialogbuttoncancel');
+            $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+        },
+        buttons: {
+            Confirm: function () {
+                $(this).dialog("close");
+            },
+            Cancel: function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+});
+
 
 
 
@@ -651,7 +680,7 @@ var ExpertClicked = function () {
         elapsed_seconds = elapsed_seconds + 1;
         $('#optionsDropDown').text('Time On Expert: ' + get_elapsed_time_string(elapsed_seconds));
     }, 1000);
- 
+
     ExpertPuzzle1();
 };
 
@@ -662,95 +691,123 @@ var EasyPuzzle1 = function () {
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").val(6);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").val(1);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(9)>input").val(2);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(9)>input").css('font-weight', 'bold');
 //Second Row
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").val(4);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").val(6);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").val(2);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").val(7);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").css('font-weight', 'bold');
 //Third Row
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").val(3);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").val(7);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").val(8);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").css('font-weight', 'bold');
 //Fourth Row
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(2)>input").val(2);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").val(4);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(7)>input").val(9);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(7)>input").css('font-weight', 'bold');
 //Fifth Row
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").val(1);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").val(2);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").css('font-weight', 'bold');
 //Sixth Row
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(3)>input").val(3);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").val(8);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(8)>input").val(5);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(8)>input").css('font-weight', 'bold');
 //Seventh Row
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").val(9);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").val(8);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").val(4);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").css('font-weight', 'bold');
 //Eigth Row
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").val(4);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").val(3);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").val(2);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").val(9);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").css('font-weight', 'bold');
 //Ninth Row
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(1)>input").val(2);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").val(7);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").val(4);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").css('font-weight', 'bold');
 };
 
 var MediumPuzzle1 = function () {//puzzle found here http://www.sudoku.ws/standard-12.htm
@@ -758,101 +815,131 @@ var MediumPuzzle1 = function () {//puzzle found here http://www.sudoku.ws/standa
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").val(1);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(4)>input").val(3);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").val(5);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(7)>input").val(9);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(7)>input").css('font-weight', 'bold');
 //Second Row
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").val(2);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").val(7);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(8)>input").val(3);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(8)>input").css('font-weight', 'bold');
 //Third Row
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(3)>input").val(2);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").val(5);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(9)>input").val(4);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(9)>input").css('font-weight', 'bold');
 //Fourth Row
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").val(8);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").val(3);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").val(1);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").css('font-weight', 'bold');
 //Fifth Row
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").val(4);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(4)>input").val(1);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(6)>input").val(7);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(6)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").val(2);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").css('font-weight', 'bold');
 //Sixth Row
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").val(9);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").val(8);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").val(3);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").css('font-weight', 'bold');
 //Seventh Row
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(1)>input").val(1);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").val(7);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(7)>input").val(8);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(7)>input").css('font-weight', 'bold');
 //Eigth Row
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(2)>input").val(5);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").val(3);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").val(8);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").css('font-weight', 'bold');
 //Ninth Row
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(3)>input").val(8);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").val(7);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(6)>input").val(1);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(6)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").val(6);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(8)>input").css('font-weight', 'bold');
 };
 
 var HardPuzzle1 = function () {//puzzle found here http://www.sudoku.ws/hard-7.htm
@@ -860,86 +947,111 @@ var HardPuzzle1 = function () {//puzzle found here http://www.sudoku.ws/hard-7.h
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").val(3);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(6)>input").val(8);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(6)>input").css('font-weight', 'bold');
 //Second Row
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(1)>input").val(7);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(3)>input").val(8);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").val(3);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").val(2);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").val(5);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").css('font-weight', 'bold');
 //Third Row
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").val(9);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").val(1);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(8)>input").css('font-weight', 'bold');
 //Fourth Row
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").val(9);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").val(4);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(6)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").val(2);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(8)>input").css('font-weight', 'bold');
 //Fifth Row
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").val(1);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").css('font-weight', 'bold');
 //Sixth Row
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").val(7);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").val(8);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").val(9);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(9)>input").css('font-weight', 'bold');
 //Seventh Row
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").val(5);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").val(3);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(6)>input").css('font-weight', 'bold');
 //Eigth Row
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").val(8);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").val(4);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").val(7);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(6)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(7)>input").val(5);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(7)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(9)>input").val(3);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(9)>input").css('font-weight', 'bold');
 //Ninth Row
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(4)>input").val(5);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(4)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").val(6);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").css('font-weight', 'bold');
 };
 
 var ExpertPuzzle1 = function () {//puzzle found here http://www.sudoku.ws/expert-7.htm
@@ -947,94 +1059,121 @@ var ExpertPuzzle1 = function () {//puzzle found here http://www.sudoku.ws/expert
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").val(8);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(3)>input").val(2);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").val(6);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(8)>input").val(4);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(1)>td:nth-child(8)>input").css('font-weight', 'bold');
 //Second Row
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").val(5);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").val(8);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(7)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").val(3);
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(2)>td:nth-child(9)>input").css('font-weight', 'bold');
 //Third Row
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").val(5);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(6)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(7)>input").val(7);
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(3)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(3)>td:nth-child(7)>input").css('font-weight', 'bold');
 //Fourth Row
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(3)>input").val(8);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").val(9);
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(4)>td:nth-child(5)>input").css('font-weight', 'bold');
 //Fifth Row
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(1)>input").val(9);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").val(7);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").val(8);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").val(5);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(7)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(9)>input").val(4);
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(5)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(5)>td:nth-child(9)>input").css('font-weight', 'bold');
 
 //Sixth Row
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").val(1);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(7)>input").val(6);
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(6)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(6)>td:nth-child(7)>input").css('font-weight', 'bold');
 //Seventh Row
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(3)>input").val(1);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").val(9);
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").keyup();
     $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(7)>td:nth-child(4)>input").css('font-weight', 'bold');
 
 //Eigth Row
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").val(4);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(1)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").val(6);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(3)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").val(5);
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").keyup();
     $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(8)>td:nth-child(8)>input").css('font-weight', 'bold');
 //Ninth Row
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(2)>input").val(8);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(2)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(2)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(2)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").val(7);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(5)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(7)>input").val(4);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(7)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(7)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(7)>input").css('font-weight', 'bold');
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").val(2);
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").keyup();
     $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").prop('disabled', true);
+    $("#container>table>tbody>tr:nth-child(9)>td:nth-child(9)>input").css('font-weight', 'bold');
 };
 
 $(window).load(function () {

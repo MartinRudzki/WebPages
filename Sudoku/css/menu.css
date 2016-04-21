@@ -23,170 +23,237 @@ Created: Martin_Rudzki@student.uml.edu 02/20/2016
 
 */
 body {
-	background-image: url("");
-	background-size: cover;
-	background-repeat: no-repeat;
-  background-color: black;
-  margin:  0px;
-  padding: 0px;
-  width: 100%;
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    margin:  0px;
+    padding: 0px;
+    width: 100%;
 }
 /********************Top Page CSS**********************/
 .top_page {
-  vertical-align: middle;
-  text-align: center;
+    vertical-align: middle;
+    text-align: center;
 }
+
+.dialogbuttonconfirm{
+    position: absolute;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    top: 168;
+    left: 0;
+    float: left;
+    padding: 28px;
+    background: #9A73A9;
+    background: -moz-linear-gradient(top, #9A73A9 0%, #7A4A8D 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9A73A9), color-stop(100%,#7A4A8D));
+    background: -webkit-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -o-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -ms-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9A73A9', endColorstr='#7A4A8D',GradientType=0 );
+}
+
+
+.dialogbuttoncancel{
+    position: absolute;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    top: 168;
+    right: 0;
+    float: right;
+    padding: 28px;
+    background: #9A73A9;
+    background: -moz-linear-gradient(top, #9A73A9 0%, #7A4A8D 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9A73A9), color-stop(100%,#7A4A8D));
+    background: -webkit-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -o-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -ms-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9A73A9', endColorstr='#7A4A8D',GradientType=0 );
+}
+
+
+.ui-dialog-buttonset{
+    //background-color: #9A73A9;    
+}
+
+.dialogbox{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 24px;
+    margin: 0px;
+    padding: 5px;
+    background: #9A73A9;
+    background: -moz-linear-gradient(top, #9A73A9 0%, #7A4A8D 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9A73A9), color-stop(100%,#7A4A8D));
+    background: -webkit-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -o-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -ms-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9A73A9', endColorstr='#7A4A8D',GradientType=0 );
+}
+
+
 /**********************Menu CSS************************/
 #cssmenu {
-  margin-left:auto;
-  margin-right: auto;
-  padding:0;
-  margin:8px;
-  color: #000000;
-  width:100%;
-  border:1px; 
-  clear:both;
-  text-align: center;
- 
+    margin-left:auto;
+    margin-right: auto;
+    padding:0;
+    margin:8px;
+    color: #000000;
+    width:100%;
+    border:1px; 
+    clear:both;
+    text-align: center;
+
 }
+
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
 /*Font below*/
 #cssmenu ul li a {
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 16px;
-  color: black;
-  font-weight: bolder;
-  -webkit-transition: all ease .3s;
-  -o-transition: all ease .3s;
-  -moz-transition: all ease .3s;
-  -ms-transition: all ease .3s;
-  transition: all ease .3s;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 16px;
+    color: black;
+    font-weight: bolder;
+    -webkit-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    transition: all ease .3s;
 }
 #cssmenu:before,
 #cssmenu:after,
 #cssmenu > ul:before,
 #cssmenu > ul:after {
-  content: "";
-  display: table;
+    content: "";
+    display: table;
 }
 #cssmenu:after,
 #cssmenu > ul:after {
-  clear: both;
+    clear: both;
 }
 #cssmenu a {
-   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 /*Menu bar color*/
 #cssmenu ul {
-  border-radius: 3px;
-  border: 1px solid #2b4479;
-  border: 1px solid #2d4373;
-  -webkit-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
-  -o-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
-  -moz-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
-  -ms-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
-  box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
-  /*Helps to Center Menu*/
-  display: inline-block;  
-  /* 
-  Below background code found at
-  http://alijafarian.com/css-transparent-drop-down-menu/
-  */
-  background: #9A73A9;
-  background: -moz-linear-gradient(top, #9A73A9 0%, #7A4A8D 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9A73A9), color-stop(100%,#7A4A8D));
-  background: -webkit-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
-  background: -o-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
-  background: -ms-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
-  background: linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9A73A9', endColorstr='#7A4A8D',GradientType=0 );
+    border-radius: 3px;
+    border: 1px solid #2b4479;
+    border: 1px solid #2d4373;
+    -webkit-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    -o-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    -moz-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    -ms-box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 1px 2px rgba(2, 2, 2, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    /*Helps to Center Menu*/
+    display: inline-block;  
+    /* 
+    Below background code found at
+    http://alijafarian.com/css-transparent-drop-down-menu/
+    */
+    background: #9A73A9;
+    background: -moz-linear-gradient(top, #9A73A9 0%, #7A4A8D 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9A73A9), color-stop(100%,#7A4A8D));
+    background: -webkit-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -o-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -ms-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9A73A9', endColorstr='#7A4A8D',GradientType=0 );
 }
 /*Menu list horizontal*/
 #cssmenu ul > li {
-  float: left;
-  margin: 0 auto;
-  list-style: none;
-  text-align: left;
+    float: left;
+    margin: 0 auto;
+    list-style: none;
+    text-align: left;
 }
 /*Menu thickness*/
 #cssmenu ul > li > a {
-  display: block;
-  text-decoration: none;
-  padding: 15px 35px;
-  position: relative;
+    display: block;
+    text-decoration: none;
+    padding: 15px 35px;
+    position: relative;
 }
 /*Hover Color*/
 #cssmenu ul > li > a:hover{
-  background: #83518E;
-  color: white; /*Text will turn white*/
-  -webkit-box-shadow: inset 0 0 1px #1e2e4f;
-  -o-box-shadow: inset 0 0 1px #1e2e4f;
-  -moz-box-shadow: inset 0 0 1px #1e2e4f;
-  -ms-box-shadow: inset 0 0 1px #1e2e4f;
-  box-shadow: inset 0 0 1px #1e2e4f;
-  -webkit-transition: all ease .3s;
-  -o-transition: all ease .3s;
-  -moz-transition: all ease .3s;
-  -ms-transition: all ease .3s;
-  transition: all ease .3s;
+    background: #83518E;
+    color: white; /*Text will turn white*/
+    -webkit-box-shadow: inset 0 0 1px #1e2e4f;
+    -o-box-shadow: inset 0 0 1px #1e2e4f;
+    -moz-box-shadow: inset 0 0 1px #1e2e4f;
+    -ms-box-shadow: inset 0 0 1px #1e2e4f;
+    box-shadow: inset 0 0 1px #1e2e4f;
+    -webkit-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    transition: all ease .3s;
 }
 #cssmenu ul > li > a:hover:before {
-  content: "";
-  z-index: 2;
-  position: absolute;
-  border: 1px solid white;
-  border-top: 0;
-  border-bottom: 0;
-  border-right: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: -1px;
-  opacity: .2;
+    content: "";
+    z-index: 2;
+    position: absolute;
+    border: 1px solid white;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -1px;
+    opacity: .2;
 }
 #cssmenu ul > li > a:hover:after {
-  content: "";
-  z-index: 2;
-  position: absolute;
-  border: 1px solid white;
-  border-top: 0;
-  border-bottom: 0;
-  border-left: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: -1px;
-  opacity: .2;
+    content: "";
+    z-index: 2;
+    position: absolute;
+    border: 1px solid white;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -1px;
+    opacity: .2;
 }
 /*Hide menu bar*/
 #cssmenu ul li ul {
-  opacity: 1;
-  display: none;
-  position: absolute;
-  border-radius: 0 0 3px 3px;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  -moz-box-shadow: none;
-  -ms-box-shadow: none;
-  box-shadow: none;
+    opacity: 1;
+    display: none;
+    position: absolute;
+    border-radius: 0 0 3px 3px;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
 
 }
 #cssmenu ul li ul {
-  display: none;
-  /*here is where we change the tutorials width */
-  //width: 55%;
+    display: none;
+    /*here is where we change the tutorials width */
+    //width: 55%;
 }
 /*Drop down menu vertical */
 #cssmenu > ul > li > ul > li {
-  float: none;
-  position: relative;
+    float: none;
+    position: relative;
 }
 /* Currently not using; if there are sub-menus with in the menu, then uncomment
 /*hide menu for sub list
@@ -212,7 +279,7 @@ body {
 }
 */
 /************************Special Menu Items************************/
-.text_in_menu{
+.text_in_menu {
   text-transform: none;
   color: white;
   font-family: sans-serif;
@@ -223,10 +290,10 @@ body {
   text-shadow: 0px 0px 1px #000;
 }
 #menu_scroll {
-  height:75%; 
-  width:40%;
-  overflow:hidden; 
-  overflow-y:scroll;
+    height:75%; 
+    width:40%;
+    /*overflow:hidden; */
+    /* overflow-y:scroll;*/
 }
 /*CSS for picture transition*/
 /*Code found at:
@@ -236,75 +303,76 @@ body {
 
 /*Spans are cliackable*/
 #cf7_controls span {
-  padding-right:2em;
-  cursor:pointer;
+    padding-right:2em;
+    cursor:pointer;
 }
 /* To make image flush with the top of the page*/
 #cf7 {
-  z-index:-1; /*Sets picture to be in the very back.*/
-  width: 100%;
-  top:0px;
-  position: fixed;
-  background-size: cover;
+    z-index:-1; /*Sets picture to be in the very back.*/
+    width: 100%;
+    top:0px;
+    position: fixed;
+    background-size: cover;
 }
 /*Make image transparent*/
 #cf7 img {
-  width: 100%;
-  position:absolute;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-  opacity:0;
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
+    width: 100%;
+    position:absolute;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
 }
 /*img.opaque = only apply to img with a class opaque*/
 #cf7 img.opaque {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=1);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=1);
 }
 
 /************************Game Board CSS*************************/
 button, h1 {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .sudoku-menu {
-	width: 50%;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sudoku-menu button {
-	font-size: 24px;
-	margin: 10px;
-	padding: 5px;
+    font-size: 24px;
+    margin: 10px;
+    padding: 5px;
     background: #9A73A9;
-  background: -moz-linear-gradient(top, #9A73A9 0%, #7A4A8D 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9A73A9), color-stop(100%,#7A4A8D));
-  background: -webkit-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
-  background: -o-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
-  background: -ms-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
-  background: linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9A73A9', endColorstr='#7A4A8D',GradientType=0 );
+    background: -moz-linear-gradient(top, #9A73A9 0%, #7A4A8D 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9A73A9), color-stop(100%,#7A4A8D));
+    background: -webkit-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -o-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: -ms-linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    background: linear-gradient(top, #9A73A9 0%,#7A4A8D 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9A73A9', endColorstr='#7A4A8D',GradientType=0 );
 }
 
 .sudoku-container {
-	border: 5px solid #666;
-	margin-left: auto;
-	margin-right: auto;
-  margin-top: 20px;
+    border: 5px solid #666;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 .sudoku-container td {
-	margin: 0;
+    margin: 0;
 }
 .sudoku-container input {
+
 	width: 40px;
 	height: 40px;
 	text-align: center;
@@ -313,15 +381,14 @@ button, h1 {
 	border: 1px #B19E98 solid;
 	background: transparent;
   color: black;
-  font-weight: 600;
 }
 
 .sudoku-container .sudoku-input-error {
-	background: #ffc9d7;
+    background: #ffc9d7;
 }
 
 .sudoku-container.valid-matrix {
-	border: 5px solid #7edb37;
+    border: 5px solid #7edb37;
 }
 
 /*Color for 9x9 square on game board:
@@ -329,125 +396,126 @@ button, h1 {
   --- --,Center Center,--------
   Bottom Left,----,Bottom Right*/
 .sudoku-section-one {
-	background: #B19E98;
+    background: #B19E98;
 }
 /*Color for 9x9 square on game board:
   --------,Top middle,-----------
   Left Middle,------,Right Middle
   --------,Bottom Middle,--------
-  */
+*/
 .sudoku-section-two {
-	background: #E8E8E8;
+    background: #E8E8E8;
 }
 /*************************TEMP*******************************/
 /*Difficulty buttons*/
 .button {
-  background-color: #4CAF50; /* Green */
-  width: 9em;  height: 4em;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 16px;
-  margin-top: 5px;
+    background-color: #4CAF50; /* Green */
+    width: 9em;  height: 4em;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin-top: 5px;
 
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 3px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 3px;
 }
 /*Easy*/
 .button1 {
-  background-color: #4CAF50; 
-  color: black; 
-  border: 2px solid #4CAF50;
+    background-color: #4CAF50; 
+    color: black; 
+    border: 2px solid #4CAF50;
 }
 
 .button1:hover {
-  background-color: #4CAF50;
-  color: black;
+    background-color: #4CAF50;
+    color: black;
 }
 /*Medium*/
 .button2 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
 }
 
 .button2:hover {
-  background-color: #008CBA;
-  color: black;
+    background-color: #008CBA;
+    color: black;
 }
 /*Hard*/
 .button3 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #f44336;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
 }
 
 .button3:hover {
-  background-color: #f44336;
-  color: black;
+    background-color: #f44336;
+    color: black;
 }
 /*Expert*/
 
 .button5 {
-  background-color: white;
-  color: black;
-  border: 2px solid #555555;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
 }
 
 .button5:hover {
-  background-color: #555555;
-  color: black;
+    background-color: #555555;
+    color: black;
 }
 /*Grow Picture in options menu*/
 .fade span img {
-  /*Shadow for picture*/
-  -webkit-transition: all .4s ease; /* Safari and Chrome */
-  -moz-transition: all .4s ease; /* Firefox*/ 
-  -o-transition: all .4s ease; /* IE 9*/ 
-  -ms-transition: all .4s ease; /* Opera*/ 
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    /*Shadow for picture*/
+    -webkit-transition: all .4s ease; /* Safari and Chrome */
+    -moz-transition: all .4s ease; /* Firefox*/ 
+    -o-transition: all .4s ease; /* IE 9*/ 
+    -ms-transition: all .4s ease; /* Opera*/ 
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 .fade span img:hover {
-  /*Grow Image*/
-  -webkit-transform:scale(1.1); /* Safari and Chrome*/ 
-  -moz-transform:scale(1.1); /* Firefox*/ 
-  -ms-transform:scale(1.1); /* IE 9*/ 
-  -o-transform:scale(1.1); /* Opera*/ 
-  transform:scale(1.1);
-  transform: scale(1.1);
-  /*Shadow Image*/
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    /*Grow Image*/
+    -webkit-transform:scale(1.1); /* Safari and Chrome*/ 
+    -moz-transform:scale(1.1); /* Firefox*/ 
+    -ms-transform:scale(1.1); /* IE 9*/ 
+    -o-transform:scale(1.1); /* Opera*/ 
+    transform:scale(1.1);
+    transform: scale(1.1);
+    /*Shadow Image*/
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 
 #behind_gameboard{
-  position:relative;
-  margin: auto;
-  margin-top:10px;
-  margin-bottom:-428px;
-  width: 404px;
-  height: 404px;
-  background: lightgrey;
-  
-  /*
-   filter: blur(5px);
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
+    position:relative;
+    margin: auto;
+    margin-top:10px;
+    margin-bottom:-428px;
+    width: 404px;
+    height: 404px;
+    background: lightgrey;
+
+    /*
+     filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
     */
-  opacity: 0.9;
-  z-index: -1;
+    opacity: 0.9;
+    z-index: -1;
 }
 
 section {
+
 	width: 150px;
 	height: auto;
 	margin: 20px auto 0;
@@ -477,36 +545,36 @@ section {
 	background: url('../img/Audio_Icons/volume3.png') no-repeat 0 -5px;
 	position: absolute;
 	margin-top: -7px;
-  
   position: relative;
 }
+
 .ui-slider-handle {
-	position: absolute;
-	z-index: 2;
-	width: 25px;
-	height: 25px;
-	cursor: pointer;
-	background: url('../img/Audio_Icons/handle.png') no-repeat 100% 100%;
-	font-weight: bold;
-	color: #1C94C4;
-	outline: none;
-	top: -7px;
-	margin-left: -12px;
+    position: absolute;
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background: url('../img/Audio_Icons/handle.png') no-repeat 100% 100%;
+    font-weight: bold;
+    color: #1C94C4;
+    outline: none;
+    top: -7px;
+    margin-left: -12px;
 }
 .ui-slider-range {
-	background: #ffffff; /* Old browsers */
-	background: -moz-linear-gradient(top,  #ffffff 0%, #eaeaea 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eaeaea)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* IE10+ */
-	background: linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
-	position: absolute;
-	border: 0;
-	top: 0;
-	height: 100%;
-	border-radius: 25px;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #eaeaea 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eaeaea)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* IE10+ */
+    background: linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+    position: absolute;
+    border: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 25px;
 }
 
 .sound_text{

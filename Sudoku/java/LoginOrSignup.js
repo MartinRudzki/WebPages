@@ -63,3 +63,7 @@ $(document).ready(function () {
 
 
 });
+
+function login(){
+	document.getElementById(currentuser) = document.getElementById(Username2).value();
+};
