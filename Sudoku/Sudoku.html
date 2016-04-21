@@ -151,7 +151,13 @@ Created: MR 02/20/2015
                 <span><img src="img/Backgrounds/metal_mini.jpg" style="width:75px; height:75px;" /></span>
               </p>
             </blockquote>
-            <blockquote id="optionsDropDown"></blockquote>
+            <div >
+              <!--<span class="span3" tabindex="0" style="padding-bottom: 10px;">Hide Me</span>
+              <span class="span2" tabindex="0">Show Me</span>
+              
+              -->
+              <blockquote class="text_in_menu alert" id="optionsDropDown"></blockquote>
+            </div>
           </li>
         </ul>
       </li>
@@ -172,10 +178,14 @@ Created: MR 02/20/2015
         <a href='#' class="drop_down"><span>Login/Signup</span></a>
         <ul>
           <li>
-            <div class="text_in_menu" style="margin-left: 10%; width:300px">
+            <div class="text_in_menu" style="margin-left: 10%; width:187px; padding-left: 10px;">
               <div class="text_in_menu">
+                <p></p>
+                <div>Logged in as:</div>
                 <form id="theForm2" name="theForm2" style="width:50%">
-                  <div id=currentuser>______ </div>
+                  <br />
+                  <div id=currentuser>Login-below</div>
+                 
                   <h3>Login</h3>
                   <label for="Username2"> Username:  </label>
                   <input type="text" name="Username2" id="Username2">
@@ -188,13 +198,13 @@ Created: MR 02/20/2015
                 </form>
               </div>
               <div>
-                <br />
+                
                 <h3>Sign-Up</h3>
                 <form id="theForm1" name="theForm1">
-                  <label for="Username1"> username:</label>
+                  <label for="Username1"> Username:</label>
                   <input type="text" name="Username1" id="Username1">
                   <div id="errUsername1">&nbsp</div>
-                  <label for="Password1"> password:</label>
+                  <label for="Password1"> Password:</label>
                   <input type="password" name="Password1" id="Password1">
                   <div>&nbsp</div>
                   <input type="button" value="Submit" onclick="NewAccount();">
@@ -220,6 +230,8 @@ Created: MR 02/20/2015
     <p class='dialogbox' style='font-weight: bold'>Are you sure?</p>
     <p class='dialogbox'>If you confirm now your progress will be lost and replaced with the completed puzzle.</p>
   </div>
+
+  <blockquote class="alert" id="optionsDropDown" style="z-index:10;"></blockquote>
 </body>
 
 </html>
