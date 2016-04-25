@@ -1,0 +1,18 @@
+/*
+Email: Martin_Rudzki@student.uml.edu
+CopyRight (c) 2016 by Martin Rudzki. You are free to use any of my code here.
+Created: MR 04/25/2016
+*/
+body {
+
+  background-color: black;
+  margin:  0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.mySlides {display:none}
+
+#slide_things {
+  margin-top: 200px;
+}
