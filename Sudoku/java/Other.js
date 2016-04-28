@@ -1,10 +1,11 @@
 /*
  File: ~Sudoku/java/Other.js
- Edit by: Martin Rudzk, UMass Lowell, GUI Programming 2
- Email: Martin_Rudzki@student.uml.edu
- CopyRight (c) 2016 by Martin Rudzki. You are free to use any of my code here.
- Description: None of this code deals with the gameboard.
- Created: MR 03/13/2016
+ Developers: Dylan Wetherald. Martin Rudzki, Michael Bejaniance
+ Class: UMass Lowell, GUI Programming 2
+ Email: Dylan_Wetherald@student.uml.edu, Martin_Rudzki@student.uml.edu, Michael_Benjaniance@student.uml.edu
+ CopyRight (c) 2016. You are free to use any of our code here.
+ Description: None of this code deals with the game board.
+ Created: by MR 03/13/2016
  */
 
 $(document).ready(function () {
@@ -252,9 +253,9 @@ $(document).ready(function () {
    Switching between backgrounds
    
    How?
-   In HTML all background images are loaded when accessing webpage. When you select a new
+   In HTML all background images are loaded when accessing the webpage. When you select a new
    background the class "opaque" is removed from the current image and then added to the
-   image you selected. Basically removeing the CSS from one photo and adding it to another.
+   image you selected. Basically removing the CSS from one photo and adding it to another.
    */
   $("#cf7_controls").on('click', 'span', function () {
     $("#cf7 img").removeClass("opaque");
@@ -274,10 +275,10 @@ $(document).ready(function () {
    Toggels drop down menu
    
    How?
-   Once clicked on the menu item you want. It then grabs all of the menu sibling "ul" elements and 
+   Once you click on the menu item you want it grabs all of the menu sibling "ul" elements and 
    sees if they are hidden. If the one you clicked on is hidden then add a class "open" and toggle
-   the menu down. The next time you go back into the if statement it will hide all "open" class elements
-   and again toggle the one you seleced.
+   the menu down. The next time you go back into the "if" statement it will hide all "open" class elements
+   and again toggle the one you selected.
    */
   $("a.drop_down").click(function () {
     var $ul = $(this).siblings("ul");
@@ -285,7 +286,7 @@ $(document).ready(function () {
       $('.open').hide();
       $ul.addClass('open').slideToggle();
     }
-      /*If you click on your slef, then close your menu.*/
+      /*If you click on yourself, then close your menu.*/
     else {
       $ul.hide();
     }
@@ -310,11 +311,10 @@ $(document).ready(function () {
     transform: 'scale(1.1)',
   });
 
-
   $("#solve").trigger('mouseenter');
-  /* Michael please comment code*/
+  
   var game = Sudoku.getInstance();
-  $('#container').append(game.getGameBoard());
+  $('#container').append(game.getGameBoard()); //add the game board to the page
 
   // only numbers allowed in game board
   // credit to https://snipt.net/GerryEng/jquery-making-textfield-only-accept-numeric-values/
@@ -333,6 +333,10 @@ $(document).ready(function () {
 
   $('#login').click(function () {
 	document.getElementById('currentuser').innerHTML = document.getElementById('Username2').value;
+	});
+	
+	$('#logout').click(function () {
+	document.getElementById('currentuser').innerHTML = "Logged out";
 	});
 	
   $('#solve').click(function () {
