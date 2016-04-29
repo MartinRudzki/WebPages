@@ -186,11 +186,11 @@ Created: MR 02/20/2015
                   <br />
                   <div id=currentuser>Login-below</div>
                  
-                  <h3>Login</h3>
-                  <label for="Username2"> Username:  </label>
+                  <h3 id="logintext">Login</h3>
+                  <label for="Username2" id="Username2text"> Username:  </label>
                   <input type="text" name="Username2" id="Username2">
                   <div>&nbsp</div>
-                  <label for="Password2"> Password:  </label>
+                  <label for="Password2" id="Password2text"> Password:  </label>
                   <input type="password" name="Password2" id="Password2">
                   <div>&nbsp</div>
                   <button id="login" type="button">Login</button>
@@ -199,7 +199,7 @@ Created: MR 02/20/2015
                 </form>
               </div>
               <div>
-                <h3>Sign-Up</h3>
+                <h3 id="signuptext">Sign-Up</h3>
                 <form id="theForm1" name="theForm1">
                   <label for="Username1"> Username:</label>
                   <input type="text" name="Username1" id="Username1">
@@ -207,7 +207,7 @@ Created: MR 02/20/2015
                   <label for="Password1"> Password:</label>
                   <input type="password" name="Password1" id="Password1">
                   <div>&nbsp</div>
-                  <input type="button" value="Submit" onclick="NewAccount();">
+                  <button type="button" id="signup">Submit</button>
                 </form>
               </div>
             </div>

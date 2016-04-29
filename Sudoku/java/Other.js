@@ -329,34 +329,54 @@ $(document).ready(function () {
   });
 
   $('#login').click(function () {
-	document.getElementById('currentuser').innerHTML = document.getElementById('Username2').value;
+  //This is horrible, but we hard coded a login for simplicity sake
+  if ( (document.getElementById('Username2').value == "Zen") && (document.getElementById('Password2').value == "garden")) {
+		document.getElementById('currentuser').innerHTML = document.getElementById('Username2').value;
+		document.getElementById('Username2').value = '';
+		document.getElementById('Password2').value = '';
+	}
+	else {
+		alert("Incorrect Username or Password");
+	}
 	});
 	
 	$('#logout').click(function () {
-	document.getElementById('currentuser').innerHTML = "Logged out";
+		document.getElementById('currentuser').innerHTML = "Logged out";
+		document.getElementById('Username2').value = '';
+		document.getElementById('Password2').value = '';
+	});
+	
+	$('#signup').click(function () {
+	alert("Not implimented, sorry!");
 	});
 	
   $('#solve').click(function () {
     game.solve();
   });
+  
   $('#validate').click(function () {
     game.validate();
   });
+  
   $('#reset').click(function () {
     game.reset();
   });
+  
   $('#EasyButton').click(function () {
     game.reset();
     EasyClicked();
   });
+  
   $('#MediumButton').click(function () {
     game.reset();
     MediumClicked();
   });
+  
   $('#HardButton').click(function () {
     game.reset();
     HardClicked();
   });
+  
   $('#ExpertButton').click(function () {
     game.reset();
     ExpertClicked();
