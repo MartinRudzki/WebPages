@@ -10,7 +10,7 @@
 
 $(document).ready(function () {
 
-
+	//The sliders allow us to control each individual mp3
   $(".slider").each(function () {
     //Store frequently elements in variables
 
@@ -314,14 +314,15 @@ $(document).ready(function () {
 
   // only numbers allowed in game board
   // credit to https://snipt.net/GerryEng/jquery-making-textfield-only-accept-numeric-values/
+  // then edited to include keypad as well
   $("#container").keydown(function (event) {
     // Allow only backspace and delete
     if (event.keyCode == 46 || event.keyCode == 8) {
       // let it happen, don't do anything
     }
     else {
-      // Ensure that it is a number and stop the keypress
-      if (event.keyCode < 48 || event.keyCode > 57) {
+      // Ensure that it is not a number and stop the keypress
+      if (!((event.keyCode >= 49 && event.keyCode <= 57) || (event.keyCode >= 97 && event.keyCode <= 105))) {
         event.preventDefault();
       }
     }
