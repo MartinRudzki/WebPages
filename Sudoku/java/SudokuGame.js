@@ -566,7 +566,6 @@ $(function () {
     });
 });
 
-
 //Code found at: http://stackoverflow.com/questions/2604450/how-to-create-a-jquery-clock-timer
 //Figures out the elapsed time
 function get_elapsed_time_string(total_seconds) {
@@ -592,15 +591,13 @@ function get_elapsed_time_string(total_seconds) {
 
     return currentTimeString;
 }
+
 //Displays timer
 var elapsed_seconds = 0;
 var timer = setInterval(function () {
     elapsed_seconds = elapsed_seconds + 1;
     $('#clock').text('Time On Easy: ' + get_elapsed_time_string(elapsed_seconds));
 }, 1000);
-
-
-
 
 var difficulty = "easy";
 var EasyClicked = function () {
@@ -611,13 +608,13 @@ var EasyClicked = function () {
     $("#ExpertButton").css("background-color", "white");
     $("#ExpertButton").css("color", "black");
 
-
     clearInterval(timer);//Pause the timer
-    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    $('#clock').empty();//Delete the current time from #clock
     elapsed_seconds = 0;//Reset time to 0
+    $('#clock').text('Time On Easy: ' + get_elapsed_time_string(elapsed_seconds));
     timer = setInterval(function () {//Begin timer again
         elapsed_seconds = elapsed_seconds + 1;
-        $('#optionsDropDown').text('Time On Easy: ' + get_elapsed_time_string(elapsed_seconds));
+        $('#clock').text('Time On Easy: ' + get_elapsed_time_string(elapsed_seconds));
     }, 1000);
 
     EasyPuzzle1();//Set the puzzle to easy
@@ -633,11 +630,12 @@ var MediumClicked = function () {
 
 
     clearInterval(timer);//Pause the timer
-    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    $('#clock').empty();//Delete the current time from #clock
     elapsed_seconds = 0;//Reset time to 0
+    $('#clock').text('Time On Medium: ' + get_elapsed_time_string(elapsed_seconds));
     timer = setInterval(function () {//Begin timer again
         elapsed_seconds = elapsed_seconds + 1;
-        $('#optionsDropDown').text('Time On Medium: ' + get_elapsed_time_string(elapsed_seconds));
+        $('#clock').text('Time On Medium: ' + get_elapsed_time_string(elapsed_seconds));
     }, 1000);
 
     MediumPuzzle1();//Set the puzzle to medium
@@ -652,11 +650,12 @@ var HardClicked = function () {
     $("#ExpertButton").css("color", "black");
 
     clearInterval(timer);//Pause the timer
-    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    $('#clock').empty();//Delete the current time from #clock
     elapsed_seconds = 0;//Reset time to 0
+    $('#clock').text('Time On Hard: ' + get_elapsed_time_string(elapsed_seconds));
     timer = setInterval(function () {//Begin timer again
         elapsed_seconds = elapsed_seconds + 1;
-        $('#optionsDropDown').text('Time On Hard: ' + get_elapsed_time_string(elapsed_seconds));
+        $('#clock').text('Time On Hard: ' + get_elapsed_time_string(elapsed_seconds));
     }, 1000);
 
     HardPuzzle1();//Set the puzzle to hard
@@ -672,11 +671,12 @@ var ExpertClicked = function () {
 
 
     clearInterval(timer);//Pause the timer
-    $('#optionsDropDown').empty();//Delete the current time from #optionsDropDown
+    $('#clock').empty();//Delete the current time from #clock
     elapsed_seconds = 0;//Reset time to 0
+    $('#clock').text('Time On Expert: ' + get_elapsed_time_string(elapsed_seconds));
     timer = setInterval(function () {//Begin timer again
         elapsed_seconds = elapsed_seconds + 1;
-        $('#optionsDropDown').text('Time On Expert: ' + get_elapsed_time_string(elapsed_seconds));
+        $('#clock').text('Time On Expert: ' + get_elapsed_time_string(elapsed_seconds));
     }, 1000);
 
     ExpertPuzzle1();
