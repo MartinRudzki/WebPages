@@ -2,8 +2,8 @@
  * A Javascript implementation of a Sudoku game, including a
  * backtracking algorithm solver. For example usage see the
  * attached index.html demo.
- *
- * @author Moriel Schottlender
+ * base code by: Moriel Schottlender
+ * Edited for our project by: Martin Rudzki, Dylan Wetherald, and Michael Michael Bejaniance
  */
 var Sudoku = (function ($) {
     var _instance, _game,
@@ -687,6 +687,7 @@ var ExpertClicked = function () {
 var EasyPuzzle1 = function () {
 //puzzle found here http://www.mathinenglish.com/images/sudoku.gif
 //The code in EasyPuzzle1(), MediumPuzzle1(), HardPuzzle1(), and ExpertPuzzle1(), sets up the board with the starting numbers depending on difficulty
+// Have to hard code this in because there is no way to randomly generate a puzzle.
 //First Row
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").val(6);
     $("#container>table>tbody>tr:nth-child(1)>td:nth-child(2)>input").keyup();

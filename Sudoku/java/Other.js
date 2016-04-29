@@ -1,6 +1,6 @@
 /*
  File: ~Sudoku/java/Other.js
- Developers: Dylan Wetherald. Martin Rudzki, Michael Bejaniance
+ Developers: Dylan Wetherald, Martin Rudzki, and Michael Bejaniance
  Class: UMass Lowell, GUI Programming 2
  Email: Dylan_Wetherald@student.uml.edu, Martin_Rudzki@student.uml.edu, Michael_Benjaniance@student.uml.edu
  CopyRight (c) 2016. You are free to use any of our code here.
@@ -246,8 +246,6 @@ $(document).ready(function () {
   /*
    Code found at:
    http://css3.bradshawenterprises.com/cfimg/
-   Martin_Rudzki@student.uml.edu
-   Created: 3/13/2016
    
    What does it do? 
    Switching between backgrounds
@@ -268,8 +266,6 @@ $(document).ready(function () {
   /*
    Code found at:
    http://stackoverflow.com/questions/21524210/jquery-only-one-drop-down-menu-opened-at-a-time
-   Martin_Rudzki@student.uml.edu
-   Created: 3/17/2016
    
    What does it do? 
    Toggels drop down menu
@@ -364,9 +360,5 @@ $(document).ready(function () {
     game.reset();
     ExpertClicked();
   });
-  /*
-  var sound = $("#beach_audio")[0];
-  sound.play();
-  */
 });//(document).ready
 
