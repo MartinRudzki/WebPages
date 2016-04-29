@@ -542,6 +542,7 @@ var Sudoku = (function ($) {
         }
     };
 })(jQuery);
+
 //Function to create the dialog box when you click Confirm
 $(function () {
     $("#dialog-confirm").dialog({
@@ -564,9 +565,6 @@ $(function () {
         }
     });
 });
-
-
-
 
 
 //Code found at: http://stackoverflow.com/questions/2604450/how-to-create-a-jquery-clock-timer
@@ -598,7 +596,7 @@ function get_elapsed_time_string(total_seconds) {
 var elapsed_seconds = 0;
 var timer = setInterval(function () {
     elapsed_seconds = elapsed_seconds + 1;
-    $('#optionsDropDown').text('Time On Easy: ' + get_elapsed_time_string(elapsed_seconds));
+    $('#clock').text('Time On Easy: ' + get_elapsed_time_string(elapsed_seconds));
 }, 1000);
 
 

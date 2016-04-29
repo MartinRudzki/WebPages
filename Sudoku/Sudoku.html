@@ -150,6 +150,9 @@ Created: MR 02/20/2015
                 <span><img src="img/Backgrounds/rainforest_mini.jpg" style="width:75px; height:75px;" /></span>
                 <span><img src="img/Backgrounds/metal_mini.jpg" style="width:75px; height:75px;" /></span>
               </p>
+              <div style="text-align: center">
+              <button id="clockToggle" onclick="$('#clock').toggle()">Toggle Clock</button>
+              </div>
             </blockquote>
             <div >
               <!--<span class="span3" tabindex="0" style="padding-bottom: 10px;">Hide Me</span>
@@ -226,12 +229,13 @@ Created: MR 02/20/2015
     <button id="validate">Check</button>
     <button id="reset">Reset</button>
   </div>
+  
   <div id="dialog-confirm">
     <p class='dialogbox' style='font-weight: bold'>Are you sure?</p>
     <p class='dialogbox'>If you confirm now your progress will be lost and replaced with the completed puzzle.</p>
   </div>
-
   <blockquote class="alert" id="optionsDropDown" style="z-index:10;"></blockquote>
+  <div><div id="clock"></div></div>
 </body>
 
 </html>
