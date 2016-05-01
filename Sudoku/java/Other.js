@@ -9,15 +9,20 @@
  */
 
 $(document).ready(function () {
-
-	//The sliders allow us to control each individual mp3
+ 
+  /*
+  Created: by MR 04/14/2016
+  Slider volume ui found:http://www.hongkiat.com/blog/jquery-volumn-slider/
+  How to do the audio found http://codepen.io/MyBeefStrong/pen/mPpNbB
+  Description: The sliders allow us to control each individual mp3
+  */
   $(".slider").each(function () {
     //Store frequently elements in variables
 
     var slider = $('.slider');
 
     //var value = slider.slider('value');
-  
+
 
     //Call the Slider
     slider.slider({
@@ -34,9 +39,9 @@ $(document).ready(function () {
 
         // Volume meter transition
         var value = slider.slider('value');
-     
-        volume = $('.volume');    
-           
+
+        volume = $('.volume');
+
         if (value <= 1) {
           volume.css('background-position', '0 -5px');
         }
@@ -69,7 +74,7 @@ $(document).ready(function () {
     myMedia.volume = myVolume;
   }
 
- 
+
   $(".slider1").each(function () {
     //Store frequently elements in variables
 
@@ -244,6 +249,8 @@ $(document).ready(function () {
     myMedia.volume = myVolume;
   }
   /*
+  Created by: Martin Rudzki
+  Date: 03/28/2016
    Code found at:
    http://css3.bradshawenterprises.com/cfimg/
    
@@ -264,9 +271,11 @@ $(document).ready(function () {
   });
 
   /*
+   Created by: Martin Rudzki
+   Date: 03/28/2016
    Code found at:
    http://stackoverflow.com/questions/21524210/jquery-only-one-drop-down-menu-opened-at-a-time
-   
+
    What does it do? 
    Toggels drop down menu
    
@@ -308,7 +317,7 @@ $(document).ready(function () {
   });
 
   $("#solve").trigger('mouseenter');
-  
+
   var game = Sudoku.getInstance();
   $('#container').append(game.getGameBoard()); //add the game board to the page
 
@@ -329,54 +338,54 @@ $(document).ready(function () {
   });
 
   $('#login').click(function () {
-  //This is horrible, but we hard coded a login for simplicity sake
-  if ( (document.getElementById('Username2').value == "Zen") && (document.getElementById('Password2').value == "garden")) {
-		document.getElementById('currentuser').innerHTML = document.getElementById('Username2').value;
-		document.getElementById('Username2').value = '';
-		document.getElementById('Password2').value = '';
-	}
-	else {
-		alert("Incorrect Username or Password");
-	}
-	});
-	
-	$('#logout').click(function () {
-		document.getElementById('currentuser').innerHTML = "Logged out";
-		document.getElementById('Username2').value = '';
-		document.getElementById('Password2').value = '';
-	});
-	
-	$('#signup').click(function () {
-	alert("Not implimented, sorry!");
-	});
-	
+    //This is horrible, but we hard coded a login for simplicity sake
+    if ((document.getElementById('Username2').value == "Zen") && (document.getElementById('Password2').value == "garden")) {
+      document.getElementById('currentuser').innerHTML = document.getElementById('Username2').value;
+      document.getElementById('Username2').value = '';
+      document.getElementById('Password2').value = '';
+    }
+    else {
+      alert("Incorrect Username or Password");
+    }
+  });
+
+  $('#logout').click(function () {
+    document.getElementById('currentuser').innerHTML = "Logged out";
+    document.getElementById('Username2').value = '';
+    document.getElementById('Password2').value = '';
+  });
+
+  $('#signup').click(function () {
+    alert("Not implimented, sorry!");
+  });
+
   $('#solve').click(function () {
     game.solve();
   });
-  
+
   $('#validate').click(function () {
     game.validate();
   });
-  
+
   $('#reset').click(function () {
     game.reset();
   });
-  
+
   $('#EasyButton').click(function () {
     game.reset();
     EasyClicked();
   });
-  
+
   $('#MediumButton').click(function () {
     game.reset();
     MediumClicked();
   });
-  
+
   $('#HardButton').click(function () {
     game.reset();
     HardClicked();
   });
-  
+
   $('#ExpertButton').click(function () {
     game.reset();
     ExpertClicked();

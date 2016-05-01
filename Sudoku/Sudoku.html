@@ -119,30 +119,6 @@ Created: MR 02/20/2015
                   <div id="player3"></div>
                 </section>
               </div>
-              <!-- This has been commented out and moved into Other.js so that we can have a more user friendly experience.
-    <p>Beach:</p>
-    <img src="img/beach_logo.png" alt="icon_sound" style="width: 50px; height: 50px;">
-    <audio id="beach_audio" controls loop>
-
-        <source src="sounds/BeachSounds.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <p>Rainforest:</p>
-    <audio controls loop>
-        <source src="sounds/RainforestSounds.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <p>Rain:</p>
-    <audio controls loop>
-        <source src="sounds/RainSound.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <p>Thunder:</p>
-    <audio controls loop>
-        <source src="sounds/thunder1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-      -->
               <!--Backgroud Menu-->
               <h1 style="text-align:left">Background</h1>
               <p id="cf7_controls" class="fade">
@@ -150,8 +126,9 @@ Created: MR 02/20/2015
                 <span><img src="img/Backgrounds/rainforest_mini.jpg" style="width:75px; height:75px;" /></span>
                 <span><img src="img/Backgrounds/metal_mini.jpg" style="width:75px; height:75px;" /></span>
               </p>
-              <div style="text-align: center">
-              <button id="clockToggle" onclick="$('#clock').toggle()">Toggle Clock</button>
+              <h1 style="text-align:left; margin-top: -2px; margin-bottom: 10px; ">Other</h1>
+              <div >
+                <button class="text_in_menu" id="clockToggle" onclick="$('#clock').toggle()">Toggle Clock</button>
               </div>
             </blockquote>
             <div >
@@ -221,21 +198,34 @@ Created: MR 02/20/2015
   </div>
   <!--End of cssmenu-->
   <!--Sudoku Game-->
-  <div id="behind_gameboard"></div>
+  <div id="behind_gameboard">
+    <!--
+     Created by:Martin Rudzki 04/30/2016
+     Image found at
+     http://giphy.com/gifs/transparent-fireworks-lnnm0WDdWKuWI
+    -->
+    <div id="fireworks_hide" value='hide/show' style="display:none;">
+      <img class="fireworks" src="img/firework1.gif" alt="Sudoku" style="margin-left: 300px;">
+      <img src="img/firework1.gif" alt="Sudoku" style="margin-left: -500px; margin-top: -600px;">
+    </div>
+  </div>
 
-  <div id="container" style=""></div>
+  <div id="container"></div>
+  
   <div id="menu" class="sudoku-menu">
-    <button id="solve" type="button" onclick="$( '#dialog-confirm' ).dialog( 'open' )">Solve</button>
-    <button id="validate">Check</button>
-    <button id="reset">Reset</button>
+    <button id="solve"    class="text_in_menu" type="button" onclick="$( '#dialog-confirm' ).dialog( 'open' )">Solve</button>
+    <button id="validate" class="text_in_menu">Check</button>
+    <button id="reset"    class="text_in_menu">Reset</button>
   </div>
   
-  <div id="dialog-confirm">
-    <p class='dialogbox' style='font-weight: bold'>Are you sure?</p>
-    <p class='dialogbox'>If you confirm now your progress will be lost and replaced with the completed puzzle.</p>
+  <div id="dialog-confirm" class="text_in_menu">
+    <p class='dialogbox text_in_menu' style="font-weight: bold">Are you sure?</p>
+    <p class='dialogbox text_in_menu' style="padding: 12px;">If you confirm now your progress will be lost and replaced with the completed puzzle.</p>
   </div>
   <blockquote class="alert" id="optionsDropDown" style="z-index:10;"></blockquote>
-  <div><div id="clock"></div></div>
-</body>
+  
+  <div><div class="text_in_menu" id="clock" ></div></div>
+  
 
+</body>
 </html>
